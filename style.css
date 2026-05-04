@@ -206,11 +206,13 @@ ul {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 115vh;
     display: flex;
     align-items: center;
     position: relative;
     background: url('assets/hero_bg_1776889333829.png') no-repeat center center/cover;
+    padding-top: 100px;
+    padding-bottom: 120px;
 }
 
 .hero-overlay {
