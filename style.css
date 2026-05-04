@@ -375,7 +375,6 @@ ul {
     padding: 2.5rem 1.5rem;
     transition: var(--transition);
     position: relative;
-    overflow: hidden;
     height: auto;
     min-height: 340px;
     display: flex;
@@ -391,6 +390,7 @@ ul {
     height: 4px;
     background: linear-gradient(to right, var(--primary), var(--secondary));
     transform: scaleX(0);
+    border-radius: 16px 16px 0 0;
     transform-origin: left;
     transition: transform 0.4s ease;
 }
@@ -434,20 +434,20 @@ ul {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, margin-top 0.4s ease-in-out;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
     margin-top: 0;
 }
 .product-card:hover .card-dropdown {
     max-height: 400px;
     opacity: 1;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 .card-dropdown ul {
     list-style: none;
     padding: 0;
     margin: 0;
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 1.5rem;
+    padding-top: 1rem;
 }
 .card-dropdown li {
     margin-bottom: 10px;
@@ -456,7 +456,7 @@ ul {
     margin-bottom: 0;
 }
 .card-dropdown a {
-    color: var(--text-muted);
+    color: #f0f4f8;
     text-decoration: none;
     font-size: 0.95rem;
     display: flex;
