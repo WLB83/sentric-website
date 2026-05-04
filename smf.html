@@ -162,131 +162,105 @@
         </div>
     </section>
 
-    <!-- NEW: Performance Charts -->
+    
+    <!-- Specification Table with Filtering -->
     <section class="section dark-bg">
         <div class="container">
             <div class="section-header fade-in">
                 <h4 class="section-subtitle">Bayi ve Toptancı Bilgilendirmesi</h4>
                 <h2 class="section-title">SMF Teknik Spesifikasyonları</h2>
-                
             </div>
             
-            <div class="about-grid">
-                <!-- Chart 1: DOD 17.5% -->
-                <div class="chart-container fade-in-up">
-                    <h3 class="chart-title">DOD %17.5 Deşarj Testi<br><span style="font-size: 0.9rem; color: var(--text-muted); font-weight: 400;">L3 (70Ah / 20HR) | EN VDA | Sıcaklık: 25°C</span></h3>
-                    <div class="bar-chart">
-                        <div class="y-axis-labels">
-                            <span>50</span>
-                            <span>40</span>
-                            <span>30</span>
-                            <span>20</span>
-                            <span>10</span>
-                            <span>0</span>
-                        </div>
-                        
-                        <!-- 18 Weeks - SPEC -->
-                        <div class="bar-wrapper">
-                            <div class="bar standard" style="height: 36%;">
-                                <span class="bar-value">18</span>
-                            </div>
-                            <span class="x-label">Standart</span>
-                        </div>
-                        
-                        <!-- 45 Weeks - SENTRIC -->
-                        <div class="bar-wrapper">
-                            <div class="bar sentric" style="height: 90%;">
-                                <span class="bar-value" style="color: var(--primary);">45</span>
-                            </div>
-                            <span class="x-label sentric-label">SENTRIC</span>
-                        </div>
-                        
-                        <!-- 40 Weeks - Rakip A -->
-                        <div class="bar-wrapper">
-                            <div class="bar competitor" style="height: 80%;">
-                                <span class="bar-value">40</span>
-                            </div>
-                            <span class="x-label">Rakip A</span>
-                        </div>
-                        
-                        <!-- 18 Weeks - Rakip B -->
-                        <div class="bar-wrapper">
-                            <div class="bar competitor" style="height: 36%;">
-                                <span class="bar-value">18</span>
-                            </div>
-                            <span class="x-label">Rakip B</span>
-                        </div>
-
-                        <!-- 5 Weeks - Rakip C -->
-                        <div class="bar-wrapper">
-                            <div class="bar competitor-low" style="height: 10%;">
-                                <span class="bar-value">5</span>
-                            </div>
-                            <span class="x-label">Rakip C</span>
-                        </div>
-                    </div>
-                    <p style="text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 0.9rem;">Ömür (Hafta)</p>
+            <div class="glassmorphism fade-in-up" style="padding: 2rem; border-radius: 16px;">
+                <!-- Filter Tabs -->
+                <div class="filter-tabs" style="display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem;">
+                    <button class="filter-btn active" data-filter="all" style="background: none; border: none; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: var(--transition);">Tümü</button>
+                    <button class="filter-btn" data-filter="din" style="background: none; border: none; color: var(--text-muted); font-family: var(--font-heading); font-size: 1.1rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: var(--transition);">Avrupa Araçları (DIN)</button>
+                    <button class="filter-btn" data-filter="jis" style="background: none; border: none; color: var(--text-muted); font-family: var(--font-heading); font-size: 1.1rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: var(--transition);">Asya Araçları (JIS)</button>
+                    <button class="filter-btn" data-filter="bci" style="background: none; border: none; color: var(--text-muted); font-family: var(--font-heading); font-size: 1.1rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: var(--transition);">Amerikan Araçları (BCI)</button>
                 </div>
 
-                <!-- Chart 2: DOD 50% -->
-                <div class="chart-container fade-in-up" style="transition-delay: 0.2s;">
-                    <h3 class="chart-title">DOD %50 Derin Deşarj Testi<br><span style="font-size: 0.9rem; color: var(--text-muted); font-weight: 400;">L3 (70Ah / 20HR) | EN VDA | Sıcaklık: 40°C</span></h3>
-                    <div class="bar-chart">
-                        <div class="y-axis-labels">
-                            <span>600</span>
-                            <span>400</span>
-                            <span>200</span>
-                            <span>0</span>
-                        </div>
-                        
-                        <!-- 360 Cycles - SPEC -->
-                        <div class="bar-wrapper">
-                            <div class="bar standard" style="height: 60%;">
-                                <span class="bar-value">360</span>
-                            </div>
-                            <span class="x-label">Standart</span>
-                        </div>
-                        
-                        <!-- 486 Cycles - SENTRIC -->
-                        <div class="bar-wrapper">
-                            <div class="bar sentric" style="height: 81%;">
-                                <span class="bar-value" style="color: var(--primary);">486</span>
-                            </div>
-                            <span class="x-label sentric-label">SENTRIC</span>
-                        </div>
-                        
-                        <!-- 408 Cycles - Rakip A -->
-                        <div class="bar-wrapper">
-                            <div class="bar competitor" style="height: 68%;">
-                                <span class="bar-value">408</span>
-                            </div>
-                            <span class="x-label">Rakip A</span>
-                        </div>
-                        
-                        <!-- 140 Cycles - Rakip B -->
-                        <div class="bar-wrapper">
-                            <div class="bar competitor-low" style="height: 23%;">
-                                <span class="bar-value">140</span>
-                            </div>
-                            <span class="x-label">Rakip B</span>
-                        </div>
+                <div style="overflow-x: auto;">
+                    <table class="specs-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--primary);">
+                                <th style="padding: 1rem; color: var(--primary);">Model (Tip)</th>
+                                <th style="padding: 1rem; color: var(--primary);">Standart</th>
+                                <th style="padding: 1rem; color: var(--primary);">Ah (20HR)</th>
+                                <th style="padding: 1rem; color: var(--primary);">CCA (EN)</th>
+                                <th style="padding: 1rem; color: var(--primary);">Boyutlar (UxGxY) mm</th>
+                                <th style="padding: 1rem; color: var(--primary);">Kutu Tipi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="specs-body">
+                            <!-- DIN Models -->
+                            <tr class="spec-row din" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600;">SMF 54459</td>
+                                <td style="padding: 1rem;"><span style="background: rgba(0,210,255,0.1); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">DIN</span></td>
+                                <td style="padding: 1rem;">44</td>
+                                <td style="padding: 1rem;">360</td>
+                                <td style="padding: 1rem;">207 x 175 x 190</td>
+                                <td style="padding: 1rem;">L1</td>
+                            </tr>
+                            <tr class="spec-row din" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600;">SMF 56030</td>
+                                <td style="padding: 1rem;"><span style="background: rgba(0,210,255,0.1); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">DIN</span></td>
+                                <td style="padding: 1rem;">60</td>
+                                <td style="padding: 1rem;">540</td>
+                                <td style="padding: 1rem;">242 x 175 x 190</td>
+                                <td style="padding: 1rem;">L2</td>
+                            </tr>
+                            <tr class="spec-row din" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600;">SMF 57539</td>
+                                <td style="padding: 1rem;"><span style="background: rgba(0,210,255,0.1); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">DIN</span></td>
+                                <td style="padding: 1rem;">75</td>
+                                <td style="padding: 1rem;">650</td>
+                                <td style="padding: 1rem;">277 x 175 x 190</td>
+                                <td style="padding: 1rem;">L3</td>
+                            </tr>
+                            
+                            <!-- JIS Models -->
+                            <tr class="spec-row jis" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600;">SMF NS40ZL</td>
+                                <td style="padding: 1rem;"><span style="background: rgba(255,100,100,0.1); color: #ff6b6b; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">JIS</span></td>
+                                <td style="padding: 1rem;">35</td>
+                                <td style="padding: 1rem;">300</td>
+                                <td style="padding: 1rem;">196 x 128 x 225</td>
+                                <td style="padding: 1rem;">B19</td>
+                            </tr>
+                            <tr class="spec-row jis" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600;">SMF 55D23L</td>
+                                <td style="padding: 1rem;"><span style="background: rgba(255,100,100,0.1); color: #ff6b6b; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">JIS</span></td>
+                                <td style="padding: 1rem;">60</td>
+                                <td style="padding: 1rem;">500</td>
+                                <td style="padding: 1rem;">230 x 172 x 220</td>
+                                <td style="padding: 1rem;">D23</td>
+                            </tr>
+                            <tr class="spec-row jis" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600;">SMF 80D26L</td>
+                                <td style="padding: 1rem;"><span style="background: rgba(255,100,100,0.1); color: #ff6b6b; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">JIS</span></td>
+                                <td style="padding: 1rem;">70</td>
+                                <td style="padding: 1rem;">600</td>
+                                <td style="padding: 1rem;">258 x 172 x 220</td>
+                                <td style="padding: 1rem;">D26</td>
+                            </tr>
 
-                        <!-- 120 Cycles - Rakip C -->
-                        <div class="bar-wrapper">
-                            <div class="bar competitor-low" style="height: 20%;">
-                                <span class="bar-value">120</span>
-                            </div>
-                            <span class="x-label">Rakip C</span>
-                        </div>
-                    </div>
-                    <p style="text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 0.9rem;">Yaşam Döngüsü Sayısı</p>
+                            <!-- BCI Models -->
+                            <tr class="spec-row bci" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; font-weight: 600;">SMF 65-850</td>
+                                <td style="padding: 1rem;"><span style="background: rgba(100,255,150,0.1); color: #4ade80; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">BCI</span></td>
+                                <td style="padding: 1rem;">85</td>
+                                <td style="padding: 1rem;">850</td>
+                                <td style="padding: 1rem;">305 x 190 x 192</td>
+                                <td style="padding: 1rem;">Group 65</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
         </div>
     </section>
-
-    <!-- Footer -->
+<!-- Footer -->
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-grid">

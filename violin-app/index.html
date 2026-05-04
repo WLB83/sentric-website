@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sihirli Keman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎻 Sihirli Keman 🌟</h1>
+            <p>Tellerin üzerine tıkla, dokun veya 1, 2, 3, 4 tuşlarına bas!</p>
+        </header>
+
+        <div class="violin-body">
+            <div class="strings-container">
+                <div class="string-wrapper" data-note="Do" data-key="1">
+                    <div class="string g-string"></div>
+                    <div class="label">Do <br><span>[1]</span></div>
+                </div>
+                <div class="string-wrapper" data-note="Re" data-key="2">
+                    <div class="string d-string"></div>
+                    <div class="label">Re <br><span>[2]</span></div>
+                </div>
+                <div class="string-wrapper" data-note="Mi" data-key="3">
+                    <div class="string a-string"></div>
+                    <div class="label">Mi <br><span>[3]</span></div>
+                </div>
+                <div class="string-wrapper" data-note="Sol" data-key="4">
+                    <div class="string e-string"></div>
+                    <div class="label">Sol <br><span>[4]</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="songbook">
+            <h2>📖 Şarkı Kitabı</h2>
+            <p class="songbook-desc">Aşağıdaki şarkıları klavyendeki rakamlara basarak çalabilirsin!</p>
+            
+            <div class="song-cards">
+                <div class="song">
+                    <h3>🐑 Küçük Kuzu</h3>
+                    <p class="notes">
+                        <span>3 2 1 2</span> <span>3 3 3</span><br>
+                        <span>2 2 2</span> <span>3 4 4</span><br>
+                        <span>3 2 1 2</span> <span>3 3 3 3</span><br>
+                        <span>2 2 3 2</span> <span>1</span>
+                    </p>
+                </div>
+
+                <div class="song">
+                    <h3>🎄 Yılbaşı Şarkısı</h3>
+                    <p class="notes">
+                        <span>3 3 3</span> <span>3 3 3</span><br>
+                        <span>3 4 1 2</span> <span>3</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

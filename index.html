@@ -22,10 +22,12 @@
                 <div class="dropdown">
                     <a href="#products" class="nav-link">Ürünler <i class="fa-solid fa-angle-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content">
-                        <a href="#products">Binek ve Hafif Ticari</a>
-                        <a href="#products">Ağır Vasıta ve Filo</a>
-                        <a href="#products">Marin ve Karavan</a>
-                        <a href="#products">Endüstriyel Özel</a>
+                        <a href="#products">1. Binek ve Hafif Ticari</a>
+                        <a href="#products" style="font-size: 0.85em; color: var(--text-muted); padding-left: 25px;">- Premium (Start-Stop)</a>
+                        <a href="#products" style="font-size: 0.85em; color: var(--text-muted); padding-left: 25px;">- Standart (DIN/JIS)</a>
+                        <a href="#products">2. Ağır Vasıta ve Filo</a>
+                        <a href="#products">3. Marin ve Karavan</a>
+                        <a href="#products">4. Endüstriyel Özel</a>
                     </div>
                 </div>
                 <a href="assets/Sentric_Katalog.pdf" download="Sentric_Katalog.pdf" class="nav-link">Katalog</a>
@@ -47,6 +49,33 @@
             <div class="hero-buttons">
                 <a href="#products" class="btn-primary">Ürünleri İncele <i class="fa-solid fa-arrow-right"></i></a>
                 <a href="#about" class="btn-secondary">Daha Fazla Bilgi</a>
+            </div>
+
+            <!-- Battery Finder Widget -->
+            <div class="battery-finder glassmorphism fade-in-up" style="margin-top: 3rem; padding: 2rem; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto; border: 1px solid var(--primary);">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;"><i class="fa-solid fa-magnifying-glass" style="color: var(--primary);"></i> Aracınıza Uygun Aküyü Bulun</h3>
+                <div class="finder-controls" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <select id="finder-make" class="finder-select">
+                        <option value="">1. Marka Seçin</option>
+                        <option value="honda">Honda (Japon)</option>
+                        <option value="toyota">Toyota (Japon)</option>
+                        <option value="vw">Volkswagen (Avrupa)</option>
+                        <option value="mercedes">Mercedes-Benz (Avrupa)</option>
+                        <option value="ford">Ford (Amerikan/Avrupa)</option>
+                    </select>
+                    <select id="finder-model" class="finder-select" disabled>
+                        <option value="">2. Model Seçin</option>
+                    </select>
+                    <select id="finder-year" class="finder-select" disabled>
+                        <option value="">3. Üretim Yılı</option>
+                    </select>
+                    <button id="finder-btn" class="btn-primary" style="padding: 0.8rem; border-radius: 8px; width: 100%;" disabled>Akümü Bul</button>
+                </div>
+                <div id="finder-result" style="display: none; margin-top: 1.5rem; padding: 1.5rem; background: rgba(0, 210, 255, 0.1); border-radius: 8px; border-left: 4px solid var(--primary);">
+                    <h4 style="margin-bottom: 0.5rem; color: #fff;">Önerilen Akü Tipi: <span id="result-type" style="color: var(--primary);">JIS (Asya) Standart SMF</span></h4>
+                    <p id="result-desc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Aracınızın fabrika çıkış standartlarına göre Asya tipi dar kasa akü kullanmanız önerilmektedir.</p>
+                    <a id="result-link" href="smf.html" class="btn-secondary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Ürünü İncele</a>
+                </div>
             </div>
         </div>
         <div class="hero-stats-bar glassmorphism fade-in-up">
@@ -101,14 +130,18 @@
                 <div class="product-card glassmorphism fade-in-up">
                     <div class="card-content">
                         <div class="card-icon"><i class="fa-solid fa-car"></i></div>
-                        <h3>AGM & EFB & SMF<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Binek ve Hafif Ticari Araçlar</span></h3>
+                        <h3>BİNEK & HAFİF TİCARİ<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Start-Stop & Standart (DIN/JIS)</span></h3>
                         <p>Standart binek araçlardan, yeni nesil Start-Stop teknolojisine sahip araçlara kadar üstün marş gücü.</p>
                     </div>
                     <div class="card-dropdown">
                         <ul>
-                            <li><a href="agm.html"><i class="fa-solid fa-angle-right"></i> AGM Aküler</a></li>
-                            <li><a href="efb.html"><i class="fa-solid fa-angle-right"></i> EFB Aküler</a></li>
-                            <li><a href="smf.html"><i class="fa-solid fa-angle-right"></i> SMF Aküler</a></li>
+                            <li style="color: var(--primary); font-size: 0.8rem; font-weight: 600; margin-bottom: 5px; padding-left: 15px; letter-spacing: 1px;">PREMIUM (START-STOP)</li>
+                            <li><a href="agm.html"><i class="fa-solid fa-angle-right"></i> AGM Serisi</a></li>
+                            <li style="margin-bottom: 15px;"><a href="efb.html"><i class="fa-solid fa-angle-right"></i> EFB Serisi</a></li>
+                            <li style="color: var(--primary); font-size: 0.8rem; font-weight: 600; margin-bottom: 5px; padding-left: 15px; letter-spacing: 1px;">STANDART (TAM KAPALI SMF)</li>
+                            <li><a href="smf.html?filter=din"><i class="fa-solid fa-angle-right"></i> Avrupa Araçları (DIN)</a></li>
+                            <li><a href="smf.html?filter=jis"><i class="fa-solid fa-angle-right"></i> Asya Araçları (JIS)</a></li>
+                            <li><a href="smf.html?filter=bci"><i class="fa-solid fa-angle-right"></i> Amerikan Araçları (BCI)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -117,13 +150,13 @@
                 <div class="product-card glassmorphism fade-in-up" style="transition-delay: 0.1s;">
                     <div class="card-content">
                         <div class="card-icon"><i class="fa-solid fa-truck"></i></div>
-                        <h3>SMF & SHD<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Ağır Vasıta ve Filo</span></h3>
+                        <h3>AĞIR VASİTA VE TİCARİ<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">SMF & SHD Serisi</span></h3>
                         <p>Kamyon, tır, otobüs ve iş makinaları için zorlu koşullara ve sarsıntıya ekstra dirençli güçlü aküler.</p>
                     </div>
                     <div class="card-dropdown">
                         <ul>
-                            <li><a href="smf-heavy.html"><i class="fa-solid fa-angle-right"></i> SMF Aküler</a></li>
-                            <li><a href="shd.html"><i class="fa-solid fa-angle-right"></i> SHD Aküler</a></li>
+                            <li><a href="smf-heavy.html"><i class="fa-solid fa-angle-right"></i> Standart Ağır Hizmet (SMF)</a></li>
+                            <li><a href="shd.html"><i class="fa-solid fa-angle-right"></i> Süper Ağır Hizmet (SHD)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -132,12 +165,13 @@
                 <div class="product-card glassmorphism fade-in-up" style="transition-delay: 0.2s;">
                     <div class="card-content">
                         <div class="card-icon"><i class="fa-solid fa-ship"></i></div>
-                        <h3>DEEP CYCLE<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Marin ve Karavan</span></h3>
+                        <h3>MARİN VE KARAVAN<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Derin Döngü (Deep Cycle)</span></h3>
                         <p>Tekneler, yatlar ve karavanlar için uzun ömürlü, güvenilir ve derin döngüye uygun marin aküleri.</p>
                     </div>
                     <div class="card-dropdown">
                         <ul>
-                            <li><a href="deep-cycle.html"><i class="fa-solid fa-angle-right"></i> DEEP CYCLE Aküler</a></li>
+                            <li><a href="deep-cycle.html"><i class="fa-solid fa-angle-right"></i> Standart Marin (M Serisi)</a></li>
+                            <li><a href="deep-cycle.html"><i class="fa-solid fa-angle-right"></i> Yüksek Kapasiteli (HCM Serisi)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -146,13 +180,13 @@
                 <div class="product-card glassmorphism fade-in-up" style="transition-delay: 0.3s;">
                     <div class="card-content">
                         <div class="card-icon"><i class="fa-solid fa-industry"></i></div>
-                        <h3>GOLF & GARDEN<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Endüstriyel Özel</span></h3>
+                        <h3>ENDÜSTRİYEL ÖZEL<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Golf & Garden</span></h3>
                         <p>Golf arabaları, elektrikli personel taşıyıcılar ve özel hizmet araçları için kesintisiz enerji.</p>
                     </div>
                     <div class="card-dropdown">
                         <ul>
-                            <li><a href="golf.html"><i class="fa-solid fa-angle-right"></i> GOLF Aküler</a></li>
-                            <li><a href="garden.html"><i class="fa-solid fa-angle-right"></i> GARDEN Aküler</a></li>
+                            <li><a href="golf.html"><i class="fa-solid fa-angle-right"></i> Golf Arabası (Longest Serisi)</a></li>
+                            <li><a href="garden.html"><i class="fa-solid fa-angle-right"></i> Bahçe ve Temizlik Ekipmanları</a></li>
                         </ul>
                     </div>
                 </div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanal Yavru Kedi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Tatlı Kediciğim</h1>
+        </header>
+        
+        <div class="status-bars">
+            <div class="bar-container">
+                <span class="bar-label">Mutluluk ❤️</span>
+                <div class="bar-background">
+                    <div class="bar-fill" id="happiness-bar"></div>
+                </div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Tokluk 🍖</span>
+                <div class="bar-background">
+                    <div class="bar-fill" id="hunger-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pet-area" id="pet-area">
+            <img src="kitten.png" alt="Yavru Kedi" id="kitten-img-static" class="kitten-img">
+            <video src="" autoplay loop muted playsinline id="kitten-video" class="kitten-img" style="display: none;"></video>
+            <div id="hearts-container"></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-feed" id="btn-feed">Besle 🐟</button>
+            <button class="btn btn-pet" id="btn-pet">Sev 😻</button>
+            <button class="btn btn-play" id="btn-play">Oyna 🧶</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

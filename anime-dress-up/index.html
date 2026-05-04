@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nezuko Giydirme Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>🌸 Nezuko Kamado Giydirme 🌸</h1>
+        </header>
+        
+        <main class="game-area">
+            <!-- Sol Gardırop -->
+            <aside class="wardrobe wardrobe-left glass-panel">
+                <h2>💖 Stil & Güzellik</h2>
+                
+                <div class="category">
+                    <h3>Saç Modeli</h3>
+                    <div class="item-grid" id="hair-styles">
+                        <button class="item-btn" data-target="hair" data-value="style1">Nezuko Saçı</button>
+                        <button class="item-btn" data-target="hair" data-value="style2">Kısa Bob</button>
+                        <button class="item-btn" data-target="hair" data-value="style3">Örgülü</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>Aksesuarlar</h3>
+                    <div class="item-grid" id="accessories">
+                        <button class="item-btn" data-target="accessory" data-value="none">Yok</button>
+                        <button class="item-btn" data-target="accessory" data-value="bamboo">Bambu Ağızlık</button>
+                        <button class="item-btn" data-target="accessory" data-value="ribbon">Pembe Kurdele</button>
+                        <button class="item-btn" data-target="accessory" data-value="cat">Kedi Kulak</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>Kuşak (Obi)</h3>
+                    <div class="item-grid" id="obis">
+                        <button class="item-btn" data-target="obi" data-value="none">Yok</button>
+                        <button class="item-btn" data-target="obi" data-value="checkered">Kırmızı-Beyaz</button>
+                        <button class="item-btn" data-target="obi" data-value="green">Yeşil Kuşak</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>Oje Rengi</h3>
+                    <div class="color-grid" id="nail-colors">
+                        <button class="color-btn" style="background: #FFB7B2" data-target="nails" data-value="#FFB7B2"></button>
+                        <button class="color-btn" style="background: #A4CD7D" data-target="nails" data-value="#A4CD7D"></button>
+                        <button class="color-btn" style="background: #111" data-target="nails" data-value="#111111"></button>
+                        <button class="color-btn" style="background: #C5A3FF" data-target="nails" data-value="#C5A3FF"></button>
+                        <button class="color-btn" style="background: transparent; border-color: rgba(255,255,255,0.2);" data-target="nails" data-value="transparent">Yok</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Orta Alan: Karakter -->
+            <section class="character-canvas glass-panel">
+                <div class="svg-container" id="character-svg">
+                    <!-- SVG çizimi JavaScript tarafından buraya eklenecek -->
+                </div>
+                <div class="confetti-container" id="confetti"></div>
+            </section>
+
+            <!-- Sağ Gardırop -->
+            <aside class="wardrobe wardrobe-right glass-panel">
+                <h2>👘 Kıyafet Dolabı</h2>
+                
+                <div class="category">
+                    <h3>Üst Giyim</h3>
+                    <div class="item-grid" id="tops">
+                        <button class="item-btn" data-target="top" data-value="none">Çıkar</button>
+                        <button class="item-btn" data-target="top" data-value="kimono_top">Pembe Kimono</button>
+                        <button class="item-btn" data-target="top" data-value="shirt1">Beyaz Gömlek</button>
+                        <button class="item-btn" data-target="top" data-value="tshirt1">Baskılı Tişört</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>Alt Giyim</h3>
+                    <div class="item-grid" id="bottoms">
+                        <button class="item-btn" data-target="bottom" data-value="none">Çıkar</button>
+                        <button class="item-btn" data-target="bottom" data-value="kimono_bottom">Kimono Eteği</button>
+                        <button class="item-btn" data-target="bottom" data-value="jeans">Kot Pantolon</button>
+                        <button class="item-btn" data-target="bottom" data-value="skirt1">Siyah Etek</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>Dış Giyim (Haori)</h3>
+                    <div class="item-grid" id="outerwear">
+                        <button class="item-btn" data-target="outer" data-value="none">Yok</button>
+                        <button class="item-btn" data-target="outer" data-value="haori">Kahverengi Haori</button>
+                        <button class="item-btn" data-target="outer" data-value="jacket1">Kot Ceket</button>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>Ayakkabılar & Sargı</h3>
+                    <div class="item-grid" id="shoes">
+                        <button class="item-btn" data-target="shoes" data-value="none">Çıplak Ayak</button>
+                        <button class="item-btn" data-target="shoes" data-value="sandals">Zori Sandalet</button>
+                        <button class="item-btn" data-target="shoes" data-value="sneakers">Spor Ayakkabı</button>
+                        <button class="item-btn" data-target="shoes" data-value="boots">Kışlık Bot</button>
+                    </div>
+                </div>
+            </aside>
+        </main>
+        
+        <div class="action-buttons">
+            <button id="btn-randomize" class="action-btn">🎲 Karıştır!</button>
+            <button id="btn-save" class="action-btn">📸 Fotoğraf Çek</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

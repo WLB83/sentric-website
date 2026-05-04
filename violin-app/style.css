@@ -1,0 +1,241 @@
+:root {
+    --bg-color: #fce4ec; /* pastel pink */
+    --violin-bg: #ffe0b2; /* light wood */
+    --violin-border: #ffb74d;
+    --g-color: #ff5252; /* red */
+    --d-color: #4caf50; /* green */
+    --a-color: #448aff; /* blue */
+    --e-color: #e040fb; /* purple */
+    --text-color: #5d4037;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    overflow: auto;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.violin-body {
+    background: linear-gradient(to bottom, #ffecb3, #ffcc80);
+    border: 8px solid #ffa726;
+    border-radius: 40px 40px 100px 100px;
+    padding: 40px 20px;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1), 0 15px 25px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Sound holes (F-holes) decoration */
+.violin-body::before, .violin-body::after {
+    content: '∫';
+    font-family: serif;
+    font-size: 6rem;
+    color: rgba(141, 110, 99, 0.4);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.violin-body::before { left: 20px; }
+.violin-body::after { right: 20px; transform: translateY(-50%) scaleX(-1); }
+
+.strings-container {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.string-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    flex: 1;
+    position: relative;
+}
+
+.string {
+    width: 8px;
+    height: 100%;
+    border-radius: 4px;
+    background-color: #ddd;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transition: all 0.1s ease;
+    position: relative;
+}
+
+/* String Colors */
+.g-string { background: linear-gradient(to right, #ff8a80, var(--g-color), #ff8a80); width: 12px; }
+.d-string { background: linear-gradient(to right, #81c784, var(--d-color), #81c784); width: 10px; }
+.a-string { background: linear-gradient(to right, #82b1ff, var(--a-color), #82b1ff); width: 8px; }
+.e-string { background: linear-gradient(to right, #ea80fc, var(--e-color), #ea80fc); width: 6px; }
+
+/* Vibration Animation */
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+.string-wrapper.playing .string {
+    animation: vibrate 0.05s infinite;
+    box-shadow: 0 0 15px currentColor;
+}
+
+.string-wrapper.playing[data-note="Do"] .string { color: var(--g-color); }
+.string-wrapper.playing[data-note="Re"] .string { color: var(--d-color); }
+.string-wrapper.playing[data-note="Mi"] .string { color: var(--a-color); }
+.string-wrapper.playing[data-note="Sol"] .string { color: var(--e-color); }
+
+.label {
+    position: absolute;
+    bottom: -40px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: transform 0.2s;
+}
+
+.string-wrapper.playing .label {
+    transform: scale(1.2);
+    background: rgba(0,0,0,0.7);
+}
+
+.label span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Add a bridge */
+.strings-container::after {
+    content: '';
+    position: absolute;
+    bottom: 80px;
+    left: -10px;
+    right: -10px;
+    height: 20px;
+    background: #8d6e63;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+/* Songbook Styles */
+.songbook {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.songbook h2 {
+    color: #5d4037;
+    margin-bottom: 5px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.songbook-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.song-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.song {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.song h3 {
+    font-size: 1.1rem;
+    color: #448aff;
+    margin-bottom: 10px;
+}
+
+.notes {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4caf50;
+    line-height: 1.5;
+}
+
+.notes span {
+    background: #f1f8e9;
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin: 2px;
+    display: inline-block;
+}
+
+@media (max-width: 600px) {
+    header h1 { font-size: 2.2rem; }
+    .violin-body { height: 350px; }
+    .strings-container::after { bottom: 60px; }
+    .label { font-size: 0.9rem; bottom: -35px; }
+    .song-cards { flex-direction: column; }
+}
