@@ -19,7 +19,15 @@
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Ana Sayfa</a>
                 <a href="#about" class="nav-link">Hakkımızda</a>
-                <a href="#products" class="nav-link">Ürünler</a>
+                <div class="dropdown">
+                    <a href="#products" class="nav-link">Ürünler <i class="fa-solid fa-angle-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#products">Binek ve Hafif Ticari</a>
+                        <a href="#products">Ağır Vasıta ve Filo</a>
+                        <a href="#products">Marin ve Karavan</a>
+                        <a href="#products">Endüstriyel Özel</a>
+                    </div>
+                </div>
                 <a href="assets/Sentric_Katalog.pdf" download="Sentric_Katalog.pdf" class="nav-link">Katalog</a>
                 <a href="#features" class="nav-link">Özellikler</a>
             </div>
@@ -89,23 +97,64 @@
                 <h2 class="section-title">Aracınıza Uygun Güç</h2>
             </div>
             <div class="products-grid">
+                <!-- Card 1 -->
                 <div class="product-card glassmorphism fade-in-up">
-                    <div class="card-icon"><i class="fa-solid fa-car-battery"></i></div>
-                    <h3>AGM Serisi</h3>
-                    <p>Start-Stop teknolojisine sahip yeni nesil araçlar için maksimum performans ve enerji verimliliği.</p>
-                    <a href="#" class="read-more">İncele <i class="fa-solid fa-angle-right"></i></a>
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-car"></i></div>
+                        <h3>AGM & EFB & SMF<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Binek ve Hafif Ticari Araçlar</span></h3>
+                        <p>Standart binek araçlardan, yeni nesil Start-Stop teknolojisine sahip araçlara kadar üstün marş gücü.</p>
+                    </div>
+                    <div class="card-dropdown">
+                        <ul>
+                            <li><a href="agm.html"><i class="fa-solid fa-angle-right"></i> AGM Aküler</a></li>
+                            <li><a href="efb.html"><i class="fa-solid fa-angle-right"></i> EFB Aküler</a></li>
+                            <li><a href="smf.html"><i class="fa-solid fa-angle-right"></i> SMF Aküler</a></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- Card 2 -->
                 <div class="product-card glassmorphism fade-in-up" style="transition-delay: 0.1s;">
-                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>EFB Serisi</h3>
-                    <p>Standart Start-Stop araçlar ve yüksek enerji ihtiyacı olan donanımlar için güçlendirilmiş yapı.</p>
-                    <a href="#" class="read-more">İncele <i class="fa-solid fa-angle-right"></i></a>
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-truck"></i></div>
+                        <h3>SMF & SHD<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Ağır Vasıta ve Filo</span></h3>
+                        <p>Kamyon, tır, otobüs ve iş makinaları için zorlu koşullara ve sarsıntıya ekstra dirençli güçlü aküler.</p>
+                    </div>
+                    <div class="card-dropdown">
+                        <ul>
+                            <li><a href="smf-heavy.html"><i class="fa-solid fa-angle-right"></i> SMF Aküler</a></li>
+                            <li><a href="shd.html"><i class="fa-solid fa-angle-right"></i> SHD Aküler</a></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- Card 3 -->
                 <div class="product-card glassmorphism fade-in-up" style="transition-delay: 0.2s;">
-                    <div class="card-icon"><i class="fa-solid fa-truck-pickup"></i></div>
-                    <h3>Ağır Vasıta</h3>
-                    <p>Kamyon, tır ve otobüsler için zorlu koşullara dayanıklı, sarsıntıya dirençli güçlü aküler.</p>
-                    <a href="#" class="read-more">İncele <i class="fa-solid fa-angle-right"></i></a>
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-ship"></i></div>
+                        <h3>DEEP CYCLE<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Marin ve Karavan</span></h3>
+                        <p>Tekneler, yatlar ve karavanlar için uzun ömürlü, güvenilir ve derin döngüye uygun marin aküleri.</p>
+                    </div>
+                    <div class="card-dropdown">
+                        <ul>
+                            <li><a href="deep-cycle.html"><i class="fa-solid fa-angle-right"></i> DEEP CYCLE Aküler</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card glassmorphism fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-industry"></i></div>
+                        <h3>GOLF & GARDEN<br><span style="font-size: 1.1rem; font-weight: 400; color: var(--text-muted);">Endüstriyel Özel</span></h3>
+                        <p>Golf arabaları, elektrikli personel taşıyıcılar ve özel hizmet araçları için kesintisiz enerji.</p>
+                    </div>
+                    <div class="card-dropdown">
+                        <ul>
+                            <li><a href="golf.html"><i class="fa-solid fa-angle-right"></i> GOLF Aküler</a></li>
+                            <li><a href="garden.html"><i class="fa-solid fa-angle-right"></i> GARDEN Aküler</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -187,10 +236,10 @@
                 <div class="footer-col">
                     <h3>Ürünlerimiz</h3>
                     <ul>
-                        <li><a href="#">AGM Aküler</a></li>
-                        <li><a href="#">EFB Aküler</a></li>
                         <li><a href="#">Binek Araç Aküleri</a></li>
-                        <li><a href="#">Ticari Araç Aküleri</a></li>
+                        <li><a href="#">Ağır Vasıta Aküleri</a></li>
+                        <li><a href="#">Marin ve Karavan</a></li>
+                        <li><a href="#">Endüstriyel Aküler</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
