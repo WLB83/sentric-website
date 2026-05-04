@@ -1,0 +1,736 @@
+{
+    "Fiat": {
+        "popular": true,
+        "models": {
+            "Egea": {
+                "years": [
+                    "2015-2026"
+                ],
+                "engines": {
+                    "1.3 Multijet": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel ve Start-Stop donanımı için yüksek kapasiteli Avrupa (DIN) tipi AGM akü zorunludur.",
+                        "link": "agm.html"
+                    },
+                    "1.4 Fire": {
+                        "type": "EFB (Start-Stop) veya SMF",
+                        "desc": "Start-Stop aktifse EFB, donanım düşükse Standart DIN (Avrupa) SMF akü yeterlidir.",
+                        "link": "efb.html"
+                    },
+                    "1.6 Multijet": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "1.6 Dizel motorun yüksek deşarj gereksinimi için AGM kullanılmalıdır.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "Fiorino": {
+                "years": [
+                    "2007-2026"
+                ],
+                "engines": {
+                    "1.3 Multijet": {
+                        "type": "SMF Standart (DIN) veya EFB",
+                        "desc": "Ticari kullanım için Standart Avrupa tipi (DIN L2/L3) tam bakımsız akü önerilir. S/S varsa EFB takılır.",
+                        "link": "smf.html?filter=din"
+                    },
+                    "1.4 Fire (LPG)": {
+                        "type": "SMF Standart (DIN)",
+                        "desc": "LPG'li modellerde de standart L2 (Avrupa) kasa 60Ah akü tercih edilir.",
+                        "link": "smf.html?filter=din"
+                    }
+                }
+            },
+            "Doblo": {
+                "years": [
+                    "2010-2022",
+                    "2023-2026 (Yeni)"
+                ],
+                "engines": {
+                    "1.6 Multijet (Eski Kasa)": {
+                        "type": "AGM veya EFB",
+                        "desc": "Start-Stop sistemli ticari kullanımlarda EFB/AGM şarttır.",
+                        "link": "efb.html"
+                    },
+                    "1.5 BlueHDi (Yeni Kasa)": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Stellantis ortak üretimi olan yeni nesil motorlar için AGM akü kullanılmalıdır.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Renault": {
+        "popular": true,
+        "models": {
+            "Clio": {
+                "years": [
+                    "2012-2019 (Clio 4)",
+                    "2019-2026 (Clio 5)"
+                ],
+                "engines": {
+                    "0.9 / 1.0 TCe": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Yeni nesil turbo benzinli araçlar için EFB serisi (L2/L3 DIN) uygundur.",
+                        "link": "efb.html"
+                    },
+                    "1.5 dCi": {
+                        "type": "AGM (Start-Stop) veya EFB",
+                        "desc": "Dizel motorlarda yoğun kullanım için AGM veya standart S/S kullanım için EFB tercih edilmelidir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "Megane": {
+                "years": [
+                    "2016-2026 (Megane 4)"
+                ],
+                "engines": {
+                    "1.3 TCe": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Standart Start-Stop donanımı için EFB idealdir.",
+                        "link": "efb.html"
+                    },
+                    "1.5 Blue dCi": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel Megane serisi için yüksek deşarj dirençli AGM akü kullanımı gereklidir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "Austral": {
+                "years": [
+                    "2023-2026"
+                ],
+                "engines": {
+                    "1.3 Mild Hybrid": {
+                        "type": "AGM (Premium Start-Stop)",
+                        "desc": "MHEV (Yarı hibrit) sisteminin 12V elektrik şebekesi için AGM zorunludur.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Volkswagen": {
+        "popular": true,
+        "models": {
+            "Polo": {
+                "years": [
+                    "2009-2017 (6R/6C)",
+                    "2018-2026 (AW)"
+                ],
+                "engines": {
+                    "1.0 TSI": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Benzinli Polo modelleri genellikle Avrupa (DIN L2) tipi EFB kullanır.",
+                        "link": "efb.html"
+                    },
+                    "1.4 / 1.6 TDI": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel Polo'larda amperajı yüksek AGM kasaları tavsiye edilir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "Golf": {
+                "years": [
+                    "2012-2020 (Golf 7)",
+                    "2020-2026 (Golf 8)"
+                ],
+                "engines": {
+                    "1.0 eTSI / 1.5 eTSI": {
+                        "type": "AGM (MHEV Start-Stop)",
+                        "desc": "Hafif hibrit (Mild-Hybrid) sistemli Golf 8 için kesinlikle L3/L4 kasa AGM akü gereklidir.",
+                        "link": "agm.html"
+                    },
+                    "1.4 TSI / 1.5 TSI": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Avrupa DIN kasalı EFB akü standart olarak yeterlidir.",
+                        "link": "efb.html"
+                    },
+                    "1.6 TDI": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel motorun yüksek güç ihtiyacı için AGM gereklidir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "Passat": {
+                "years": [
+                    "2015-2026 (B8/B9)"
+                ],
+                "engines": {
+                    "1.5 TSI": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "EFB serisi araç elektroniğini desteklemek için uygundur.",
+                        "link": "efb.html"
+                    },
+                    "1.6 / 2.0 TDI": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Passat Dizel serilerinde AGM akü (L3/L4 kasa) kullanımı mecburidir.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Ford": {
+        "popular": true,
+        "models": {
+            "Focus": {
+                "years": [
+                    "2011-2018",
+                    "2018-2026"
+                ],
+                "engines": {
+                    "1.0 EcoBoost": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "EcoBoost motorlarda EFB (Alçak T175 DIN kasa) yaygın olarak kullanılır.",
+                        "link": "efb.html"
+                    },
+                    "1.5 TDCi / EcoBlue": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel versiyonlar AGM veya Yüksek Kapasiteli EFB gerektirir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "Transit / Tourneo Courier": {
+                "years": [
+                    "2014-2026"
+                ],
+                "engines": {
+                    "1.5 / 1.6 TDCi": {
+                        "type": "SMF Standart veya EFB",
+                        "desc": "Ticari seri Start-Stoplu ise EFB, değilse Standart DIN tipi akü yeterlidir.",
+                        "link": "smf.html?filter=din"
+                    }
+                }
+            },
+            "Transit Custom": {
+                "years": [
+                    "2012-2026"
+                ],
+                "engines": {
+                    "2.0 EcoBlue": {
+                        "type": "AGM veya EFB (Ticari)",
+                        "desc": "Büyük ticari araçlar için yüksek marş (CCA) gücüne sahip özel L4/L5 kasa aküler seçilmelidir.",
+                        "link": "smf-heavy.html"
+                    }
+                }
+            }
+        }
+    },
+    "Peugeot": {
+        "popular": true,
+        "models": {
+            "208": {
+                "years": [
+                    "2012-2019",
+                    "2019-2026"
+                ],
+                "engines": {
+                    "1.2 PureTech": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Benzinli kompakt modellerde EFB yeterlidir.",
+                        "link": "efb.html"
+                    },
+                    "1.5 BlueHDi": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Peugeot dizel modelleri L2/L3 kasa AGM akü gerektirir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "3008": {
+                "years": [
+                    "2016-2026"
+                ],
+                "engines": {
+                    "1.2 PureTech": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Standart Start-Stop donanımı için Avrupa EFB akü idealdir.",
+                        "link": "efb.html"
+                    },
+                    "1.5 / 1.6 BlueHDi": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Peugeot SUV dizellerinde kesinlikle AGM akü kullanılmalıdır.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Opel": {
+        "popular": true,
+        "models": {
+            "Astra": {
+                "years": [
+                    "2015-2021 (K)",
+                    "2021-2026 (L)"
+                ],
+                "engines": {
+                    "1.2 / 1.4 Turbo": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Benzinli versiyonlar genellikle EFB tercih eder.",
+                        "link": "efb.html"
+                    },
+                    "1.5 / 1.6 Dizel": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel motorlarda yoğun kullanım için L3 kasa AGM akü şarttır.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "Corsa": {
+                "years": [
+                    "2014-2019 (E)",
+                    "2019-2026 (F)"
+                ],
+                "engines": {
+                    "1.2 Benzinli": {
+                        "type": "EFB (Start-Stop) veya SMF",
+                        "desc": "Start-Stop aktifse EFB, donanım düşükse Standart DIN (Avrupa) SMF akü yeterlidir.",
+                        "link": "efb.html"
+                    }
+                }
+            }
+        }
+    },
+    "Hyundai": {
+        "popular": true,
+        "models": {
+            "Tucson": {
+                "years": [
+                    "2015-2021",
+                    "2021-2026"
+                ],
+                "engines": {
+                    "1.6 T-GDI": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Yeni nesil Tucson'larda Avrupa kasalı AGM akü kullanılmaktadır.",
+                        "link": "agm.html"
+                    },
+                    "1.6 CRDi": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel motorlar için AGM akü yüksek performans sağlar.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "i20": {
+                "years": [
+                    "2014-2020",
+                    "2020-2026"
+                ],
+                "engines": {
+                    "1.2 / 1.4 MPI": {
+                        "type": "JIS (Asya) Standart SMF",
+                        "desc": "Asya tipi dar kasa (JIS) standart akü gerektirir.",
+                        "link": "smf.html?filter=jis"
+                    },
+                    "1.0 T-GDI": {
+                        "type": "EFB (Asya Kasa)",
+                        "desc": "Start-Stoplu turbo motorlarda Asya tipi (JIS) EFB akü seçilmelidir.",
+                        "link": "efb.html"
+                    }
+                }
+            }
+        }
+    },
+    "Toyota": {
+        "popular": true,
+        "models": {
+            "Corolla": {
+                "years": [
+                    "2013-2019",
+                    "2019-2026"
+                ],
+                "engines": {
+                    "1.6 Valvematic": {
+                        "type": "JIS (Asya) Standart SMF",
+                        "desc": "Japon tipi ince uzun (JIS) standart akü (Örn: NS40/NS60) kullanılır.",
+                        "link": "smf.html?filter=jis"
+                    },
+                    "1.5 Dynamic Force": {
+                        "type": "EFB (Asya Kasa)",
+                        "desc": "Yeni nesil benzinli motorlarda Start-Stop desteği için EFB gereklidir.",
+                        "link": "efb.html"
+                    },
+                    "1.8 Hybrid": {
+                        "type": "JIS (Asya) Özel Hibrit Yardımcı Akü",
+                        "desc": "Hibrit sistemin 12V yardımcı aküsü (JIS) bagajda veya motor içi özel yerleşimdedir.",
+                        "link": "smf.html?filter=jis"
+                    }
+                }
+            },
+            "C-HR": {
+                "years": [
+                    "2016-2026"
+                ],
+                "engines": {
+                    "1.8 Hybrid": {
+                        "type": "JIS (Asya) Özel Hibrit",
+                        "desc": "12V JIS standardı (B24 veya benzeri) dar kasa yardımcı akü.",
+                        "link": "smf.html?filter=jis"
+                    }
+                }
+            }
+        }
+    },
+    "Dacia": {
+        "popular": true,
+        "models": {
+            "Duster": {
+                "years": [
+                    "2010-2018",
+                    "2018-2026"
+                ],
+                "engines": {
+                    "1.0 TCe (LPG)": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Dacia fabrika çıkışlı LPG ve benzinli modellerinde genellikle L2 kasa EFB kullanır.",
+                        "link": "efb.html"
+                    },
+                    "1.5 dCi": {
+                        "type": "EFB veya AGM (Start-Stop)",
+                        "desc": "Dizel modellerde donanıma göre L2/L3 EFB veya AGM akü önerilir.",
+                        "link": "efb.html"
+                    }
+                }
+            }
+        }
+    },
+    "Skoda": {
+        "popular": true,
+        "models": {
+            "Octavia": {
+                "years": [
+                    "2013-2020",
+                    "2020-2026"
+                ],
+                "engines": {
+                    "1.0 e-TEC / 1.5 e-TEC": {
+                        "type": "AGM (MHEV Start-Stop)",
+                        "desc": "Yarı hibrit modellerde AGM zorunludur.",
+                        "link": "agm.html"
+                    },
+                    "1.6 TDI": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel modeller için AGM (L3 Kasa) akü gereklidir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "Superb": {
+                "years": [
+                    "2015-2026"
+                ],
+                "engines": {
+                    "1.5 TSI": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Büyük kasa benzinli modelde elektronikleri desteklemek için L3 EFB.",
+                        "link": "efb.html"
+                    },
+                    "2.0 TDI": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Güçlü dizel motor için L4/L5 kasa AGM.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Seat": {
+        "popular": true,
+        "models": {
+            "Leon": {
+                "years": [
+                    "2012-2020",
+                    "2020-2026"
+                ],
+                "engines": {
+                    "1.0 eTSI / 1.5 eTSI": {
+                        "type": "AGM (MHEV Start-Stop)",
+                        "desc": "Hafif hibrit (Mild-Hybrid) sistemli Leon için L3 kasa AGM akü gereklidir.",
+                        "link": "agm.html"
+                    },
+                    "1.4 TSI / 1.6 TDI": {
+                        "type": "EFB veya AGM",
+                        "desc": "Benzinlide EFB, Dizelde AGM kullanımı Volkswagen grubunun standardıdır.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Chery": {
+        "popular": true,
+        "models": {
+            "Tiggo 8 Pro": {
+                "years": [
+                    "2022-2026"
+                ],
+                "engines": {
+                    "1.6 TGDI": {
+                        "type": "AGM veya EFB",
+                        "desc": "Çin pazarından gelen yoğun elektronik donanımlı araçlarda Start-Stop akü kullanılır.",
+                        "link": "efb.html"
+                    }
+                }
+            },
+            "Omoda 5": {
+                "years": [
+                    "2023-2026"
+                ],
+                "engines": {
+                    "1.6 TGDI": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Yeni nesil sistemler için EFB yeterli olmaktadır.",
+                        "link": "efb.html"
+                    }
+                }
+            }
+        }
+    },
+    "MG": {
+        "popular": true,
+        "models": {
+            "HS": {
+                "years": [
+                    "2020-2026"
+                ],
+                "engines": {
+                    "1.5T (Benzinli)": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Yoğun elektronik donanım için EFB akü.",
+                        "link": "efb.html"
+                    },
+                    "PHEV (Şarj Edilebilir Hibrit)": {
+                        "type": "AGM (Yardımcı Akü)",
+                        "desc": "12V yardımcı akü olarak yüksek çevrimli AGM.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Nissan": {
+        "popular": false,
+        "models": {
+            "Qashqai": {
+                "years": [
+                    "2014-2021",
+                    "2021-2026"
+                ],
+                "engines": {
+                    "1.2 DIG-T / 1.3 DIG-T": {
+                        "type": "EFB (Start-Stop)",
+                        "desc": "Nissan modelleri Avrupa pazarı için genelde L2/L3 DIN EFB ile gelir.",
+                        "link": "efb.html"
+                    },
+                    "1.5 dCi": {
+                        "type": "AGM veya EFB (Start-Stop)",
+                        "desc": "Dizel modeller için AGM tercih edilir.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Kia": {
+        "popular": false,
+        "models": {
+            "Sportage": {
+                "years": [
+                    "2015-2021",
+                    "2021-2026"
+                ],
+                "engines": {
+                    "1.6 GDI / T-GDI": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Geniş elektronik donanımlar için AGM akü Avrupa kasalarında tercih edilir.",
+                        "link": "agm.html"
+                    },
+                    "1.6 CRDi": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel motor yüksek CCA ister, AGM tavsiye edilir.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Honda": {
+        "popular": false,
+        "models": {
+            "Civic": {
+                "years": [
+                    "2012-2016 (FB7)",
+                    "2016-2021 (FC5)",
+                    "2021-2026 (FE)"
+                ],
+                "engines": {
+                    "1.6 i-VTEC (LPG/Benzin)": {
+                        "type": "JIS (Asya) Standart SMF",
+                        "desc": "Klasik JIS (Dar Kasa) Asya tipi akü. (Örn: NS40ZL veya 45Ah JIS).",
+                        "link": "smf.html?filter=jis"
+                    },
+                    "1.5 VTEC Turbo": {
+                        "type": "EFB (Start-Stop) JIS",
+                        "desc": "Turbo modellerde kapasitesi artırılmış Asya tipi EFB gereklidir.",
+                        "link": "efb.html"
+                    }
+                }
+            },
+            "CR-V": {
+                "years": [
+                    "2017-2026"
+                ],
+                "engines": {
+                    "1.5 VTEC Turbo": {
+                        "type": "EFB (JIS)",
+                        "desc": "Büyük Asya tipi (D23/D26 kasa) EFB akü.",
+                        "link": "efb.html"
+                    }
+                }
+            }
+        }
+    },
+    "Mercedes-Benz": {
+        "popular": false,
+        "models": {
+            "C-Serisi (W205/W206)": {
+                "years": [
+                    "2014-2021",
+                    "2021-2026"
+                ],
+                "engines": {
+                    "C200 (Mild Hybrid)": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Tüm modern Mercedes modelleri yüksek şarj kabulü için AGM kullanır.",
+                        "link": "agm.html"
+                    },
+                    "C200d": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel motorlu premium araçlar için L4/L5 kasa AGM akü.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "E-Serisi (W213)": {
+                "years": [
+                    "2016-2026"
+                ],
+                "engines": {
+                    "Tüm Motorlar": {
+                        "type": "AGM (Start-Stop) + Yedek Akü",
+                        "desc": "Ana batarya olarak L5 (95Ah) veya L6 (105Ah) AGM kullanılır. Ayrıca yardımcı akü bulunabilir.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "BMW": {
+        "popular": false,
+        "models": {
+            "3 Serisi (F30/G20)": {
+                "years": [
+                    "2012-2019",
+                    "2019-2026"
+                ],
+                "engines": {
+                    "320i / 318i": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "BMW iDrive sisteminin ve akıllı şarjın gereksinimleri için bagajda konumlandırılan AGM akü.",
+                        "link": "agm.html"
+                    },
+                    "320d": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Yüksek marş basma gücüne sahip bagaj monteli L4/L5 AGM.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "5 Serisi (G30)": {
+                "years": [
+                    "2017-2026"
+                ],
+                "engines": {
+                    "Tüm Motorlar": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "90Ah ile 105Ah arası yüksek kapasiteli AGM akü zorunludur.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Audi": {
+        "popular": false,
+        "models": {
+            "A3": {
+                "years": [
+                    "2013-2020",
+                    "2020-2026"
+                ],
+                "engines": {
+                    "35 TFSI (Mild Hybrid)": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Yarı hibrit sistemli A3 için kesinlikle AGM akü gereklidir.",
+                        "link": "agm.html"
+                    },
+                    "30 TDI / 35 TDI": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Dizel motorlu premium araçlar AGM gerektirir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "A4": {
+                "years": [
+                    "2015-2026"
+                ],
+                "engines": {
+                    "Tüm Motorlar": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "Premium donanımlı Audi A4, bagajda yer alan L4/L5 kasa AGM akü kullanır.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    },
+    "Volvo": {
+        "popular": false,
+        "models": {
+            "XC40": {
+                "years": [
+                    "2017-2026"
+                ],
+                "engines": {
+                    "T3 / B4 (Mild Hybrid)": {
+                        "type": "AGM (Start-Stop)",
+                        "desc": "İsveçli üreticinin tüm modern araçlarında güvenlik ve kış performansı için AGM akü tercih edilir.",
+                        "link": "agm.html"
+                    }
+                }
+            },
+            "XC90": {
+                "years": [
+                    "2015-2026"
+                ],
+                "engines": {
+                    "B5 / B6 / T8": {
+                        "type": "AGM (Start-Stop) + Yardımcı Akü",
+                        "desc": "Büyük AGM akü ve genellikle önde küçük bir yardımcı akü sistemi mevcuttur.",
+                        "link": "agm.html"
+                    }
+                }
+            }
+        }
+    }
+}
