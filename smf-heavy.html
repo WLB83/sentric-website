@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentric Akü - Ağır Vasıta SMF Serisi</title>
+    <meta name="description" content="SENTRIC EFB Serisi aküler ile tanışın. Küçük ve orta ölçekli start-stop araçlar için üstün dayanıklılık ve performans.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .performance-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid var(--glass-border);
+        }
+        .performance-table th, .performance-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--glass-border);
+            border-right: 1px solid var(--glass-border);
+        }
+        .performance-table th:last-child, .performance-table td:last-child {
+            border-right: none;
+        }
+        .performance-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .performance-table th {
+            background-color: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .performance-table td {
+            background-color: var(--glass-bg);
+            color: var(--text-main);
+        }
+        .performance-table .category-header {
+            background-color: rgba(58, 123, 213, 0.2);
+            font-weight: bold;
+            color: #fff;
+            text-align: left;
+            padding-left: 1.5rem;
+        }
+        .performance-table .spec-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .performance-table .value-highlight {
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        .performance-table td.sub-col {
+            background-color: rgba(255,255,255,0.01);
+        }
+        .graph-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+    </style>
+</head>
+<body class="subpage">
+    <!-- Navbar -->
+    <nav class="navbar" style="background: rgba(10, 10, 12, 0.95);">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> SENTRIC
+            </a>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Ana Sayfa</a>
+                <a href="index.html#about" class="nav-link">Hakkımızda</a>
+                <div class="dropdown">
+                    <a href="index.html#products" class="nav-link">Ürünler <i class="fa-solid fa-angle-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#products">Binek ve Hafif Ticari</a>
+                        <a href="index.html#products">Ağır Vasıta ve Filo</a>
+                        <a href="index.html#products">Marin ve Karavan</a>
+                        <a href="index.html#products">Endüstriyel Özel</a>
+                    </div>
+                </div>
+                <a href="assets/Sentric_Katalog.pdf" download="Sentric_Katalog.pdf" class="nav-link">Katalog</a>
+                <a href="index.html#features" class="nav-link">Özellikler</a>
+            </div>
+            <a href="index.html#contact" class="btn-quote">Teklif Al</a>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subpage Hero -->
+    <header class="hero sub-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in" style="padding-top: 150px; text-align: center;">
+            <h4 class="section-subtitle">Gelişmiş Dayanıklılık</h4>
+            <h1>EFB <span>SERİSİ</span></h1>
+            <p style="max-width: 800px; margin: 0 auto; margin-top: 20px;">SENTRIC EFB aküleri, Start-Stop sistemine sahip araçlar için uzun ömürlü ve güvenilir güç sağlamak üzere tasarlanmıştır.</p>
+        </div>
+    </header>
+
+    <!-- Description Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-grid" style="align-items: start; grid-template-columns: 1fr;">
+                <div class="about-text slide-in-left">
+                    <h2 class="section-title">EFB Akü Teknolojisi</h2>
+                    <p><strong>EFB (Enhanced Flooded Battery)</strong> aküler, Start-Stop sistemine sahip ancak rejeneratif frenleme sistemi olmayan küçük ve orta ölçekli araçlar için mükemmel uyum sağlar.</p>
+                    <p>Standart kurşun-asit akülere kıyasla çok daha uzun bir kullanım ömrüne sahip olan EFB aküler, AGM akülerine benzer şekilde azaltılmış gaz emisyonları sunar ve araç içi elektrik donanımlarının verimli şekilde çalışmasına yardımcı olur.</p>
+                    <p>Özel organik elyaflar ve yüksek saflıkta elektrolit teknolojisi ile derin deşarj döngü performansı maksimize edilerek, sık dur-kalk trafiğinde bile aracınızın her zaman ilk marşta çalışmasını garanti eder.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Anatomy Section -->
+    <section class="section dark-bg">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h4 class="section-subtitle">İç Yapı Analizi</h4>
+                <h2 class="section-title">Anatomi</h2>
+            </div>
+            
+            <div class="about-grid mt-5">
+                <div class="features-content slide-in-left">
+                    <h3 class="mb-4" style="color: var(--primary-color);">EFB Yapısal Bileşenleri</h3>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
+                        <div class="feature-text">
+                            <h4>SPECIAL DOUBLE LID (Özel Çift Kapak)</h4>
+                            <p>Sızdırmaz yapı (Anti-leakage structure), 50° eğime kadar tam koruma ve dayanıklılık sağlar.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="feature-text">
+                            <h4>HIGH PURE ELECTROLYTE</h4>
+                            <p>Yüksek saflıkta elektrolit kullanımı sayesinde düşük su kaybı yaşanır.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-vial"></i></div>
+                        <div class="feature-text">
+                            <h4>ELECTROLYTE ADDITIVES (Elektrolit Katkıları)</h4>
+                            <p>Derin deşarj döngü performansını ve akünün ömrünü artırır.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-blender"></i></div>
+                        <div class="feature-text">
+                            <h4>MIXING ELEMENT (Karıştırıcı Eleman)</h4>
+                            <p>Asit tabakalaşmasını önler (Özellikle Avrupa/DIN tipleri için opsiyonel özellik).</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+                        <div class="feature-text">
+                            <h4>SPECIAL ADDITIVES (Özel Katkılar)</h4>
+                            <p>Geliştirilmiş şarj kabulü sağlayarak akünün çok daha hızlı şarj olmasını mümkün kılar.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-spa"></i></div>
+                        <div class="feature-text">
+                            <h4>SPECIAL ORGANIC FIBER</h4>
+                            <p>Plakalara eklenen özel organik elyaf ile daha yüksek bir yaşam döngüsü sunar.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-border-all"></i></div>
+                        <div class="feature-text">
+                            <h4>GRID TECHNOLOGY (Izgara Teknolojisi)</h4>
+                            <p>Korozyona karşı daha uzun ömür sağlayan alt-tane sınırları oluşturur. Dayanıklılık için iyidir, korozyona son derece dirençlidir, yüksek iletkenlik sunar. (Genişletilmiş Izgara ve Delikli Izgara).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-image slide-in-right">
+                    <img src="assets/sentric_detailed_product_1776896363828.png" alt="EFB Akü Teknolojisi">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Performance Table Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h4 class="section-subtitle">Kanıtlanmış Üstünlük</h4>
+                <h2 class="section-title">Performans ve Döngü Testleri</h2>
+                <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">DOD (Depth of Discharge) %50 Döngü Testi sonuçlarına göre SENTRIC EFB serisi, standart spesifikasyonların çok üzerinde bir performans sergilemektedir.</p>
+            </div>
+            
+            <div class="fade-in-up glassmorphism" style="padding: 2rem; overflow-x: auto;">
+                <table class="performance-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="width: 15%;">Kategori</th>
+                            <th rowspan="2" style="width: 10%;">Test</th>
+                            <th colspan="2">EFB Q85</th>
+                            <th colspan="2">EFB LN2</th>
+                            <th colspan="2">EFB LN3</th>
+                        </tr>
+                        <tr>
+                            <th class="sub-col">Standart (Spec)</th>
+                            <th class="sub-col">Test Sonucu</th>
+                            <th class="sub-col">Standart (Spec)</th>
+                            <th class="sub-col">Test Sonucu</th>
+                            <th class="sub-col">Standart (Spec)</th>
+                            <th class="sub-col">Test Sonucu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="category-header">PERFORMANCE<br>(Performans)</td>
+                            <td><strong>C20</strong><br><small>Kapasite</small></td>
+                            <td><span class="spec-label">73 Ah</span></td>
+                            <td><span class="value-highlight" style="color: var(--primary);">73.8 Ah</span></td>
+                            <td><span class="spec-label">60 Ah</span></td>
+                            <td><span class="value-highlight" style="color: var(--primary);">65.2 Ah</span></td>
+                            <td><span class="spec-label">70 Ah</span></td>
+                            <td><span class="value-highlight" style="color: var(--primary);">75.4 Ah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>SAE CCA</strong><br><small>Marş Gücü</small></td>
+                            <td><span class="spec-label">7.2 V (660 A)</span></td>
+                            <td><span class="value-highlight" style="color: var(--primary);">7.42 V</span></td>
+                            <td><span class="spec-label">7.2 V (560 A)</span></td>
+                            <td><span class="value-highlight" style="color: var(--primary);">7.48 V</span></td>
+                            <td><span class="spec-label">7.2 V (650 A)</span></td>
+                            <td><span class="value-highlight" style="color: var(--primary);">7.51 V</span></td>
+                        </tr>
+                        <tr>
+                            <td class="category-header">LIFE CYCLE<br>(Yaşam Döngüsü)</td>
+                            <td><strong>DOD 50%</strong><br><small>Deşarj</small></td>
+                            <td><span class="spec-label">150 Döngü</span></td>
+                            <td><span class="value-highlight" style="color: #00ff88;">183 Döngü</span></td>
+                            <td><span class="spec-label">150 Döngü</span></td>
+                            <td><span class="value-highlight" style="color: #00ff88;">214 Döngü</span></td>
+                            <td><span class="spec-label">150 Döngü</span></td>
+                            <td><span class="value-highlight" style="color: #00ff88;">209 Döngü</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i class="fa-solid fa-bolt"></i> SENTRIC
+                    </a>
+                    <p class="mt-4">Her iklimde, her yolda yanınızda. Yarım asırlık tecrübeyle üretilmiş üstün kalite.</p>
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html#home">Ana Sayfa</a></li>
+                        <li><a href="index.html#about">Hakkımızda</a></li>
+                        <li><a href="index.html#products">Ürünler</a></li>
+                        <li><a href="index.html#features">Teknoloji</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Ürünlerimiz</h3>
+                    <ul>
+                        <li><a href="index.html#products">Binek Araç Aküleri</a></li>
+                        <li><a href="index.html#products">Ağır Vasıta Aküleri</a></li>
+                        <li><a href="index.html#products">Marin ve Karavan</a></li>
+                        <li><a href="index.html#products">Endüstriyel Aküler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>İletişim</h3>
+                    <ul class="contact-info">
+                        <li><i class="fa-solid fa-location-dot"></i> Sentric Organize Sanayi Bölgesi, İstanbul</li>
+                        <li><i class="fa-solid fa-phone"></i> +90 850 123 45 67</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@sentric.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sentric. Tüm hakları saklıdır. Bu site örnek amaçlı hazırlanmıştır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
