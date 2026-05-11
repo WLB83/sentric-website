@@ -1142,70 +1142,6 @@ ul {
     }
 }
 \n
-/* Compact Brand Carousel Layout */
-.brand-carousel-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    padding: 1rem 0 3rem 0;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) rgba(255,255,255,0.05);
-}
-
-.brand-carousel-wrapper::-webkit-scrollbar {
-    height: 8px;
-}
-.brand-carousel-wrapper::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-    border-radius: 4px;
-}
-.brand-carousel-wrapper::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
-    border-radius: 4px;
-}
-
-.brand-carousel {
-    display: flex;
-    gap: 1.5rem;
-    width: max-content;
-    padding: 0 1rem;
-}
-
-.compact-brand-card {
-    position: relative;
-    width: 260px;
-    height: 220px;
-    border-radius: 12px;
-    background: #0a0a0c;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.compact-brand-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.compact-bg {
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-    transition: transform 0.4s ease;
-    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.8));
-}
-
-.compact-brand-card:hover .compact-bg {
-    transform: scale(1.05);
-}
-
 /* 3D CSS Label Overlays */
 .css-label {
     position: absolute;
@@ -1261,3 +1197,155 @@ ul {
 .label-colossus { background: linear-gradient(135deg, #333333, #555555); } /* Silver/Gray */
 .label-sentric { background: linear-gradient(135deg, #008080, #00d2ff); } /* Cyan */
 
+\n
+/* Global Manufacturer Brand Layout */
+.global-brands-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem 0 3rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.2) rgba(0,0,0,0.1);
+}
+
+.global-brands-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+.global-brands-wrapper::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+.global-brands-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+
+.global-brands-scroll {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    padding: 0 1rem;
+}
+
+.global-brand-card {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    background: linear-gradient(145deg, #111115 0%, #0a0a0c 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.global-brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Devasa Arka Plan Tipografisi */
+.gb-typography {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 4rem;
+    font-weight: 900;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.global-brand-card:hover .gb-typography {
+    color: rgba(255, 255, 255, 0.07);
+    transform: translateX(10px);
+}
+
+/* Akü Ürün Görseli (Ortada / Sağda) */
+.gb-product-shot {
+    position: absolute;
+    bottom: 90px;
+    right: -30px;
+    width: 250px;
+    z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.6));
+}
+
+.gb-product-shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.global-brand-card:hover .gb-product-shot {
+    transform: scale(1.08) translateX(-15px) translateY(-5px);
+}
+
+/* Bilgi ve İncele Alanı */
+.gb-info {
+    position: relative;
+    z-index: 3;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(10,10,12,1) 0%, rgba(10,10,12,0.8) 60%, transparent 100%);
+}
+
+.gb-info h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.2rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.gb-info p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.gb-link {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.gb-link i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.global-brand-card:hover .gb-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.gb-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Marka Vurgu Çizgisi */
+.gb-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 4;
+}
