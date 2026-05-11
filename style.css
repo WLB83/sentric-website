@@ -1200,11 +1200,18 @@ ul {
 \n
 /* Global Manufacturer Brand Layout */
 .global-brands-wrapper {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     overflow-x: auto;
-    padding: 1rem 0 3rem 0;
+    padding: 1rem max(2rem, calc((100vw - 1200px) / 2)) 3rem max(2rem, calc((100vw - 1200px) / 2));
     scrollbar-width: thin;
     scrollbar-color: rgba(255,255,255,0.2) rgba(0,0,0,0.1);
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+}
+
+.global-brands-wrapper:active {
+    cursor: grabbing;
 }
 
 .global-brands-wrapper::-webkit-scrollbar {
