@@ -1198,45 +1198,25 @@ ul {
 .label-sentric { background: linear-gradient(135deg, #008080, #00d2ff); } /* Cyan */
 
 \n
+
 /* Global Manufacturer Brand Layout */
 .global-brands-wrapper {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    overflow-x: auto;
-    padding: 1rem max(2rem, calc((100vw - 1200px) / 2)) 3rem max(2rem, calc((100vw - 1200px) / 2));
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.2) rgba(0,0,0,0.1);
-    -webkit-overflow-scrolling: touch;
-    cursor: grab;
-}
-
-.global-brands-wrapper:active {
-    cursor: grabbing;
-}
-
-.global-brands-wrapper::-webkit-scrollbar {
-    height: 6px;
-}
-.global-brands-wrapper::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.1);
-    border-radius: 4px;
-}
-.global-brands-wrapper::-webkit-scrollbar-thumb {
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 4px;
+    width: 100%;
+    padding: 1rem 0 3rem 0;
 }
 
 .global-brands-scroll {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    width: max-content;
-    padding: 0 1rem;
+    width: 100%;
 }
 
 .global-brand-card {
     position: relative;
-    width: 320px;
-    height: 420px;
+    width: 100%;
+    height: 380px;
+
     background: linear-gradient(145deg, #111115 0%, #0a0a0c 100%);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -1355,4 +1335,15 @@ ul {
     width: 100%;
     height: 4px;
     z-index: 4;
+}
+\n
+@media (max-width: 992px) {
+    .global-brands-scroll {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .global-brands-scroll {
+        grid-template-columns: 1fr;
+    }
 }
