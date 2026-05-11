@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKET Akü | SENTRIC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .brand-hero {
+            padding: 8rem 0 4rem 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, #0a0a0c 70%);
+        }
+        .brand-header-text h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            font-style: italic;
+            margin-bottom: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        .brand-header-text h2 {
+            color: #137547;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        .brand-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #137547, #0a0a0c);
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+            border-color: rgba(255,255,255,0.3);
+        }
+        .brand-image-col {
+            position: relative;
+        }
+        .brand-image-col img {
+            width: 120%;
+            max-width: 800px;
+            margin-left: -10%;
+            filter: drop-shadow(0 30px 40px rgba(0,0,0,0.8));
+            animation: float 6s ease-in-out infinite;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-car-battery"></i>
+                SENTRIC<span>.</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="index.html#brands" class="nav-link active">Markalar</a>
+                <a href="index.html#contact" class="nav-link">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Brand Hero Section -->
+    <section class="brand-hero">
+        <div class="container">
+            <div class="grid" style="align-items: center;">
+                <div class="brand-header-text">
+                    <a href="index.html#brands" class="back-link"><i class="fa-solid fa-arrow-left"></i> Markalara Dön</a>
+                    <h1>ROCKET</h1>
+                    <h2>The Ultimate Power</h2>
+                    <p class="brand-desc">Rocket aküleri, yüksek CCA (Soğuk Marş Amperi) değerleri ve üstün korozyon direnci sayesinde en zorlu iklim koşullarında bile aracınıza anında güç sağlar. Uzun ömürlü ve bakım gerektirmeyen kapalı sistem yapısıyla güvenli sürüş deneyimi sunar.</p>
+                    <a href="assets/catalogs/rocket.pdf" target="_blank" class="btn-download">
+                        <i class="fa-solid fa-file-pdf"></i> Resmi Kataloğu İndir
+                    </a>
+                </div>
+                <div class="brand-image-col">
+                    <img src="assets/brand_rocket.png" alt="ROCKET Battery">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 SENTRIC Automotive Batteries. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
