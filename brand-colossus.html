@@ -59,11 +59,13 @@
         }
         .brand-image-col {
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .brand-image-col img {
-            width: 120%;
-            max-width: 800px;
-            margin-left: -10%;
+            width: 50%; /* Image reduced by 50% */
+            max-width: 400px;
             filter: drop-shadow(0 30px 40px rgba(0,0,0,0.8));
             animation: float 6s ease-in-out infinite;
         }
@@ -78,6 +80,30 @@
         }
         .back-link:hover {
             color: #fff;
+        }
+        
+        /* Grid swap for mobile responsiveness */
+        .brand-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media (max-width: 992px) {
+            .brand-hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .brand-desc {
+                margin: 0 auto 3rem auto;
+            }
+            .brand-image-col {
+                order: -1; /* Image stays on top for mobile */
+            }
+            .brand-image-col img {
+                width: 70%;
+            }
         }
     </style>
 </head>
@@ -101,7 +127,13 @@
     <!-- Brand Hero Section -->
     <section class="brand-hero">
         <div class="container">
-            <div class="grid" style="align-items: center;">
+            <div class="brand-hero-grid">
+                <!-- Image now on the LEFT -->
+                <div class="brand-image-col">
+                    <img src="assets/brand_colossus.png" alt="COLOSSUS Battery">
+                </div>
+                
+                <!-- Text now on the RIGHT -->
                 <div class="brand-header-text">
                     <a href="index.html#brands" class="back-link"><i class="fa-solid fa-arrow-left"></i> Markalara Dön</a>
                     <h1>COLOSSUS</h1>
@@ -110,9 +142,6 @@
                     <a href="assets/catalogs/colossus.pdf" target="_blank" class="btn-download">
                         <i class="fa-solid fa-file-pdf"></i> Resmi Kataloğu İndir
                     </a>
-                </div>
-                <div class="brand-image-col">
-                    <img src="assets/brand_colossus.png" alt="COLOSSUS Battery">
                 </div>
             </div>
         </div>

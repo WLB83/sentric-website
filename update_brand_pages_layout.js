@@ -1,10 +1,69 @@
+const fs = require('fs');
 
+const brands = [
+    {
+        id: 'rocket',
+        name: 'ROCKET',
+        slogan: 'The Ultimate Power',
+        desc: 'Rocket aküleri, yüksek CCA (Soğuk Marş Amperi) değerleri ve üstün korozyon direnci sayesinde en zorlu iklim koşullarında bile aracınıza anında güç sağlar. Uzun ömürlü ve bakım gerektirmeyen kapalı sistem yapısıyla güvenli sürüş deneyimi sunar.',
+        image: 'assets/brand_rocket.png',
+        pdf: 'assets/catalogs/rocket.pdf',
+        color: '#137547'
+    },
+    {
+        id: 'global',
+        name: 'GLOBAL',
+        slogan: 'High Performance',
+        desc: 'Global aküler, standartların ötesindeki rezerv kapasitesiyle aracınızın tüm elektronik donanımlarını besler. Start-Stop ve AGM teknolojisine sahip modelleriyle hem çevreci hem de uzun ömürlü bir enerji çözümü sunar.',
+        image: 'assets/brand_global.png',
+        pdf: 'assets/catalogs/global.pdf',
+        color: '#00509e'
+    },
+    {
+        id: 'maxtorm',
+        name: 'MAXTORM',
+        slogan: 'Extreme Durability',
+        desc: 'Sınırları zorlamak için tasarlandı. Maxtorm, titreşime karşı yüksek dirençli iç yapısı sayesinde ağır şartlar altında bile maksimum performans gösterir. Spor otomobiller ve yüksek enerji ihtiyacı olan araçlar için idealdir.',
+        image: 'assets/brand_maxtorm.png',
+        pdf: 'assets/catalogs/maxtorm.pdf',
+        color: '#c41e3a'
+    },
+    {
+        id: 'supreme',
+        name: 'SUPREME',
+        slogan: 'Premium Quality',
+        desc: 'Lüks araçlar ve üst segment donanımlar için özel olarak geliştirilmiş Supreme aküler, kusursuz güç iletimi sağlar. Ekstra kalın plakaları ve saf kurşun teknolojisiyle uzun ömrün ve asaletin simgesidir.',
+        image: 'assets/brand_supreme.png',
+        pdf: 'assets/catalogs/supreme.pdf',
+        color: '#daa520'
+    },
+    {
+        id: 'colossus',
+        name: 'COLOSSUS',
+        slogan: 'Heavy Duty Power',
+        desc: 'Ticari araçlar, kamyonlar ve ağır vasıtalar için devasa güç! Colossus, uzun yollarda yarı yolda bırakmayan ağır hizmet (Heavy Duty) tipi yapısıyla işletmelerin gücüne güç katar. Sarsıntıya ve zorlu arazi şartlarına tam dayanıklıdır.',
+        image: 'assets/brand_colossus.png',
+        pdf: 'assets/catalogs/colossus.pdf',
+        color: '#555555'
+    },
+    {
+        id: 'sentric',
+        name: 'SENTRIC',
+        slogan: 'Reliable Energy',
+        desc: 'Sentric, yeni nesil araçların tüm enerji ihtiyaçlarını karşılarken güvenilirlikten ödün vermez. Modern teknolojisiyle şarj kabulünü maksimize eder ve şehir içi kısa mesafe kullanımlarında bile akünün daima dolu kalmasını sağlar.',
+        image: 'assets/brand_sentric.png',
+        pdf: 'assets/catalogs/sentric.pdf',
+        color: '#00d2ff'
+    }
+];
+
+const template = (brand) => `
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAXTORM Akü | SENTRIC</title>
+    <title>${brand.name} Akü | SENTRIC</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -25,7 +84,7 @@
             text-transform: uppercase;
         }
         .brand-header-text h2 {
-            color: #c41e3a;
+            color: ${brand.color};
             font-size: 1.5rem;
             margin-bottom: 2rem;
             font-weight: 600;
@@ -42,7 +101,7 @@
             align-items: center;
             gap: 10px;
             padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, #c41e3a, #0a0a0c);
+            background: linear-gradient(135deg, ${brand.color}, #0a0a0c);
             color: #fff;
             border-radius: 30px;
             text-decoration: none;
@@ -130,16 +189,16 @@
             <div class="brand-hero-grid">
                 <!-- Image now on the LEFT -->
                 <div class="brand-image-col">
-                    <img src="assets/brand_maxtorm.png" alt="MAXTORM Battery">
+                    <img src="${brand.image}" alt="${brand.name} Battery">
                 </div>
                 
                 <!-- Text now on the RIGHT -->
                 <div class="brand-header-text">
                     <a href="index.html#brands" class="back-link"><i class="fa-solid fa-arrow-left"></i> Markalara Dön</a>
-                    <h1>MAXTORM</h1>
-                    <h2>Extreme Durability</h2>
-                    <p class="brand-desc">Sınırları zorlamak için tasarlandı. Maxtorm, titreşime karşı yüksek dirençli iç yapısı sayesinde ağır şartlar altında bile maksimum performans gösterir. Spor otomobiller ve yüksek enerji ihtiyacı olan araçlar için idealdir.</p>
-                    <a href="assets/catalogs/maxtorm.pdf" target="_blank" class="btn-download">
+                    <h1>${brand.name}</h1>
+                    <h2>${brand.slogan}</h2>
+                    <p class="brand-desc">${brand.desc}</p>
+                    <a href="${brand.pdf}" target="_blank" class="btn-download">
                         <i class="fa-solid fa-file-pdf"></i> Resmi Kataloğu İndir
                     </a>
                 </div>
@@ -156,3 +215,11 @@
 
 </body>
 </html>
+`;
+
+brands.forEach(brand => {
+    const filePath = require('path').join('c:\\\\Users\\\\LENOVO\\\\.gemini\\\\antigravity\\\\scratch', 'brand-' + brand.id + '.html');
+    fs.writeFileSync(filePath, template(brand));
+    console.log("Updated Layout for " + filePath);
+});
+
