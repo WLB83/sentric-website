@@ -1109,69 +1109,6 @@ ul {
     }
 }
 \n
-/* Brand Grid Layout */
-.brand-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 1rem 0;
-}
-
-.brand-card {
-    position: relative;
-    height: 300px;
-    border-radius: 16px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.brand-card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.6;
-    transition: transform 0.6s ease, opacity 0.4s ease;
-    mix-blend-mode: screen;
-}
-
-.brand-card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-    z-index: 2;
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
-}
-
-.brand-card-content h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
-}
-
-.brand-card-content p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    transform: translateY(10px);
-}
-
 /* Hover Effects */
 .brand-card:hover {
     transform: translateY(-10px);
@@ -1204,3 +1141,123 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+\n
+/* Compact Brand Carousel Layout */
+.brand-carousel-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem 0 3rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) rgba(255,255,255,0.05);
+}
+
+.brand-carousel-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+.brand-carousel-wrapper::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+}
+.brand-carousel-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 4px;
+}
+
+.brand-carousel {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    padding: 0 1rem;
+}
+
+.compact-brand-card {
+    position: relative;
+    width: 260px;
+    height: 220px;
+    border-radius: 12px;
+    background: #0a0a0c;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.compact-brand-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.compact-bg {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.8));
+}
+
+.compact-brand-card:hover .compact-bg {
+    transform: scale(1.05);
+}
+
+/* 3D CSS Label Overlays */
+.css-label {
+    position: absolute;
+    z-index: 2;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(-15deg) rotateZ(-2deg);
+    width: 65%;
+    height: 40%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 2px 5px rgba(0,0,0,0.8);
+    opacity: 0.95;
+}
+
+.css-label h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    font-style: italic;
+}
+
+.label-subtitle {
+    font-size: 0.45rem;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2px;
+}
+
+.label-type {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 2px;
+    background: rgba(0,0,0,0.3);
+    padding: 2px 6px;
+    border-radius: 2px;
+}
+
+/* Brand Specific Label Colors (Inspired by user attachments) */
+.label-rocket { background: linear-gradient(135deg, #0a4d2e, #137547); } /* Green EFB */
+.label-global { background: linear-gradient(135deg, #003366, #00509e); } /* Blue AGM */
+.label-maxtorm { background: linear-gradient(135deg, #8b0000, #c41e3a); } /* Red/Black HD */
+.label-supreme { background: linear-gradient(135deg, #b8860b, #daa520); } /* Gold */
+.label-colossus { background: linear-gradient(135deg, #333333, #555555); } /* Silver/Gray */
+.label-sentric { background: linear-gradient(135deg, #008080, #00d2ff); } /* Cyan */
+
