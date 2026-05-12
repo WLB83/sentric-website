@@ -277,7 +277,7 @@ ul {
 
 .hero-bg-logo {
     position: absolute;
-    bottom: 16%;
+    bottom: calc(16% - 1cm);
     left: 50%;
     transform: translateX(-50%);
     width: 48%; /* Increased by another 15% */
