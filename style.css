@@ -1421,3 +1421,99 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 }
+
+/* Sebang Style Products Section */
+.sebang-products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.sebang-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+}
+
+.sebang-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 210, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 210, 255, 0.1);
+}
+
+.sebang-img-wrapper {
+    width: 100%;
+    height: 350px;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.sebang-img-wrapper img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 25px rgba(0,0,0,0.8));
+    transition: transform 0.5s ease;
+}
+
+.sebang-card:hover .sebang-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.sebang-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sebang-info h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: var(--font-heading);
+}
+
+.sebang-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 90%;
+}
+
+.sebang-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.sebang-card:hover .sebang-link {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+}
+
+@media (max-width: 992px) {
+    .sebang-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
