@@ -1429,6 +1429,39 @@ textarea.form-control {
     overflow: hidden;
     position: relative;
     padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-nav-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    position: absolute;
+}
+
+.carousel-nav-btn:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+.carousel-nav-btn.prev-btn {
+    left: 0;
+}
+
+.carousel-nav-btn.next-btn {
+    right: 0;
 }
 
 .products-carousel-track {

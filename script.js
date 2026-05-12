@@ -440,12 +440,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Products Carousel Drag-to-Scroll & Edge Auto-Scroll
     const slider = document.getElementById('productsCarousel');
+    const btnPrev = document.getElementById('carouselPrev');
+    const btnNext = document.getElementById('carouselNext');
+
     if (slider) {
         let isDown = false;
         let startX;
         let scrollLeft;
         let animationFrameId = null;
         let autoScrollDirection = 0;
+
+        // Navigation Buttons
+        if (btnPrev && btnNext) {
+            btnPrev.addEventListener('click', () => {
+                slider.scrollBy({ left: -320, behavior: 'smooth' }); // Scroll left by approx one card width
+            });
+            btnNext.addEventListener('click', () => {
+                slider.scrollBy({ left: 320, behavior: 'smooth' }); // Scroll right by approx one card width
+            });
+        }
 
         const stopAutoScroll = () => {
             if (animationFrameId) {
@@ -457,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scrollLoop = () => {
             if (autoScrollDirection !== 0) {
-                slider.scrollLeft += autoScrollDirection * 15; // smooth speed
+                slider.scrollLeft += autoScrollDirection * 35; // highly increased smooth speed
                 animationFrameId = requestAnimationFrame(scrollLoop);
             }
         };
