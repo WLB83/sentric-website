@@ -1,0 +1,60 @@
+const fs = require('fs');
+const path = require('path');
+
+const boltPath = "M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z";
+
+const primaryColor = "#00d2ff";
+
+function createSVG(isDarkTheme) {
+    const bgColor = isDarkTheme ? "#0a0a0c" : "transparent";
+    const textColor = isDarkTheme ? "#ffffff" : "#111115";
+    
+    // The exact dimensions and layout for the logo
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;800&amp;display=swap');
+      .text-main {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        font-size: 160px;
+        fill: ${textColor};
+      }
+      .text-dot {
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
+        font-size: 160px;
+        fill: ${textColor};
+      }
+      .icon {
+        fill: ${primaryColor};
+      }
+    </style>
+  </defs>
+  
+  ${isDarkTheme ? `<rect width="100%" height="100%" fill="${bgColor}"/>` : ''}
+  
+  <g transform="translate(50, 40)">
+    <!-- Lightning Bolt Icon -->
+    <g transform="translate(0, 30) scale(0.35)">
+      <path class="icon" d="${boltPath}"/>
+    </g>
+    
+    <!-- Text -->
+    <text x="180" y="160">
+      <tspan class="text-main">SENTRIC</tspan><tspan class="text-dot">.</tspan>
+    </text>
+  </g>
+</svg>`;
+}
+
+const dir = path.join('c:\\\\Users\\\\LENOVO\\\\.gemini\\\\antigravity\\\\scratch\\\\assets\\\\logo');
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir, { recursive: true });
+}
+
+fs.writeFileSync(path.join(dir, 'Sentric_Logo_Transparent.svg'), createSVG(false));
+fs.writeFileSync(path.join(dir, 'Sentric_Logo_Dark.svg'), createSVG(true));
+
+console.log("SVG logos generated successfully in assets/logo/");
