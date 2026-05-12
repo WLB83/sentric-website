@@ -8,6 +8,9 @@
         font-weight: 800;
         font-size: 160px;
         fill: #111115;
+        stroke: #ffffff;
+        stroke-width: 3px;
+        stroke-linejoin: round;
       }
       .text-dot {
         font-family: 'Inter', sans-serif;
