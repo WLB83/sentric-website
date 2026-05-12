@@ -277,10 +277,11 @@ ul {
 
 .hero-bg-logo {
     position: absolute;
-    top: 8%;
-    left: calc(20% - 2.5cm);
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 48%; /* Increased by another 15% */
-    z-index: 3;
+    z-index: 4;
     mix-blend-mode: screen;
     filter: drop-shadow(0 0 15px rgba(0, 210, 255, 1)) drop-shadow(0 0 30px rgba(0, 210, 255, 0.7));
     pointer-events: none;
