@@ -2,12 +2,12 @@
     --primary: #00d2ff;
     --primary-dark: #00a1cc;
     --secondary: #3a7bd5;
-    --bg-dark: #0a0b10;
-    --bg-darker: #050508;
+    --bg-dark: #1e2230;
+    --bg-darker: #151821;
     --text-main: #f0f2f5;
     --text-muted: #a0aab2;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
