@@ -34,7 +34,7 @@
                 <a href="assets/Sentric_Katalog.pdf" download="Sentric_Katalog.pdf" class="nav-link">Katalog</a>
                 <a href="#features" class="nav-link">Özellikler</a>
             </div>
-            <a href="#contact" class="btn-quote">Teklif Al</a>
+            <a href="#contact" class="btn-quote">Bize Ulaşın</a>
             <div class="hamburger">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -312,17 +312,78 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta section">
-        <div class="cta-container glassmorphism fade-in">
-            <h2>İşletmeniz İçin Toptan Akü Çözümleri</h2>
-            <p>Küresel distribütör ağımıza katılın ve Sentric kalitesini müşterilerinize sunun.</p>
-            <a href="#contact" class="btn-primary">Distribütörlük Başvurusu</a>
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section section dark-bg">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-panel glassmorphism fade-in-up">
+                    <h4 class="section-subtitle">Bize Ulaşın</h4>
+                    <h2 class="section-title">Nasıl Yardımcı Olabiliriz?</h2>
+                    <p>Satış, distribütörlük başvuruları veya teknik destek için ekibimizle hemen iletişime geçin. Size en kısa sürede dönüş yapacağız.</p>
+                    <ul class="contact-list" style="margin-top: 2rem; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 15px;">
+                            <div style="background: rgba(0, 210, 255, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0;"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px; color: #fff;">Adres</h4>
+                                <span style="color: var(--text-muted);">Adalet Mah. Manas Blv. Folkart Towers No: 39 İç Kapı No: 3408 Bayraklı, İzmir</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 15px;">
+                            <div style="background: rgba(0, 210, 255, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0;"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px; color: #fff;">E-posta</h4>
+                                <span style="color: var(--text-muted);">info@sentric.com.tr</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px;">
+                            <div style="background: rgba(0, 210, 255, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0;"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px; color: #fff;">Telefon</h4>
+                                <span style="color: var(--text-muted);">+90 850 123 45 67</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form-panel glassmorphism fade-in-up" style="transition-delay: 0.1s;">
+                    <form id="contactForm" action="https://formsubmit.co/ajax/info@sentric.com.tr" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Ad Soyad</label>
+                                <input type="text" id="name" name="name" class="form-control" required placeholder="Adınız Soyadınız">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-posta</label>
+                                <input type="email" id="email" name="email" class="form-control" required placeholder="ornek@sirket.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+90 555 000 0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Konu</label>
+                                <input type="text" id="subject" name="subject" class="form-control" required placeholder="Hangi konuda yazıyorsunuz?">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" required placeholder="Mesajınızı buraya yazın..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; border: none; font-family: 'Inter', sans-serif; cursor: pointer;">
+                            Gönder <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i>
+                        </button>
+                        <div id="form-success" class="form-success-msg" style="display: none;">
+                            <i class="fa-solid fa-circle-check"></i> Mesajınız başarıyla gönderildi.
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">

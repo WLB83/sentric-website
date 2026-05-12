@@ -437,4 +437,52 @@ document.addEventListener('DOMContentLoaded', () => {
             res.classList.add('fade-in');
         });
     }
+
+    // Contact Form Background Submission (AJAX)
+    const contactForm = document.getElementById('contactForm');
+    const formSuccessMsg = document.getElementById('form-success');
+    const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page reload
+            
+            // Show loading state
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Gönderiliyor... <i class="fa-solid fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Restore button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Show success message
+                formSuccessMsg.style.display = 'block';
+                contactForm.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formSuccessMsg.style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                console.error("Form submission error:", error);
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                alert("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
+            });
+        });
+    }
+
 });

@@ -642,41 +642,83 @@ ul {
     color: var(--text-muted);
 }
 
-/* CTA Section */
-.cta {
-    background: url('assets/hero_bg_1776889333829.png') no-repeat center center/cover;
-    position: relative;
-    text-align: center;
-    padding: 8rem 2rem;
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
 }
 
-.cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(5, 5, 8, 0.85);
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
 }
 
-.cta-container {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
+.contact-info-panel, .contact-form-panel {
+    padding: 3rem;
+    border-radius: 20px;
 }
 
-.cta h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
-.cta p {
-    font-size: 1.2rem;
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.form-success-msg {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(46, 213, 115, 0.1);
+    border: 1px solid rgba(46, 213, 115, 0.3);
+    color: #2ed573;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }
 
 /* Footer */
