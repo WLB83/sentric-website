@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const startAutoScroll = (direction) => {
             stopAutoScroll();
             autoScrollInterval = setInterval(() => {
-                slider.scrollLeft += direction * 6; // Scroll speed
+                slider.scrollLeft += direction * 20; // Scroll speed (increased for faster scroll)
             }, 16); // ~60fps
         };
 
