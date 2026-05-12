@@ -444,20 +444,29 @@ document.addEventListener('DOMContentLoaded', () => {
         let isDown = false;
         let startX;
         let scrollLeft;
-        let autoScrollInterval = null;
+        let animationFrameId = null;
+        let autoScrollDirection = 0;
 
         const stopAutoScroll = () => {
-            if (autoScrollInterval) {
-                clearInterval(autoScrollInterval);
-                autoScrollInterval = null;
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+                autoScrollDirection = 0;
+            }
+        };
+
+        const scrollLoop = () => {
+            if (autoScrollDirection !== 0) {
+                slider.scrollLeft += autoScrollDirection * 15; // smooth speed
+                animationFrameId = requestAnimationFrame(scrollLoop);
             }
         };
 
         const startAutoScroll = (direction) => {
+            if (autoScrollDirection === direction) return; // Already scrolling in this direction
             stopAutoScroll();
-            autoScrollInterval = setInterval(() => {
-                slider.scrollLeft += direction * 20; // Scroll speed (increased for faster scroll)
-            }, 16); // ~60fps
+            autoScrollDirection = direction;
+            animationFrameId = requestAnimationFrame(scrollLoop);
         };
 
         slider.addEventListener('mousedown', (e) => {
@@ -484,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isDown) {
                 e.preventDefault();
                 const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 2; // scroll-fast
+                const walk = (x - startX) * 1.5; // smoother drag feel
                 slider.scrollLeft = scrollLeft - walk;
                 return;
             }
@@ -492,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Auto-scroll when mouse is near edges
             const rect = slider.getBoundingClientRect();
             const x = e.clientX - rect.left; 
-            const edgeThreshold = 100; // pixels from edge to trigger auto-scroll
+            const edgeThreshold = 120; // increased threshold for better UX
 
             if (x < edgeThreshold) {
                 // Near left edge
