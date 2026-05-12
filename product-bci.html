@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCI Standart Akü | Sentric</title>
+    <meta name="description" content="Amerikan araç standartlarına uygun, yüksek marş gücüne sahip Sentric BCI Serisi.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background: radial-gradient(circle at center, rgba(0,210,255,0.05) 0%, var(--bg-dark) 70%);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        .product-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .product-image-container {
+            position: relative;
+        }
+        .product-image-container img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 30px 40px rgba(0,0,0,0.8));
+            animation: float 6s ease-in-out infinite;
+        }
+        .product-info h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .product-info p.lead {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .product-info p.desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        @media (max-width: 992px) {
+            .product-hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .product-info h1 { font-size: 3rem; }
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .feature-card {
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            color: #fff;
+            margin: 15px 0 10px 0;
+            font-size: 1.3rem;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar scrolled" style="background: rgba(5, 5, 8, 0.95);">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> SENTRIC
+            </a>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Ana Sayfa</a>
+                <a href="index.html#products" class="nav-link">Ürünler</a>
+                <a href="assets/Sentric_Katalog.pdf" download="Sentric_Katalog.pdf" class="nav-link">Katalog</a>
+            </div>
+            <a href="index.html#contact" class="btn-quote">Bize Ulaşın</a>
+        </div>
+    </nav>
+
+    <!-- Product Hero -->
+    <header class="product-hero">
+        <div class="container">
+            <div class="product-hero-grid">
+                <div class="product-info fade-in-up">
+                    <div class="breadcrumb">
+                        <a href="index.html">Ana Sayfa</a> / <a href="index.html#products">Ürünler</a> / BCI Serisi
+                    </div>
+                    <h1>BCI SERİSİ</h1>
+                    <p class="lead">Amerikan Araç Standartlarına Uygun Maksimum Güç</p>
+                    <p class="desc">Battery Council International (BCI) standartlarına göre üretilmiş olan Sentric BCI serisi, Amerikan araçlarının yüksek marş ve enerji ihtiyacını karşılamak üzere en zorlu hava şartları ve arazi koşulları için özel olarak geliştirilmiştir.</p>
+                    <a href="assets/Sentric_Katalog.pdf" download="Sentric_Katalog.pdf" class="btn-primary">Kataloğu İndir <i class="fa-solid fa-download" style="margin-left: 8px;"></i></a>
+                </div>
+                <div class="product-image-container slide-in-right">
+                    <img src="assets/sentric_bci_1778621691789.png" alt="Sentric BCI Battery">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="section dark-bg">
+        <div class="container">
+            <div class="section-header text-center fade-in">
+                <h4 class="section-subtitle">ÖNE ÇIKANLAR</h4>
+                <h2 class="section-title">Teknik Özellikler</h2>
+            </div>
+            <div class="feature-grid fade-in-up">
+                <div class="feature-card glassmorphism">
+                    <i class="fa-solid fa-flag-usa"></i>
+                    <h3>Amerikan Araçlarına Özel</h3>
+                    <p>Özellikle Amerikan menşeli otomobil, SUV ve pikap (pick-up) araçların kutupbaşı tasarımı ve akü yuvası boyutlarıyla birebir uyumlu olacak şekilde BCI (Battery Council International) normlarında üretilmiştir.</p>
+                </div>
+                <div class="feature-card glassmorphism">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <h3>Yüksek Soğuk Marş Amperi (CCA)</h3>
+                    <p>Zorlu Kuzey Amerika ve benzeri iklim şartlarında araçların ihtiyaç duyduğu yüksek anlık enerjiyi (CCA) en hızlı şekilde motora iletir.</p>
+                </div>
+                <div class="feature-card glassmorphism">
+                    <i class="fa-solid fa-truck-pickup"></i>
+                    <h3>Titreşime Karşı Ekstra Direnç</h3>
+                    <p>Büyük hacimli araçların ve arazi koşullarının yarattığı şiddetli sarsıntılara karşı, güçlendirilmiş dış kaplama ve sabitlenmiş iç plakalar sayesinde üstün koruma sağlar.</p>
+                </div>
+                <div class="feature-card glassmorphism">
+                    <i class="fa-solid fa-recycle"></i>
+                    <h3>Çevre Dostu & Geri Dönüşüm</h3>
+                    <p>Tamamen geri dönüştürülebilir yüksek saflıkta bileşenlerden üretilmiş olup, çevreye duyarlı uzun ömürlü bir enerji çözümüdür.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i class="fa-solid fa-bolt"></i> SENTRIC
+                    </a>
+                    <p class="mt-4">Her iklimde, her yolda yanınızda. Yarım asırlık tecrübeyle üretilmiş üstün kalite.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>İletişim</h3>
+                    <ul class="contact-info">
+                        <li><i class="fa-solid fa-location-dot"></i> Adalet Mah. Manas Blv. Folkart Towers No: 39 İç Kapı No: 3408 Bayraklı, İzmir, TÜRKİYE</li>
+                        <li><i class="fa-solid fa-phone"></i> +90 850 123 45 67</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@sentric.com.tr</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sentric. Tüm hakları saklıdır. Bu site örnek amaçlı hazırlanmıştır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
