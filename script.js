@@ -438,33 +438,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Products Carousel Drag-to-Scroll
+    // Products Carousel Drag-to-Scroll & Edge Auto-Scroll
     const slider = document.getElementById('productsCarousel');
     if (slider) {
         let isDown = false;
         let startX;
         let scrollLeft;
+        let autoScrollInterval = null;
+
+        const stopAutoScroll = () => {
+            if (autoScrollInterval) {
+                clearInterval(autoScrollInterval);
+                autoScrollInterval = null;
+            }
+        };
+
+        const startAutoScroll = (direction) => {
+            stopAutoScroll();
+            autoScrollInterval = setInterval(() => {
+                slider.scrollLeft += direction * 6; // Scroll speed
+            }, 16); // ~60fps
+        };
 
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.classList.add('active');
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
+            stopAutoScroll();
         });
+        
         slider.addEventListener('mouseleave', () => {
             isDown = false;
             slider.classList.remove('active');
+            stopAutoScroll();
         });
+        
         slider.addEventListener('mouseup', () => {
             isDown = false;
             slider.classList.remove('active');
+            stopAutoScroll();
         });
+        
         slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // scroll-fast
-            slider.scrollLeft = scrollLeft - walk;
+            if (isDown) {
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // scroll-fast
+                slider.scrollLeft = scrollLeft - walk;
+                return;
+            }
+
+            // Auto-scroll when mouse is near edges
+            const rect = slider.getBoundingClientRect();
+            const x = e.clientX - rect.left; 
+            const edgeThreshold = 100; // pixels from edge to trigger auto-scroll
+
+            if (x < edgeThreshold) {
+                // Near left edge
+                startAutoScroll(-1);
+            } else if (x > rect.width - edgeThreshold) {
+                // Near right edge
+                startAutoScroll(1);
+            } else {
+                stopAutoScroll();
+            }
         });
     }
 
