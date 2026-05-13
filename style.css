@@ -213,6 +213,7 @@ ul {
     background: url('assets/hero_bg_1776889333829.png') no-repeat center center/cover;
     padding-top: 100px;
     padding-bottom: 120px;
+    overflow-x: hidden;
 }
 
 .hero-overlay {
@@ -268,12 +269,11 @@ ul {
 
 .hero-image-wrapper {
     position: relative;
-    width: 140%;
-    max-width: 1300px;
-    margin-right: -40%;
+    width: 200%;
+    margin-right: -100%;
     z-index: 2;
-    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 98%);
-    mask-image: linear-gradient(to right, black 80%, transparent 98%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
 }
 
 .hero-batteries-img {
