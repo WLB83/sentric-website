@@ -124,25 +124,53 @@
         </div>
     </header>
 
+    <style>
+        .brand-banner-section {
+            padding: 120px 0 40px 0;
+            text-align: center;
+        }
+        .brand-banner-img {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            margin: 0 auto 3rem auto;
+            display: block;
+        }
+        .brand-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .brand-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .brand-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+    </style>
+
     <!-- Brand Hero Section -->
-    <section class="brand-hero">
+    <section class="brand-banner-section">
         <div class="container">
-            <div class="brand-hero-grid">
-                <!-- Image now on the LEFT -->
-                <div class="brand-image-col">
-                    <img src="assets/brand_rocket.png" alt="ROCKET Battery">
-                </div>
-                
-                <!-- Text now on the RIGHT -->
-                <div class="brand-header-text">
-                    <a href="index.html#brands" class="back-link"><i class="fa-solid fa-arrow-left"></i> Markalara Dön</a>
-                    <h1>ROCKET</h1>
-                    <h2>The Ultimate Power</h2>
-                    <p class="brand-desc">Rocket aküleri, yüksek CCA (Soğuk Marş Amperi) değerleri ve üstün korozyon direnci sayesinde en zorlu iklim koşullarında bile aracınıza anında güç sağlar. Uzun ömürlü ve bakım gerektirmeyen kapalı sistem yapısıyla güvenli sürüş deneyimi sunar.</p>
-                    <a href="assets/catalogs/rocket.pdf" target="_blank" class="btn-download">
-                        <i class="fa-solid fa-file-pdf"></i> Resmi Kataloğu İndir
-                    </a>
-                </div>
+            <a href="index.html#brands" class="back-link" style="justify-content: center; margin-bottom: 2rem;"><i class="fa-solid fa-arrow-left"></i> Markalara Dön</a>
+            
+            <!-- Yeni Geniş Görsel Alanı -->
+            <img src="assets/rocket_banner.jpg" alt="Rocket Battery Ultimate Power" class="brand-banner-img">
+            
+            <div class="brand-content">
+                <h1>ROCKET AKÜ</h1>
+                <p>Rocket aküleri, yüksek CCA (Soğuk Marş Amperi) değerleri ve üstün korozyon direnci sayesinde en zorlu iklim koşullarında bile aracınıza anında güç sağlar. Uzun ömürlü ve bakım gerektirmeyen kapalı sistem yapısıyla güvenli sürüş deneyimi sunar.</p>
+                <a href="assets/catalogs/rocket.pdf" target="_blank" class="btn-download">
+                    <i class="fa-solid fa-file-pdf"></i> Resmi Kataloğu İndir
+                </a>
             </div>
         </div>
     </section>
