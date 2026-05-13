@@ -1674,7 +1674,7 @@ textarea.form-control {
 }
 
 /* Additional Mobile Fixes for Hero Slogan & Logo */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .hero-logo-plaque {
         padding: 10px 20px;
         margin-bottom: 20px;
