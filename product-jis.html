@@ -94,6 +94,27 @@
             color: var(--primary);
             text-decoration: none;
         }
+    
+        /* Desktop optimizations: Shrink by ~15% and force single row */
+        @media (min-width: 993px) {
+            .feature-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+            .feature-card {
+                padding: 20px;
+            }
+            .feature-card h3 {
+                font-size: 1.1rem;
+                margin: 12px 0 8px 0;
+            }
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+            .feature-card i {
+                font-size: 2.1rem;
+            }
+        }
     </style>
 </head>
 <body>
