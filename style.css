@@ -298,6 +298,7 @@ ul {
 
 .hero-bg-logo {
     width: 100%;
+    max-width: 480px;
     height: auto;
     filter: drop-shadow(0 5px 15px rgba(0, 210, 255, 0.5));
     pointer-events: none;
