@@ -279,11 +279,10 @@ ul {
 }
 
 .hero-logo-plaque {
-    position: absolute;
-    bottom: calc(15% - 1cm);
-    left: 75%;
-    transform: translateX(-50%);
-    width: 55%;
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    margin-bottom: 30px;
     padding: 15px 40px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.15);
