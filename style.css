@@ -1672,3 +1672,33 @@ textarea.form-control {
         padding: 2rem 1.5rem;
     }
 }
+
+/* Additional Mobile Fixes for Hero Slogan & Logo */
+@media (max-width: 576px) {
+    .hero-logo-plaque {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        width: auto;
+        display: inline-block;
+    }
+    .hero-bg-logo {
+        max-width: 200px;
+        height: auto;
+    }
+    .hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+    .hero p {
+        font-size: 1rem !important;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    .hero-buttons .btn-primary, .hero-buttons .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
