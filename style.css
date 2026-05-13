@@ -1703,3 +1703,63 @@ textarea.form-control {
         text-align: center;
     }
 }
+
+/* Specification Tables */
+.spec-section {
+    padding: 60px 0;
+    background: transparent;
+}
+.spec-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+    text-align: center;
+    color: var(--text-main);
+}
+.spec-table th, .spec-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+.spec-table th:last-child, .spec-table td:last-child {
+    border-right: none;
+}
+.spec-table tr:last-child td {
+    border-bottom: none;
+}
+.spec-table thead tr:first-child th {
+    background: rgba(0, 210, 255, 0.05);
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(0, 210, 255, 0.2);
+}
+.spec-table thead tr:nth-child(2) th {
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.spec-table tbody tr {
+    transition: background 0.3s ease;
+}
+.spec-table tbody tr:hover {
+    background: rgba(0, 210, 255, 0.05);
+}
+.spec-table tbody td:first-child {
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+    padding-left: 20px;
+}
