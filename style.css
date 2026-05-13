@@ -248,7 +248,7 @@ ul {
     flex: 1;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 500px;
     perspective: 1000px;
@@ -262,31 +262,26 @@ ul {
     border-radius: 50%;
     z-index: 0;
     top: 50%;
-    left: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
     filter: blur(40px);
 }
 
-.hero-image-wrapper {
+.hero-batteries-img {
+    width: 150%;
+    max-width: none;
+    border-radius: 12px;
     position: relative;
-    width: 200%;
-    margin-right: -100%;
     z-index: 2;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
     -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
     mask-image: linear-gradient(to right, black 85%, transparent 100%);
-}
-
-.hero-batteries-img {
-    width: 100%;
-    border-radius: 12px;
-    display: block;
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
 }
 
 .hero-logo-plaque {
     position: absolute;
     bottom: calc(15% - 1cm);
-    left: 50%;
+    left: 75%;
     transform: translateX(-50%);
     width: 55%;
     padding: 15px 40px;
