@@ -1728,9 +1728,10 @@ textarea.form-control {
     color: var(--text-main);
 }
 .spec-table th, .spec-table td {
-    padding: 15px;
+    padding: 10px 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     border-right: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.85rem;
 }
 .spec-table th:last-child, .spec-table td:last-child {
     border-right: none;
@@ -1744,11 +1745,12 @@ textarea.form-control {
     font-family: var(--font-heading);
     font-weight: 800;
     letter-spacing: 1px;
+    font-size: 0.95rem;
     border-bottom: 2px solid rgba(0, 210, 255, 0.2);
 }
 .spec-table thead tr:nth-child(2) th {
     background: rgba(255, 255, 255, 0.02);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
 }
 .spec-table tbody tr {
@@ -1757,9 +1759,10 @@ textarea.form-control {
 .spec-table tbody tr:hover {
     background: rgba(0, 210, 255, 0.05);
 }
-.spec-table tbody td:first-child {
+.spec-table tbody td:first-child, .spec-table tbody th {
     font-weight: 600;
     color: #fff;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 15px;
+    font-size: 0.9rem;
 }
