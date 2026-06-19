@@ -6,6 +6,7 @@
     <title>Sentric | Her Yolculukta Güvenilir Güç</title>
     <meta name="description" content="Sentric, en zorlu koşullarda bile her yolculuğunuzda güvenilir, yüksek performanslı ve uzun ömürlü otomotiv aküleri sunar.">
     <link rel="stylesheet" href="style.css?v=1778706949863">
+    <link rel="stylesheet" href="css-battery.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -42,26 +43,31 @@
 
     <!-- Hero Section -->
     <header id="home" class="hero">
+        <div class="mesh-gradient-bg"></div>
+        <div class="hero-particles"></div>
         <div class="hero-overlay"></div>
+        
         <div class="hero-container">
-            <div class="hero-content fade-in">
-                <div class="hero-logo-plaque">
+            <div class="hero-content fade-in-stagger">
+                <div class="hero-logo-plaque stagger-item">
                     <img src="assets/logo/Sentric_Logo_Transparent.svg" alt="Sentric Logo" class="hero-bg-logo">
                 </div>
-                <h1>Her Yolculukta <span>Güvenilir Güç</span></h1>
-                <p>Sentric, zorlu iklim ve sürüş koşullarında bile aracınızın her zaman en iyi performansı göstermesini sağlar. Gücünüz hiç tükenmesin.</p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn-primary">Ürünleri İncele <i class="fa-solid fa-arrow-right"></i></a>
+                <h1 class="stagger-item">Her Yolculukta <span class="text-glow-animate">Güvenilir Güç</span></h1>
+                <p class="stagger-item">Sentric, zorlu iklim ve sürüş koşullarında bile aracınızın her zaman en iyi performansı göstermesini sağlar. Gücünüz hiç tükenmesin.</p>
+                <div class="hero-buttons stagger-item">
+                    <a href="#products" class="btn-primary btn-glow">Ürünleri İncele <i class="fa-solid fa-arrow-right"></i></a>
                     <a href="#about" class="btn-secondary">Daha Fazla Bilgi</a>
                 </div>
             </div>
             
-            <div class="hero-visual fade-in-up">
-                <div class="hero-glow"></div>
-                <img src="assets/hero_batteries.png" alt="Sentric Professional Batteries" class="hero-batteries-img">
+            <div class="hero-visual parallax-container stagger-item">
+                <div class="hero-glow animated-glow"></div>
+                <div class="bat-layer" data-depth="0.2">
+                    <img src="assets/hero_batteries.png" alt="Sentric Professional Batteries" class="hero-batteries-img">
+                </div>
             </div>
         </div>
-        <div class="hero-stats-bar glassmorphism fade-in-up">
+        <div class="hero-stats-bar glassmorphism-premium fade-in-up">
             <div class="stat-item">
                 <h3><span class="counter" data-target="130">0</span>+</h3>
                 <p>İhracat Yapılan Ülke</p>
@@ -116,7 +122,11 @@
                     <!-- EFB -->
                     <a href="product-efb.html" class="sebang-card glassmorphism fade-in-up" draggable="false" style="text-decoration:none;">
                         <div class="sebang-img-wrapper">
-                            <img src="assets/sentric_efb_1778621678428.png" alt="Sentric EFB Battery" draggable="false">
+                            <div class="css-battery" style="width:100%; margin:0;">
+                                <img src="assets/premium_battery_base.png" alt="Sentric EFB Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/sentric.png'); background-position: center 60%; background-size: 180%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none;">
+                                </div>
+                            </div>
                         </div>
                         <div class="sebang-card-content">
                             <div class="sebang-info">
@@ -130,7 +140,12 @@
                     <!-- BCI -->
                     <a href="product-bci.html" class="sebang-card glassmorphism fade-in-up" draggable="false" style="transition-delay: 0.1s; text-decoration:none;">
                         <div class="sebang-img-wrapper">
-                            <img src="assets/sentric_bci_1778621691789.png" alt="Sentric BCI Battery" draggable="false">
+                            <div class="css-battery" style="width:100%; margin:0;">
+                                <img src="assets/premium_battery_base.png" alt="Sentric BCI Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/sentric.png'); background-position: center 60%; background-size: 180%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none;"></div>
+                                    <div class="b-sub">BCI SERIES</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="sebang-card-content">
                             <div class="sebang-info">
@@ -144,7 +159,12 @@
                     <!-- DIN -->
                     <a href="product-din.html" class="sebang-card glassmorphism fade-in-up" draggable="false" style="transition-delay: 0.2s; text-decoration:none;">
                         <div class="sebang-img-wrapper">
-                            <img src="assets/sentric_din_1778621704858.png" alt="Sentric DIN Battery" draggable="false">
+                            <div class="css-battery" style="width:100%; margin:0;">
+                                <img src="assets/premium_battery_base.png" alt="Sentric DIN Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/sentric.png'); background-position: center 60%; background-size: 180%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none;"></div>
+                                    <div class="b-sub">DIN STANDARD</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="sebang-card-content">
                             <div class="sebang-info">
@@ -158,7 +178,12 @@
                     <!-- JIS -->
                     <a href="product-jis.html" class="sebang-card glassmorphism fade-in-up" draggable="false" style="transition-delay: 0.3s; text-decoration:none;">
                         <div class="sebang-img-wrapper">
-                            <img src="assets/sentric_jis_1778621739563.png" alt="Sentric JIS Battery" draggable="false">
+                            <div class="css-battery" style="width:100%; margin:0;">
+                                <img src="assets/premium_battery_base.png" alt="Sentric JIS Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/sentric.png'); background-position: center 60%; background-size: 180%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none;"></div>
+                                    <div class="b-sub">JIS STANDARD</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="sebang-card-content">
                             <div class="sebang-info">
@@ -172,7 +197,12 @@
                     <!-- AGM -->
                     <a href="product-agm.html" class="sebang-card glassmorphism fade-in-up" draggable="false" style="transition-delay: 0.4s; text-decoration:none;">
                         <div class="sebang-img-wrapper">
-                            <img src="assets/sentric_agm_1778621754376.png" alt="Sentric AGM Battery" draggable="false">
+                            <div class="css-battery" style="width:100%; margin:0;">
+                                <img src="assets/premium_battery_base.png" alt="Sentric AGM Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/sentric.png'); background-position: center 60%; background-size: 180%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none;"></div>
+                                    <div class="b-sub" style="color: #ffd700;">AGM PREMIUM</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="sebang-card-content">
                             <div class="sebang-info">
@@ -204,7 +234,12 @@
                     <a href="brand-rocket.html" class="global-brand-card" style="text-decoration:none;">
                         <div class="gb-typography">ROCKET</div>
                         <div class="gb-product-shot">
-                            <img src="assets/brand_rocket.png" alt="Rocket Battery" style="width: 120%; margin-left: -10%;">
+                            <div class="css-battery">
+                                <img src="assets/premium_battery_base.png" alt="Rocket Chassis" class="battery-base">
+                                <div class="battery-label" style="background: transparent; border: none; box-shadow: none;">
+                                    <img src="assets/labels/rocket.png" alt="Rocket Authentic Label" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                            </div>
                         </div>
                         <div class="gb-info">
                             <h3>ROCKET</h3>
@@ -218,7 +253,12 @@
                     <a href="brand-global.html" class="global-brand-card" style="text-decoration:none;">
                         <div class="gb-typography">GLOBAL</div>
                         <div class="gb-product-shot">
-                            <img src="assets/brand_global.png" alt="Global Battery" style="width: 120%; margin-left: -10%;">
+                            <div class="css-battery">
+                                <img src="assets/premium_battery_base.png" alt="Global Chassis" class="battery-base">
+                                <div class="battery-label" style="background: transparent; border: none; box-shadow: none;">
+                                    <img src="assets/labels/global.png" alt="Global Authentic Label" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                            </div>
                         </div>
                         <div class="gb-info">
                             <h3>GLOBAL</h3>
@@ -232,7 +272,11 @@
                     <a href="brand-maxtorm.html" class="global-brand-card" style="text-decoration:none;">
                         <div class="gb-typography">MAXTORM</div>
                         <div class="gb-product-shot">
-                            <img src="assets/brand_maxtorm.png" alt="Maxtorm Battery" style="width: 120%; margin-left: -10%;">
+                            <div class="css-battery">
+                                <img src="assets/premium_battery_base.png" alt="Maxtorm Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/maxtorm.png'); background-position: center 74%; background-size: 140%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none;">
+                                </div>
+                            </div>
                         </div>
                         <div class="gb-info">
                             <h3>MAXTORM</h3>
@@ -246,7 +290,11 @@
                     <a href="brand-supreme.html" class="global-brand-card" style="text-decoration:none;">
                         <div class="gb-typography" style="font-size: 3.5rem;">SUPREME</div>
                         <div class="gb-product-shot">
-                            <img src="assets/brand_supreme.png" alt="Supreme Battery" style="width: 120%; margin-left: -10%;">
+                            <div class="css-battery">
+                                <img src="assets/premium_battery_base.png" alt="Supreme Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/supreme.png'); background-position: 48% 68%; background-size: 250%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none; transform: scale(1.1) rotateY(-2deg) rotateX(2deg);">
+                                </div>
+                            </div>
                         </div>
                         <div class="gb-info">
                             <h3>SUPREME</h3>
@@ -260,7 +308,11 @@
                     <a href="brand-colossus.html" class="global-brand-card" style="text-decoration:none;">
                         <div class="gb-typography" style="font-size: 3.5rem;">COLOSSUS</div>
                         <div class="gb-product-shot">
-                            <img src="assets/brand_colossus.png" alt="Colossus Battery" style="width: 120%; margin-left: -10%;">
+                            <div class="css-battery">
+                                <img src="assets/premium_battery_base.png" alt="Colossus Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/colossus.png'); background-position: center 33%; background-size: 125%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none;">
+                                </div>
+                            </div>
                         </div>
                         <div class="gb-info">
                             <h3>COLOSSUS</h3>
@@ -274,7 +326,12 @@
                     <a href="brand-sentric.html" class="global-brand-card" style="text-decoration:none;">
                         <div class="gb-typography" style="color: rgba(0, 210, 255, 0.05);">SENTRIC</div>
                         <div class="gb-product-shot">
-                            <img src="assets/brand_sentric.png" alt="Sentric Battery" style="width: 120%; margin-left: -10%;">
+                            <div class="css-battery">
+                                <img src="assets/premium_battery_base.png" alt="Sentric Chassis" class="battery-base">
+                                <div class="battery-label" style="background-image: url('assets/labels/sentric.png'); background-position: center 60%; background-size: 180%; background-repeat: no-repeat; background-color: transparent; border: none; box-shadow: none;"></div>
+                                    <div class="b-sub">PROFESSIONAL</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="gb-info">
                             <h3 style="color: var(--primary);">SENTRIC</h3>
@@ -450,3 +507,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+

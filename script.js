@@ -576,3 +576,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// ==========================================
+// ANTIGRAVITY PREMIUM HERO SECTION LOGIC
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Staggered Entrance Animations
+    const heroContent = document.querySelector('.hero-content');
+    const heroVisual = document.querySelector('.parallax-container');
+    const heroStats = document.querySelector('.glassmorphism-premium');
+    
+    // Trigger animations after a tiny delay for smooth rendering
+    setTimeout(() => {
+        if(heroContent) heroContent.classList.add('is-visible');
+        if(heroVisual) heroVisual.classList.add('is-visible');
+        if(heroStats) {
+            heroStats.classList.add('is-visible');
+            // Trigger counters since we bypassed IntersectionObserver for the hero stats
+            const counters = document.querySelectorAll('.hero-stats-bar .counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const updateCount = () => {
+                    const inc = target / 200;
+                    if (count < target) {
+                        count += inc;
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+    }, 100);
+
+    // 2. 3D Parallax Effect on Mouse Move
+    const hero = document.querySelector('.hero');
+    const layers = document.querySelectorAll('.bat-layer');
+
+    if (hero && layers.length > 0) {
+        hero.addEventListener('mousemove', (e) => {
+            const x = (e.clientX - window.innerWidth / 2);
+            const y = (e.clientY - window.innerHeight / 2);
+
+            layers.forEach(layer => {
+                const depth = parseFloat(layer.getAttribute('data-depth'));
+                // Inverse movement based on depth
+                const moveX = (x * depth * -0.05);
+                const moveY = (y * depth * -0.05);
+                
+                layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            });
+        });
+        
+        // Reset on mouse leave
+        hero.addEventListener('mouseleave', () => {
+            layers.forEach(layer => {
+                layer.style.transform = `translate3d(0px, 0px, 0)`;
+            });
+        });
+    }
+});
