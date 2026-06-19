@@ -1446,6 +1446,7 @@ textarea.form-control {
     width: 100%;
     height: auto;
     display: block;
+    margin-left: -25px;
 }
 
 .global-brand-card:hover .gb-product-shot {
