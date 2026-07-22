@@ -1394,17 +1394,18 @@ textarea.form-control {
 .global-brand-card {
     position: relative;
     width: 100%;
-    height: 340px; /* Reduced by ~10% */
-
+    height: 380px; 
     background: #ffffff;
     border: 1px solid var(--glass-border);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: flex-start;
     transition: all 0.4s ease;
     cursor: pointer;
+    text-align: center;
 }
 
 .global-brand-card:hover {
@@ -1416,9 +1417,10 @@ textarea.form-control {
 /* Devasa Arka Plan Tipografisi */
 .gb-typography {
     position: absolute;
-    top: 20px;
-    left: 10px;
-    font-size: 4rem;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4.5rem;
     font-weight: 900;
     font-style: italic;
     color: rgba(0, 0, 0, 0.03);
@@ -1430,66 +1432,72 @@ textarea.form-control {
 
 .global-brand-card:hover .gb-typography {
     color: rgba(0, 0, 0, 0.07);
-    transform: translateX(10px);
+    transform: translateX(-50%) translateY(5px);
 }
 
-/* AkÃ¼ ÃœrÃ¼n GÃ¶rseli (Ortada / SaÄŸda) */
+/* Akü Ürün Görseli (Ortalanmýþ) */
 .gb-product-shot {
-    position: absolute;
-    bottom: 90px;
-    right: -30px;
-    width: 225px; /* Reduced by ~10% */
+    position: relative;
+    width: 65%; 
+    margin: 45px auto 10px auto;
     z-index: 2;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.6));
+    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
 
 .gb-product-shot img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-left: -38px;
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
 }
 
 .global-brand-card:hover .gb-product-shot {
-    transform: scale(1.08) translateX(-15px) translateY(-5px);
+    transform: scale(1.1) translateY(-10px);
 }
 
-/* Bilgi ve Ä°ncele AlanÄ± */
+/* Bilgi ve Ýncele Alaný */
 .gb-info {
     position: relative;
     z-index: 3;
-    padding: 25px;
-    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 60%, transparent 100%);
+    padding: 10px 25px 30px 25px;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gb-info h3 {
     font-size: 1.8rem;
     font-weight: 800;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
     letter-spacing: 1px;
     color: var(--text-main);
 }
 
 .gb-info p {
-    color: rgba(255,255,255,0.5);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    font-weight: 300;
+    color: rgba(0,0,0,0.5); /* Fixed text color for white background */
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
     letter-spacing: 0.5px;
 }
 
 .gb-link {
     display: inline-flex;
     align-items: center;
-    color: #fff;
+    color: var(--text-main);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateY(10px);
     transition: all 0.3s ease;
 }
 
@@ -1500,7 +1508,7 @@ textarea.form-control {
 
 .global-brand-card:hover .gb-link {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .gb-link:hover i {
@@ -1854,3 +1862,4 @@ textarea.form-control {
     padding-left: 15px;
     font-size: 0.9rem;
 }
+
