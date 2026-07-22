@@ -1628,7 +1628,6 @@ textarea.form-control {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.8));
     transition: transform 0.5s ease;
     pointer-events: none; /* Helps with drag */
 }
