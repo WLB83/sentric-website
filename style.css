@@ -1863,3 +1863,22 @@ textarea.form-control {
     font-size: 0.9rem;
 }
 
+
+/* Dark Mode Fixes for Chrome Auto Dark Mode */
+@media (prefers-color-scheme: dark) {
+    /* Mask out the baked-in opaque gray reflection on the Sebang battery */
+    img[src*="battery_sebang_full"] {
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 82%);
+        mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 82%);
+    }
+    
+    /* Remove box-shadows that get inverted to white glowing blobs by Chrome */
+    .features-image img {
+        box-shadow: none !important;
+    }
+    
+    .product-card:hover {
+        box-shadow: none !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
