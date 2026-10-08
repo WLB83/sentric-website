@@ -132,18 +132,35 @@
 </head>
 <body>
     <!-- Navbar -->
-    <header class="navbar">
-        <div class="container nav-container">
+        <nav class="navbar">
+        <div class="nav-container">
             <a href="index.html" class="logo">
-                <i class="fa-solid fa-bolt text-primary"></i> SENTRIC<span class="text-primary">.</span>
+                <i class="fa-solid fa-bolt"></i> SENTRIC
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="index.html#brands">Markalar</a></li>
-                <li><a href="index.html#contact">İletişim</a></li>
-            </ul>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Ana Sayfa</a>
+                <a href="index.html#about" class="nav-link">Hakkımızda</a>
+                <div class="dropdown">
+                    <a href="index.html#products" class="nav-link">Ürünler <i class="fa-solid fa-angle-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#products">Tüm Aküler</a>
+                        <a href="product-otomotiv.html">Otomotiv</a>
+                        <a href="index.html#products">Ticari</a>
+                        <a href="index.html#products">Marin ve Karavan</a>
+                        <a href="index.html#products">Bahçe ve Tarım</a>
+                        <a href="index.html#products">Traksiyoner</a>
+                    </div>
+                </div>
+                <a href="index.html#brands" class="nav-link">Markalar</a>
+                <a href="assets/Sentric_Katalog.pdf" download="Sentric_Katalog.pdf" class="nav-link">Katalog</a>
+                <a href="index.html#features" class="nav-link">Özellikler</a>
+            </div>
+            <a href="index.html#contact" class="btn-quote">Bize Ulaşın</a>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <div class="page-header">
         <div class="container">
@@ -158,7 +175,7 @@
             <!-- AGM Series -->
             <div class="series-row reveal">
                 <div class="series-image">
-                    <img src="assets/battery_rocket.png" alt="AGM Akü">
+                    <img src="assets/battery_rocket_final.png" alt="AGM Akü">
                 </div>
                 <div class="series-content">
                     <h2>AGM Serisi</h2>
@@ -180,7 +197,7 @@
             <!-- EFB Series -->
             <div class="series-row reveal">
                 <div class="series-image" style="order: 2;">
-                    <img src="assets/battery_global.png" alt="EFB Akü">
+                    <img src="assets/battery_global_v11.png" alt="EFB Akü">
                 </div>
                 <div class="series-content" style="order: 1;">
                     <h2>EFB Serisi</h2>
@@ -201,7 +218,7 @@
             <!-- SLI Series -->
             <div class="series-row reveal">
                 <div class="series-image">
-                    <img src="assets/battery_colossus.png" alt="SLI Akü">
+                    <img src="assets/battery_colossus_final.png" alt="SLI Akü">
                 </div>
                 <div class="series-content">
                     <h2>SLI Serisi</h2>
@@ -248,3 +265,4 @@
     </script>
 </body>
 </html>
+
