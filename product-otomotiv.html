@@ -39,40 +39,34 @@
             padding: 0 20px;
         }
 
-                        .series-row {
+                                .series-row {
             display: flex;
             align-items: stretch;
-            background: #fff;
-            margin-bottom: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            overflow: hidden; /* Added back so the black box gets rounded corners */
+            background: transparent;
+            margin-bottom: 5rem;
+            border-radius: 0;
+            box-shadow: none;
+            overflow: visible;
         }
 
         .series-image {
-            width: 340px;
+            width: 400px;
             flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #0a0a0c 0%, #1c1c28 100%);
+            padding: 1rem;
+            background: transparent;
             position: relative;
         }
 
-        /* Subtle glow effect behind batteries */
         .series-image::before {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(0,210,255,0.15) 0%, rgba(0,0,0,0) 70%);
-            z-index: 0;
+            display: none; /* Remove radial glow */
         }
 
         .dual-battery {
             position: relative;
-            height: 220px;
+            height: 250px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -82,72 +76,51 @@
         
         .dual-battery img {
             position: absolute;
-            width: 170px;
+            width: 220px;
             max-width: 100%;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
             display: block;
         }
         
         .battery-back {
-            transform: translate(45px, -25px) scale(0.85);
+            transform: translate(55px, -35px) scale(0.85);
             z-index: 1;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.15));
+            filter: drop-shadow(5px 15px 15px rgba(0,0,0,0.15));
         }
         
         .battery-front {
-            transform: translate(-35px, 15px) scale(1.05);
+            transform: translate(-45px, 20px) scale(1.05);
             z-index: 2;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
+            filter: drop-shadow(-5px 20px 25px rgba(0,0,0,0.3));
         }
         
         .dual-battery:hover .battery-back {
-            transform: translate(65px, -35px) scale(1.05);
+            transform: translate(80px, -50px) scale(0.95);
             z-index: 3;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+            filter: drop-shadow(10px 20px 25px rgba(0,0,0,0.25));
         }
         
         .dual-battery:hover .battery-front {
-            transform: translate(-55px, 35px) scale(0.9);
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.15));
+            transform: translate(-70px, 40px) scale(0.9);
+            filter: drop-shadow(-10px 15px 20px rgba(0,0,0,0.15));
         }
 
         .series-content-wrapper {
             flex: 1;
             display: flex;
             flex-direction: column;
-            border-left: 1px solid #edf2f7;
+            border-left: none;
         }
 
         .series-content {
-            padding: 2rem;
+            padding: 2rem 3rem;
             flex: 1;
         }
-        
-        .series-content h2 {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            margin-bottom: 0.25rem;
-            font-weight: 800;
-        }
-        
-        .series-content h3 {
-            font-size: 1rem;
-            color: #00a1cc; /* subtle cyan */
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .series-content p {
-            color: #4a5568;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-        
+
         .brand-logos {
-            background: #f8fafc;
-            padding: 1rem 2rem;
-            border-top: 1px solid #edf2f7;
+            background: transparent;
+            padding: 0 3rem;
+            border-top: none;
         }
         
         .brand-logos p {
@@ -269,8 +242,8 @@
             <div class="series-row reveal">
                 <div class="series-image">
                     <div class="dual-battery">
-                        <img src="assets/battery_global_v11.png" alt="Global Akü" class="battery-back">
-                        <img src="assets/battery_rocket_final.png" alt="Rocket Akü" class="battery-front">
+                        <img src="assets/battery_global_trans.png" alt="Global Akü" class="battery-back">
+                        <img src="assets/battery_rocket_trans.png" alt="Rocket Akü" class="battery-front">
                     </div>
                 </div>
                 <div class="series-content-wrapper">
@@ -295,7 +268,7 @@
             <div class="series-row reveal">
                 <div class="series-image">
                     <div class="dual-battery">
-                        <img src="assets/battery_global_v11.png" alt="Global Akü" class="battery-back">
+                        <img src="assets/battery_global_trans.png" alt="Global Akü" class="battery-back">
                         <img src="assets/battery_unitron.png" alt="Unitron Akü" class="battery-front">
                     </div>
                 </div>
@@ -320,8 +293,8 @@
             <div class="series-row reveal">
                 <div class="series-image">
                     <div class="dual-battery">
-                        <img src="assets/battery_colossus_final.png" alt="Colossus Akü" class="battery-back">
-                        <img src="assets/battery_maxtorm_final.png" alt="Maxtorm Akü" class="battery-front">
+                        <img src="assets/battery_colossus_trans.png" alt="Colossus Akü" class="battery-back">
+                        <img src="assets/battery_maxtorm_trans.png" alt="Maxtorm Akü" class="battery-front">
                     </div>
                 </div>
                 <div class="series-content-wrapper">
@@ -370,6 +343,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
