@@ -1863,3 +1863,25 @@ textarea.form-control {
     font-size: 0.9rem;
 }
 
+
+/* Global Product Page Series Typography Improvements */
+.series-content h2 {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.series-content h3 {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.series-content p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
