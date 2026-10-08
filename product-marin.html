@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentric | Marin ve Karavan Aküleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2">
+            <style>
+        body {
+            background-color: #f2f7f7; /* Very light delicate gray from Sebang */
+        }
+        .page-header {
+            padding: 80px 0 40px;
+            text-align: center;
+            background: #fff;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+                                .series-row {
+            display: flex;
+            align-items: stretch;
+            background: transparent;
+            margin-bottom: 5rem;
+            border-radius: 0;
+            box-shadow: none;
+            overflow: visible;
+        }
+
+        .series-image {
+            width: 400px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: transparent;
+            position: relative;
+        }
+
+        .series-image::before {
+            display: none; /* Remove radial glow */
+        }
+
+        .dual-battery {
+            position: relative;
+            height: 250px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+        
+        .dual-battery img {
+            position: absolute;
+            width: 220px;
+            max-width: 100%;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: block;
+        }
+        
+        .battery-back {
+            transform: translate(55px, -35px) scale(0.85);
+            z-index: 1;
+            filter: drop-shadow(5px 15px 15px rgba(0,0,0,0.15));
+        }
+        
+        .battery-front {
+            transform: translate(-45px, 20px) scale(1.05);
+            z-index: 2;
+            filter: drop-shadow(-5px 20px 25px rgba(0,0,0,0.3));
+        }
+        
+        .dual-battery:hover .battery-back {
+            transform: translate(80px, -50px) scale(0.95);
+            z-index: 3;
+            filter: drop-shadow(10px 20px 25px rgba(0,0,0,0.25));
+        }
+        
+        .dual-battery:hover .battery-front {
+            transform: translate(-70px, 40px) scale(0.9);
+            filter: drop-shadow(-10px 15px 20px rgba(0,0,0,0.15));
+        }
+
+        .series-content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-left: none;
+        }
+
+        .series-content {
+            padding: 2rem 3rem;
+            flex: 1;
+        }
+
+        .brand-logos {
+            background: transparent;
+            padding: 0 3rem;
+            border-top: none;
+        }
+        
+        .brand-logos p {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: #718096;
+            font-weight: 600;
+        }
+        
+                .brand-pills {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .brand-logo-btn {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            min-width: 120px;
+            transition: all 0.2s ease;
+        }
+        
+        .brand-logo-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .brand-logo-btn img {
+            height: 20px;
+            width: auto;
+            max-width: 100px;
+            object-fit: contain;
+        }
+
+        .brand-info-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #00a0c6;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-underline-offset: 4px;
+        }
+        
+        .brand-info-link:hover {
+            color: #0087a8;
+        }
+        
+        .brand-logo-text {
+            font-weight: 800;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .series-row {
+                flex-direction: column;
+            }
+            .series-image {
+                width: 100%;
+                border-bottom: 1px solid #edf2f7;
+                border-right: none;
+            }
+            .series-content-wrapper {
+                border-left: none;
+            }
+        }
+        
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+        <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> SENTRIC
+            </a>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Ana Sayfa</a>
+                <a href="index.html#about" class="nav-link">Hakkımızda</a>
+                <div class="dropdown">
+                    <a href="index.html#products" class="nav-link">Ürünler <i class="fa-solid fa-angle-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#products">Tüm Aküler</a>
+                        <a href="product-otomotiv.html">Otomotiv</a>
+                        <a href="index.html#products">Ticari</a>
+                        <a href="product-marin.html">Marin ve Karavan</a>
+                        <a href="index.html#products">Bahçe ve Tarım</a>
+                        <a href="index.html#products">Traksiyoner</a>
+                    </div>
+                </div>
+                <a href="index.html#brands" class="nav-link">Markalar</a>
+                <a href="assets/Sentric_Katalog.pdf" download="Sentric_Katalog.pdf" class="nav-link">Katalog</a>
+                <a href="index.html#features" class="nav-link">Özellikler</a>
+            </div>
+            <a href="index.html#contact" class="btn-quote">Bize Ulaşın</a>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+        <div class="page-header">
+        <div class="container">
+            <h1>Otomotiv Aküleri</h1>
+            <p>Aracınızın enerji ihtiyacına özel olarak tasarlanmış, üstün performanslı ve uzun ömürlü akü serilerimiz.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            
+            <!-- AGM Series -->
+            <div class="series-row reveal">
+                <div class="series-image">
+                    <div class="dual-battery">
+                        <img src="assets/sebang_marine_global_agm.png" alt="Global Dual Purpose AGM" class="battery-back">
+                        <img src="assets/sebang_marine_rocket_agm.png" alt="Rocket Dual Purpose AGM" class="battery-front">
+                    </div>
+                </div>
+                <div class="series-content-wrapper">
+                    <div class="series-content">
+                        <h2>Dual Purpose AGM Serisi</h2>
+                          <h3>AGM (Emici Cam Elyaf) Teknolojisi</h3>
+                          <p>Yüksek titreşim direnci, üstün çevrim ömrü ve tamamen sızdırmaz yapısı ile tekneler, yatlar ve lüks karavanlar için marş ve derin deşarj özelliklerini bir arada sunan en üst düzey premium güç kaynağı.</p>
+                    </div>
+                    <div class="brand-logos">
+                        <p>Bu seriyi üreten markalarımızı inceleyin:</p>
+                        <div class="brand-pills">
+                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/logo/brand_global.svg" alt="Global"></a>
+                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/logo/brand_rocket.svg" alt="Rocket"></a>
+                            <a href="brand-colossus.html" class="brand-logo-btn"><img src="assets/logo/brand_colossus.svg" alt="Colossus"></a>
+                            <a href="brand-maxtorm.html" class="brand-logo-btn"><img src="assets/logo/brand_maxtorm.svg" alt="Maxtorm"></a>
+                            <a href="brand-supreme.html" class="brand-logo-btn"><img src="assets/logo/brand_supreme.svg" alt="Supreme"></a>
+                            <a href="brand-unitron.html" class="brand-logo-btn"><img src="assets/logo/brand_unitron.svg" alt="Unitron"></a>
+                        </div></div></div></div><!-- EFB Series -->
+            <div class="series-row reveal">
+                <div class="series-image">
+                    <div class="dual-battery">
+                        <img src="assets/sebang_marine_global_dcm.png" alt="Global Dual Purpose DCM" class="battery-back">
+                        <img src="assets/sebang_marine_rocket_dcm.png" alt="Rocket Dual Purpose DCM" class="battery-front">
+                    </div>
+                </div>
+                <div class="series-content-wrapper">
+                    <div class="series-content">
+                        <h2>Dual Purpose Serisi</h2>
+                          <h3>Derin Deşarj (Deep Cycle) Teknolojisi</h3>
+                          <p>Artırılmış derin deşarj ve şarj döngüsü kapasitesi ile marin araçları ve karavanlar için hem motoru çalıştırma hem de iç donanımlara uzun süreli enerji sağlama yeteneği.</p>
+                    </div>
+                    <div class="brand-logos">
+                        <p>Bu seriyi üreten markalarımızı inceleyin:</p>
+                        <div class="brand-pills">
+                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/logo/brand_global.svg" alt="Global"></a>
+                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/logo/brand_rocket.svg" alt="Rocket"></a>
+                            <a href="brand-colossus.html" class="brand-logo-btn"><img src="assets/logo/brand_colossus.svg" alt="Colossus"></a>
+                            <a href="brand-maxtorm.html" class="brand-logo-btn"><img src="assets/logo/brand_maxtorm.svg" alt="Maxtorm"></a>
+                            <a href="brand-supreme.html" class="brand-logo-btn"><img src="assets/logo/brand_supreme.svg" alt="Supreme"></a>
+                            <a href="brand-unitron.html" class="brand-logo-btn"><img src="assets/logo/brand_unitron.svg" alt="Unitron"></a>
+                        </div></div></div></div></section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 SENTRIC Automotive Batteries. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
