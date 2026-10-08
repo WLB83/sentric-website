@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background: #1a1a1a; margin: 0; padding: 50px; }
+.css-battery {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+}
+.css-battery img.battery-base {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+.css-battery .battery-label {
+    position: absolute;
+    top: 40%;
+    left: 19%;
+    width: 62%;
+    height: 31%;
+    z-index: 2;
+    overflow: hidden;
+    transform: perspective(600px) rotateY(12deg) rotateX(2deg) rotateZ(-1deg);
+    background-image: url('assets/brand_global_real.png');
+    background-size: 160% 240%;
+    background-position: 50% 70%;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+    <div class="css-battery">
+        <img src="assets/premium_battery_base.png" class="battery-base">
+        <div class="battery-label"></div>
+    </div>
+</body>
+</html>
