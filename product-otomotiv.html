@@ -7,157 +7,199 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=2">
-        <style>
+            <style>
+        body {
+            background-color: #f2f7f7; /* Very light delicate gray from Sebang */
+        }
         .page-header {
-            padding: 120px 0 60px;
+            padding: 80px 0 40px;
             text-align: center;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #e2e8f0 100%);
+            background: #fff;
             border-bottom: 1px solid var(--glass-border);
         }
         .page-header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--text-main);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         .page-header p {
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
         }
         
         .section {
-            background-color: var(--bg-darker);
-            padding: 60px 0;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .series-row {
             display: flex;
-            align-items: center;
-            gap: 4rem;
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--glass-border);
+            align-items: stretch;
+            background: #fff;
+            margin-bottom: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            overflow: hidden;
         }
-        .series-row:last-child {
-            border-bottom: none;
-        }
+
         .series-image {
-            flex: 1;
-            position: relative;
+            width: 320px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
+
         .dual-battery {
-            height: 350px;
+            position: relative;
+            height: 160px;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+        
         .dual-battery img {
             position: absolute;
-            width: 300px;
+            width: 160px;
             max-width: 100%;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             display: block;
         }
+        
         .battery-back {
-            transform: translate(-40px, -30px);
+            transform: translate(25px, -15px);
             z-index: 1;
-            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
         }
+        
         .battery-front {
-            transform: translate(40px, 30px);
+            transform: translate(-25px, 15px);
             z-index: 2;
-            filter: drop-shadow(0 25px 40px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
         }
+        
         .dual-battery:hover .battery-back {
-            transform: translate(-60px, -45px) scale(1.02);
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
-            z-index: 3;
+            transform: translate(35px, -20px) scale(1.02);
         }
+        
         .dual-battery:hover .battery-front {
-            transform: translate(60px, 45px) scale(1.05);
+            transform: translate(-35px, 20px) scale(1.05);
+        }
+
+        .series-content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #edf2f7;
         }
 
         .series-content {
+            padding: 2rem;
             flex: 1;
         }
+        
         .series-content h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--text-main);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+            font-weight: 800;
         }
+        
         .series-content h3 {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-size: 1rem;
+            color: #00a1cc; /* subtle cyan */
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
+        
         .series-content p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
         }
         
         .brand-logos {
-            background: var(--bg-dark);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
+            background: #f8fafc;
+            padding: 1rem 2rem;
+            border-top: 1px solid #edf2f7;
         }
+        
         .brand-logos p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: #718096;
             font-weight: 600;
         }
+        
         .brand-pills {
             display: flex;
-            gap: 1rem;
+            gap: 0.5rem;
+            align-items: center;
             flex-wrap: wrap;
         }
-        .brand-pill {
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            color: #fff;
+        
+        .brand-logo-btn {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
+            min-width: 100px;
+            transition: all 0.2s ease;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
         }
-        .brand-pill.global { background: linear-gradient(135deg, #182855, #2a4180); }
-        .brand-pill.rocket { background: linear-gradient(135deg, #137547, #1f9e63); }
-        .brand-pill.maxtorm { background: linear-gradient(135deg, #c71f25, #e03138); }
-        .brand-pill.supreme { background: linear-gradient(135deg, #c1a05b, #dbb86f); }
-        .brand-pill.colossus { background: linear-gradient(135deg, #ea5c0b, #ff7424); }
-        .brand-pill.unitron { background: linear-gradient(135deg, #d1121d, #f22430); }
-        .brand-pill:hover {
+        
+        .brand-logo-btn:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            color: #fff;
+        }
+        
+        .brand-logo-btn img {
+            max-height: 22px;
+            max-width: 100px;
+            object-fit: contain;
+        }
+        
+        .brand-logo-text {
+            font-weight: 800;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
 
         @media (max-width: 768px) {
             .series-row {
                 flex-direction: column;
-                text-align: center;
-                gap: 2rem;
             }
-            .brand-pills {
-                justify-content: center;
+            .series-image {
+                width: 100%;
+                border-bottom: 1px solid #edf2f7;
+                border-right: none;
             }
-            .dual-battery {
-                height: 300px;
-            }
-            .dual-battery img {
-                width: 220px;
+            .series-content-wrapper {
+                border-left: none;
             }
         }
         
         /* Reveal Animations */
         .reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
         }
         .reveal.active {
             opacity: 1;
@@ -197,7 +239,7 @@
         </div>
     </nav>
 
-    <div class="page-header">
+        <div class="page-header">
         <div class="container">
             <h1>Otomotiv Aküleri</h1>
             <p>Aracınızın enerji ihtiyacına özel olarak tasarlanmış, üstün performanslı ve uzun ömürlü akü serilerimiz.</p>
@@ -209,22 +251,25 @@
             
             <!-- AGM Series -->
             <div class="series-row reveal">
-                                <div class="series-image dual-battery">
-                    <img src="assets/battery_global_v11.png" alt="Global Akü" class="battery-back">
-                    <img src="assets/battery_rocket_final.png" alt="Rocket Akü" class="battery-front">
+                <div class="series-image">
+                    <div class="dual-battery">
+                        <img src="assets/battery_global_v11.png" alt="Global Akü" class="battery-back">
+                        <img src="assets/battery_rocket_final.png" alt="Rocket Akü" class="battery-front">
+                    </div>
                 </div>
-                <div class="series-content">
-                    <h2>AGM Serisi</h2>
-                    <h3>AGM (Emici Cam Elyaf) Teknolojisi</h3>
-                    <p>Start-Stop sistemi ve enerji geri kazanım (reküperasyon) özelliğine sahip araçlar için uygun, artırılmış dayanıklılık ve geliştirilmiş hızlı şarj kapasitesi sunan premium araç aküsü.</p>
-                    
+                <div class="series-content-wrapper">
+                    <div class="series-content">
+                        <h2>AGM Serisi</h2>
+                        <h3>AGM (Emici Cam Elyaf) Teknolojisi</h3>
+                        <p>Start-Stop sistemi ve enerji geri kazanım (reküperasyon) özelliğine sahip araçlar için uygun, artırılmış dayanıklılık ve geliştirilmiş hızlı şarj kapasitesi sunan premium araç aküsü.</p>
+                    </div>
                     <div class="brand-logos">
-                        <p><i class="fa-solid fa-check-circle"></i> Bu seriyi üreten markalarımızı inceleyin:</p>
+                        <p>Bu seriyi üreten markalarımızı inceleyin:</p>
                         <div class="brand-pills">
-                            <a href="brand-global.html" class="brand-pill global">GLOBAL</a>
-                            <a href="brand-rocket.html" class="brand-pill rocket">ROCKET</a>
-                            <a href="brand-maxtorm.html" class="brand-pill maxtorm">MAXTORM</a>
-                            <a href="brand-supreme.html" class="brand-pill supreme">SUPREME</a>
+                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/labels/global.png" alt="Global"></a>
+                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/labels/rocket.png" alt="Rocket"></a>
+                            <a href="brand-maxtorm.html" class="brand-logo-btn"><img src="assets/labels/maxtorm.png" alt="Maxtorm"></a>
+                            <a href="brand-supreme.html" class="brand-logo-btn"><img src="assets/labels/supreme.png" alt="Supreme"></a>
                         </div>
                     </div>
                 </div>
@@ -232,21 +277,24 @@
 
             <!-- EFB Series -->
             <div class="series-row reveal">
-                                <div class="series-image dual-battery" style="order: 2;">
-                    <img src="assets/battery_global_v11.png" alt="Global Akü" class="battery-back">
-                    <img src="assets/battery_unitron.png" alt="Unitron Akü" class="battery-front">
+                <div class="series-image">
+                    <div class="dual-battery">
+                        <img src="assets/battery_global_v11.png" alt="Global Akü" class="battery-back">
+                        <img src="assets/battery_unitron.png" alt="Unitron Akü" class="battery-front">
+                    </div>
                 </div>
-                <div class="series-content" style="order: 1;">
-                    <h2>EFB Serisi</h2>
-                    <h3>EFB (Geliştirilmiş Sulu Akü) Teknolojisi</h3>
-                    <p>Sentric EFB aküleri, Start-Stop sistemine sahip küçük ve orta ölçekli araçlar için artırılmış kapasite ve dayanıklılıkla üstün performans sağlar.</p>
-                    
+                <div class="series-content-wrapper">
+                    <div class="series-content">
+                        <h2>EFB Serisi</h2>
+                        <h3>EFB (Geliştirilmiş Sulu Akü) Teknolojisi</h3>
+                        <p>Sentric EFB aküleri, Start-Stop sistemine sahip küçük ve orta ölçekli araçlar için artırılmış kapasite ve dayanıklılıkla üstün performans sağlar.</p>
+                    </div>
                     <div class="brand-logos">
-                        <p><i class="fa-solid fa-check-circle"></i> Bu seriyi üreten markalarımızı inceleyin:</p>
+                        <p>Bu seriyi üreten markalarımızı inceleyin:</p>
                         <div class="brand-pills">
-                            <a href="brand-global.html" class="brand-pill global">GLOBAL</a>
-                            <a href="brand-rocket.html" class="brand-pill rocket">ROCKET</a>
-                            <a href="brand-unitron.html" class="brand-pill unitron">UNITRON</a>
+                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/labels/global.png" alt="Global"></a>
+                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/labels/rocket.png" alt="Rocket"></a>
+                            <a href="brand-unitron.html" class="brand-logo-btn"><span class="brand-logo-text">UNITRON</span></a>
                         </div>
                     </div>
                 </div>
@@ -254,22 +302,25 @@
 
             <!-- SLI Series -->
             <div class="series-row reveal">
-                                <div class="series-image dual-battery">
-                    <img src="assets/battery_colossus_final.png" alt="Colossus Akü" class="battery-back">
-                    <img src="assets/battery_maxtorm_final.png" alt="Maxtorm Akü" class="battery-front">
+                <div class="series-image">
+                    <div class="dual-battery">
+                        <img src="assets/battery_colossus_final.png" alt="Colossus Akü" class="battery-back">
+                        <img src="assets/battery_maxtorm_final.png" alt="Maxtorm Akü" class="battery-front">
+                    </div>
                 </div>
-                <div class="series-content">
-                    <h2>SLI Serisi</h2>
-                    <h3>Yüksek elektrik donanımına sahip araçlar için premium seri</h3>
-                    <p>Premium serimiz, üstün Soğuk Marş Performansı sunan klasik sulu tip (kurşun-asit) akülerdir. Start-stop teknolojisi olmayan ancak bol miktarda elektrik tüketen donanıma sahip araçlar için en uygun seçimdir.</p>
-                    
+                <div class="series-content-wrapper">
+                    <div class="series-content">
+                        <h2>SLI Serisi</h2>
+                        <h3>Yüksek elektrik donanımına sahip araçlar için premium seri</h3>
+                        <p>Premium serimiz, üstün Soğuk Marş Performansı sunan klasik sulu tip (kurşun-asit) akülerdir. Start-stop teknolojisi olmayan ancak bol miktarda elektrik tüketen donanıma sahip araçlar için en uygun seçimdir.</p>
+                    </div>
                     <div class="brand-logos">
-                        <p><i class="fa-solid fa-check-circle"></i> Bu seriyi üreten markalarımızı inceleyin:</p>
+                        <p>Bu seriyi üreten markalarımızı inceleyin:</p>
                         <div class="brand-pills">
-                            <a href="brand-colossus.html" class="brand-pill colossus">COLOSSUS</a>
-                            <a href="brand-rocket.html" class="brand-pill rocket">ROCKET</a>
-                            <a href="brand-global.html" class="brand-pill global">GLOBAL</a>
-                            <a href="brand-maxtorm.html" class="brand-pill maxtorm">MAXTORM</a>
+                            <a href="brand-colossus.html" class="brand-logo-btn"><img src="assets/labels/colossus.png" alt="Colossus"></a>
+                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/labels/rocket.png" alt="Rocket"></a>
+                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/labels/global.png" alt="Global"></a>
+                            <a href="brand-maxtorm.html" class="brand-logo-btn"><img src="assets/labels/maxtorm.png" alt="Maxtorm"></a>
                         </div>
                     </div>
                 </div>
@@ -303,6 +354,7 @@
     </script>
 </body>
 </html>
+
 
 
 
