@@ -130,7 +130,7 @@
             font-weight: 600;
         }
         
-        .brand-pills {
+                .brand-pills {
             display: flex;
             gap: 0.5rem;
             align-items: center;
@@ -145,22 +145,39 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 44px;
-            min-width: 100px;
+            height: 48px;
+            min-width: 120px;
             transition: all 0.2s ease;
-            text-decoration: none;
         }
         
         .brand-logo-btn:hover {
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border-color: #cbd5e1;
+            border-color: var(--primary);
             transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         
         .brand-logo-btn img {
-            max-height: 22px;
+            height: 20px;
+            width: auto;
             max-width: 100px;
             object-fit: contain;
+        }
+
+        .brand-info-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #00a0c6;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-underline-offset: 4px;
+        }
+        
+        .brand-info-link:hover {
+            color: #0087a8;
         }
         
         .brand-logo-text {
@@ -255,16 +272,11 @@
                     <div class="brand-logos">
                         <p>Bu seriyi üreten markalarımızı inceleyin:</p>
                         <div class="brand-pills">
-                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/labels/global.png" alt="Global"></a>
-                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/labels/rocket.png" alt="Rocket"></a>
-                            <a href="brand-maxtorm.html" class="brand-logo-btn"><img src="assets/labels/maxtorm.png" alt="Maxtorm"></a>
-                            <a href="brand-supreme.html" class="brand-logo-btn"><img src="assets/labels/supreme.png" alt="Supreme"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- EFB Series -->
+                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/logo/brand_global.svg" alt="Global"></a>
+                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/logo/brand_rocket.svg" alt="Rocket"></a>
+                            <a href="brand-maxtorm.html" class="brand-logo-btn"><img src="assets/logo/brand_maxtorm.svg" alt="Maxtorm"></a>
+                            <a href="brand-supreme.html" class="brand-logo-btn"><img src="assets/logo/brand_supreme.svg" alt="Supreme"></a>
+                        <a href="hakkimizda.html" class="brand-info-link"><i class="fa-regular fa-circle-info"></i> Neden farklı markalar?</a></div></div></div></div><!-- EFB Series -->
             <div class="series-row reveal">
                 <div class="series-image">
                     <div class="dual-battery">
@@ -281,15 +293,10 @@
                     <div class="brand-logos">
                         <p>Bu seriyi üreten markalarımızı inceleyin:</p>
                         <div class="brand-pills">
-                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/labels/global.png" alt="Global"></a>
-                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/labels/rocket.png" alt="Rocket"></a>
+                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/logo/brand_global.svg" alt="Global"></a>
+                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/logo/brand_rocket.svg" alt="Rocket"></a>
                             <a href="brand-unitron.html" class="brand-logo-btn"><span class="brand-logo-text">UNITRON</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SLI Series -->
+                        <a href="hakkimizda.html" class="brand-info-link"><i class="fa-regular fa-circle-info"></i> Neden farklı markalar?</a></div></div></div></div><!-- SLI Series -->
             <div class="series-row reveal">
                 <div class="series-image">
                     <div class="dual-battery">
@@ -306,17 +313,12 @@
                     <div class="brand-logos">
                         <p>Bu seriyi üreten markalarımızı inceleyin:</p>
                         <div class="brand-pills">
-                            <a href="brand-colossus.html" class="brand-logo-btn"><img src="assets/labels/colossus.png" alt="Colossus"></a>
-                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/labels/rocket.png" alt="Rocket"></a>
-                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/labels/global.png" alt="Global"></a>
-                            <a href="brand-maxtorm.html" class="brand-logo-btn"><img src="assets/labels/maxtorm.png" alt="Maxtorm"></a>
+                            <a href="brand-colossus.html" class="brand-logo-btn"><img src="assets/logo/brand_colossus.svg" alt="Colossus"></a>
+                            <a href="brand-rocket.html" class="brand-logo-btn"><img src="assets/logo/brand_rocket.svg" alt="Rocket"></a>
+                            <a href="brand-global.html" class="brand-logo-btn"><img src="assets/logo/brand_global.svg" alt="Global"></a>
+                            <a href="brand-maxtorm.html" class="brand-logo-btn"><img src="assets/logo/brand_maxtorm.svg" alt="Maxtorm"></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
+                    <a href="hakkimizda.html" class="brand-info-link"><i class="fa-regular fa-circle-info"></i> Neden farklı markalar?</a></div></div></div></div></section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -343,6 +345,7 @@
     </script>
 </body>
 </html>
+
 
 
 
