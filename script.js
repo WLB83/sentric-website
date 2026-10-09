@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Products Carousel Drag-to-Scroll & Edge Auto-Scroll
+    // Products Carousel Drag-to-Scroll & Smooth Edge Auto-Scroll
     const slider = document.getElementById('productsCarousel');
     const btnPrev = document.getElementById('carouselPrev');
     const btnNext = document.getElementById('carouselNext');
@@ -453,10 +453,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Navigation Buttons
         if (btnPrev && btnNext) {
             btnPrev.addEventListener('click', () => {
-                slider.scrollBy({ left: -320, behavior: 'smooth' }); // Scroll left by approx one card width
+                slider.scrollBy({ left: -350, behavior: 'smooth' });
             });
             btnNext.addEventListener('click', () => {
-                slider.scrollBy({ left: 320, behavior: 'smooth' }); // Scroll right by approx one card width
+                slider.scrollBy({ left: 350, behavior: 'smooth' });
             });
         }
 
@@ -470,18 +470,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scrollLoop = () => {
             if (autoScrollDirection !== 0) {
-                slider.scrollLeft += autoScrollDirection * 35; // highly increased smooth speed
+                slider.scrollLeft += autoScrollDirection * 5; // 5 pixels per frame for buttery smooth, manageable speed
                 animationFrameId = requestAnimationFrame(scrollLoop);
             }
         };
 
         const startAutoScroll = (direction) => {
-            if (autoScrollDirection === direction) return; // Already scrolling in this direction
+            if (autoScrollDirection === direction) return;
             stopAutoScroll();
             autoScrollDirection = direction;
             animationFrameId = requestAnimationFrame(scrollLoop);
         };
 
+        // Drag events
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.classList.add('active');
@@ -506,28 +507,30 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isDown) {
                 e.preventDefault();
                 const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 1.5; // smoother drag feel
+                const walk = (x - startX) * 1.5;
                 slider.scrollLeft = scrollLeft - walk;
                 return;
             }
 
-            // Auto-scroll when mouse is near edges
+            // Smooth Edge Auto-Scroll logic
             const rect = slider.getBoundingClientRect();
             const x = e.clientX - rect.left; 
-            const edgeThreshold = 120; // increased threshold for better UX
+            const edgeThreshold = 100; // Activation zone width in pixels
 
             if (x < edgeThreshold) {
-                // Near left edge
                 startAutoScroll(-1);
             } else if (x > rect.width - edgeThreshold) {
-                // Near right edge
                 startAutoScroll(1);
             } else {
                 stopAutoScroll();
             }
         });
-    }
 
+        // Cancel auto-scroll if user uses trackpad/mousewheel
+        slider.addEventListener('wheel', () => {
+            stopAutoScroll();
+        });
+    }
     // Contact Form Background Submission (AJAX)
     const contactForm = document.getElementById('contactForm');
     const formSuccessMsg = document.getElementById('form-success');
@@ -639,3 +642,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
