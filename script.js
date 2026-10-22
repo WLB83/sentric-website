@@ -644,3 +644,175 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+// ==========================================
+// SENTRIC SMART VISITOR & ACTION TRACKING
+// ==========================================
+(function() {
+    const ACCESS_KEY = '4a6c6fa4-ca23-4189-99e2-1b1a40536094';
+    
+    // Ignore automated bots, scrapers, and headless crawlers
+    const ua = navigator.userAgent || '';
+    const isBot = /bot|crawl|spider|slurp|lighthouse|headlesschrome|googlebot|bingbot|yandex|duckduckbot/i.test(ua);
+    if (isBot) return;
+
+    // Helper: Deliver email notification via Web3Forms
+    function sendAlert(subject, details) {
+        try {
+            const formData = new FormData();
+            formData.append('access_key', ACCESS_KEY);
+            formData.append('subject', subject);
+            formData.append('from_name', 'Sentric Web Takip');
+            
+            for (const [key, value] of Object.entries(details)) {
+                formData.append(key, value);
+            }
+
+            // Primary: fetch
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            }).catch(() => {
+                // Fallback: silent hidden iframe submit if fetch fails (e.g. adblocker)
+                const iframe = document.createElement('iframe');
+                iframe.name = 'track_frame_' + Date.now();
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+
+                const form = document.createElement('form');
+                form.target = iframe.name;
+                form.action = 'https://api.web3forms.com/submit';
+                form.method = 'POST';
+                form.style.display = 'none';
+
+                for (const [k, v] of formData.entries()) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = k;
+                    input.value = v;
+                    form.appendChild(input);
+                }
+
+                document.body.appendChild(form);
+                form.submit();
+                setTimeout(() => {
+                    form.remove();
+                    iframe.remove();
+                }, 5000);
+            });
+        } catch (e) {
+            // Silently fail without interrupting user experience
+        }
+    }
+
+    // Determine referrer origin
+    function getReferrerInfo() {
+        const ref = document.referrer || '';
+        if (!ref) return '🌐 Doğrudan Giriş (Direkt URL / Yer İmi)';
+        if (/google\./i.test(ref)) return '🔍 Google Arama Sonuçları (' + ref + ')';
+        if (/yandex\./i.test(ref)) return '🔍 Yandex Arama Sonuçları (' + ref + ')';
+        if (/bing\./i.test(ref)) return '🔍 Bing Arama Sonuçları (' + ref + ')';
+        if (/instagram|facebook|linkedin|t\.co|twitter/i.test(ref)) return '📱 Sosyal Medya (' + ref + ')';
+        return '🔗 Harici Bağlantı (' + ref + ')';
+    }
+
+    // Determine device
+    function getDeviceInfo() {
+        const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(ua);
+        let os = 'Bilinmeyen İşletim Sistemi';
+        if (/Windows/i.test(ua)) os = 'Windows PC';
+        else if (/Macintosh|Mac OS/i.test(ua)) os = 'Mac OS';
+        else if (/iPhone/i.test(ua)) os = 'iPhone (iOS)';
+        else if (/iPad/i.test(ua)) os = 'iPad (iPadOS)';
+        else if (/Android/i.test(ua)) os = 'Android';
+        else if (/Linux/i.test(ua)) os = 'Linux';
+
+        return (isMobile ? '📱 Mobil' : '💻 Masaüstü') + ' - ' + os + ' (' + window.screen.width + 'x' + window.screen.height + ')';
+    }
+
+    // 1. Visit Notification (Once per session to prevent spam)
+    if (!sessionStorage.getItem('sentric_visit_alert_sent')) {
+        sessionStorage.setItem('sentric_visit_alert_sent', 'true');
+
+        const now = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
+        const pageTitle = document.title || 'Sentric Web Sitesi';
+        const pagePath = window.location.pathname.split('/').pop() || 'Ana Sayfa';
+        const refInfo = getReferrerInfo();
+        const devInfo = getDeviceInfo();
+
+        // Query free geolocation API with 2.5s timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2500);
+
+        fetch('https://freeipapi.com/api/json', { signal: controller.signal })
+            .then(res => res.json())
+            .then(geo => {
+                clearTimeout(timeoutId);
+                const city = geo.cityName || 'Bilinmiyor';
+                const country = geo.countryName || 'Türkiye';
+                const subject = '🔔 Yeni Ziyaretçi: ' + city + ', ' + country + ' | ' + pagePath;
+                
+                sendAlert(subject, {
+                    'Konum': city + ', ' + country + ' (IP: ' + (geo.ipAddress || 'Mevcut') + ')',
+                    'İlk_Giriş_Sayfası': pageTitle + ' (' + window.location.href + ')',
+                    'Geliş_Kaynağı': refInfo,
+                    'Cihaz': devInfo,
+                    'Giriş_Saati': now
+                });
+            })
+            .catch(() => {
+                // If geo fails, still send the visit notification!
+                const subject = '🔔 Yeni Ziyaretçi: ' + pagePath;
+                sendAlert(subject, {
+                    'Konum': 'Tespit Edilemedi (Adblocker veya Gizli Sekme)',
+                    'İlk_Giriş_Sayfası': pageTitle + ' (' + window.location.href + ')',
+                    'Geliş_Kaynağı': refInfo,
+                    'Cihaz': devInfo,
+                    'Giriş_Saati': now
+                });
+            });
+    }
+
+    // 2. Action Detection: Screenshot (Desktop) & Text Copying (Max 2 action alerts per session)
+    let actionCount = parseInt(sessionStorage.getItem('sentric_action_count') || '0', 10);
+
+    function reportAction(actionType, extraInfo) {
+        if (actionCount >= 2) return;
+        actionCount++;
+        sessionStorage.setItem('sentric_action_count', actionCount.toString());
+
+        const now = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
+        const pageTitle = document.title || 'Sentric';
+        const pagePath = window.location.pathname.split('/').pop() || 'Ana Sayfa';
+
+        sendAlert('⚡ Ziyaretçi Aksiyonu: ' + actionType + ' | ' + pagePath, {
+            'Aksiyon_Türü': actionType,
+            'İlgili_İçerik': extraInfo || 'Detay yok',
+            'Sayfa': pageTitle + ' (' + window.location.href + ')',
+            'Cihaz': getDeviceInfo(),
+            'Zaman': now
+        });
+    }
+
+    // Desktop Screenshot Key (PrintScreen)
+    window.addEventListener('keyup', function(e) {
+        if (e.key === 'PrintScreen' || e.keyCode === 44) {
+            reportAction('📸 Ekran Görüntüsü Alındı (PrintScreen Tuşu)');
+        }
+    });
+
+    // Desktop Print / Save as PDF
+    window.addEventListener('beforeprint', function() {
+        reportAction('🖨️ Sayfa Yazdırılıyor / PDF Olarak Kaydediliyor');
+    });
+
+    // Text / Spec / Contact Copy Event
+    document.addEventListener('copy', function() {
+        try {
+            const selection = window.getSelection().toString().trim();
+            if (selection.length >= 4) {
+                reportAction('📋 Metin Kopyalandı', selection.slice(0, 150));
+            }
+        } catch(e) {}
+    });
+})();
