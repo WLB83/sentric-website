@@ -740,37 +740,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const refInfo = getReferrerInfo();
         const devInfo = getDeviceInfo();
 
-        // Query free geolocation API with 2.5s timeout
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 2500);
+        // Global monthly and yearly counter keys
+        const curDate = new Date();
+        const curYear = curDate.getFullYear();
+        const curMonth = String(curDate.getMonth() + 1).padStart(2, '0');
+        const monthKey = 'sentric_m_' + curYear + '_' + curMonth;
+        const yearKey = 'sentric_y_' + curYear;
 
-        fetch('https://freeipapi.com/api/json', { signal: controller.signal })
-            .then(res => res.json())
-            .then(geo => {
-                clearTimeout(timeoutId);
-                const city = geo.cityName || 'Bilinmiyor';
-                const country = geo.countryName || 'Türkiye';
-                const subject = '🔔 Yeni Ziyaretçi: ' + city + ', ' + country + ' | ' + pagePath;
-                
-                sendAlert(subject, {
-                    'Konum': city + ', ' + country + ' (IP: ' + (geo.ipAddress || 'Mevcut') + ')',
-                    'İlk_Giriş_Sayfası': pageTitle + ' (' + window.location.href + ')',
-                    'Geliş_Kaynağı': refInfo,
-                    'Cihaz': devInfo,
-                    'Giriş_Saati': now
-                });
-            })
-            .catch(() => {
-                // If geo fails, still send the visit notification!
-                const subject = '🔔 Yeni Ziyaretçi: ' + pagePath;
-                sendAlert(subject, {
-                    'Konum': 'Tespit Edilemedi (Adblocker veya Gizli Sekme)',
-                    'İlk_Giriş_Sayfası': pageTitle + ' (' + window.location.href + ')',
-                    'Geliş_Kaynağı': refInfo,
-                    'Cihaz': devInfo,
-                    'Giriş_Saati': now
-                });
+        // Query geolocation & counters concurrently
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+        Promise.all([
+            fetch('https://freeipapi.com/api/json', { signal: controller.signal }).then(r => r.json()).catch(() => null),
+            fetch('https://countapi.mileshilliard.com/api/v1/hit/' + monthKey).then(r => r.json()).catch(() => null),
+            fetch('https://countapi.mileshilliard.com/api/v1/hit/' + yearKey).then(r => r.json()).catch(() => null)
+        ]).then(([geo, monthRes, yearRes]) => {
+            clearTimeout(timeoutId);
+            const city = (geo && geo.cityName) ? geo.cityName : 'Bilinmiyor';
+            const country = (geo && geo.countryName) ? geo.countryName : 'Türkiye';
+            const monthTotal = (monthRes && monthRes.value !== undefined) ? (monthRes.value + ' Ziyaret') : 'Kayıt Alındı';
+            const yearTotal = (yearRes && yearRes.value !== undefined) ? (yearRes.value + ' Ziyaret') : 'Kayıt Alındı';
+            
+            const subject = '🔔 Yeni Ziyaretçi: ' + city + ', ' + country + ' | ' + pagePath;
+            
+            sendAlert(subject, {
+                'Konum': city + ', ' + country + ' (IP: ' + ((geo && geo.ipAddress) || 'Mevcut') + ')',
+                'İlk_Giriş_Sayfası': pageTitle + ' (' + window.location.href + ')',
+                'Geliş_Kaynağı': refInfo,
+                'Cihaz': devInfo,
+                'Giriş_Saati': now,
+                '📊 Bu_Ay_Toplam_Ziyaret': monthTotal,
+                '📈 Bu_Yıl_Toplam_Ziyaret': yearTotal
             });
+        });
     }
 
     // 2. Action Detection: Screenshot (Desktop) & Text Copying (Max 2 action alerts per session)
