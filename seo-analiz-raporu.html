@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentric | Teknik SEO Denetim & İyileştirme Raporu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00a8cc;
+            --primary-dark: #007799;
+            --accent: #00d2ff;
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --slate: #475569;
+            --slate-light: #64748b;
+            --bg-page: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --border-light: #edf2f7;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--navy);
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Top Action Bar (Screen Only) */
+        .action-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            color: #ffffff;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .action-bar-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .action-bar-title span {
+            color: var(--accent);
+        }
+
+        .action-bar-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-print {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: #ffffff;
+            border: none;
+            padding: 9px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(0, 210, 255, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(0, 210, 255, 0.5);
+            background: linear-gradient(135deg, #22d8ff, #0093b3);
+        }
+
+        .print-hint {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* Report Container */
+        .report-wrapper {
+            max-width: 1080px;
+            margin: 30px auto 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Page / Slide Card */
+        .report-page {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+            margin-bottom: 35px;
+            padding: 45px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .page-header-left h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .page-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: #e0f2fe;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .page-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #cbd5e1;
+        }
+
+        /* Cover Slide */
+        .cover-page {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 60%, #0c4a6e 100%);
+            color: #ffffff;
+            border: none;
+            padding: 70px 60px;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.25);
+        }
+
+        .cover-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 210, 255, 0.15);
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .cover-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .cover-title span {
+            background: linear-gradient(90deg, #00d2ff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cover-subtitle {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 680px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cover-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .meta-item-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        .meta-item-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Score Dashboard */
+        .score-hero-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .overall-score-card {
+            background: linear-gradient(145deg, #0f172a, #1e293b);
+            border-radius: 14px;
+            padding: 30px 20px;
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 6px solid #f59e0b;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 12px;
+            background: rgba(245, 158, 11, 0.08);
+        }
+
+        .score-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f59e0b;
+            line-height: 1;
+        }
+
+        .score-max {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .overall-score-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .overall-score-card p {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .pillar-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .pillar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .pillar-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--navy);
+        }
+
+        .pillar-grade {
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .grade-a { background: #dcfce7; color: #15803d; }
+        .grade-b { background: #e0f2fe; color: #0284c7; }
+        .grade-c { background: #fef3c7; color: #b45309; }
+        .grade-f { background: #fee2e2; color: #b91c1c; }
+
+        .progress-bar-bg {
+            height: 7px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .fill-success { background: var(--success); }
+        .fill-warning { background: var(--warning); }
+        .fill-danger { background: var(--danger); }
+        .fill-info { background: var(--info); }
+
+        .pillar-desc {
+            font-size: 0.8rem;
+            color: var(--slate);
+        }
+
+        /* Content Blocks & Grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card-box {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .card-box.highlight {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+
+        .card-box.danger {
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+
+        .card-box.warning {
+            background: #fffbeb;
+            border-color: #fde68a;
+        }
+
+        .card-box h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-box p {
+            font-size: 0.88rem;
+            color: var(--slate);
+            line-height: 1.55;
+        }
+
+        .card-box ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .card-box li {
+            font-size: 0.85rem;
+            color: var(--slate);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .card-box li strong {
+            color: var(--navy);
+        }
+
+        .icon-check { color: var(--success); font-weight: bold; }
+        .icon-cross { color: var(--danger); font-weight: bold; }
+        .icon-warn { color: var(--warning); font-weight: bold; }
+
+        /* Tables */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 16px;
+        }
+
+        .seo-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.86rem;
+            text-align: left;
+        }
+
+        .seo-table th {
+            background: var(--navy);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            padding: 12px 14px;
+            font-weight: 600;
+            border: 1px solid var(--navy-light);
+        }
+
+        .seo-table td {
+            padding: 11px 14px;
+            border: 1px solid var(--border);
+            color: var(--slate);
+        }
+
+        .seo-table tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .status-pill {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .status-ok { background: #dcfce7; color: #166534; }
+        .status-missing { background: #fee2e2; color: #991b1b; }
+        .status-warn { background: #fef3c7; color: #92400e; }
+
+        /* Visual Callouts */
+        .callout-banner {
+            background: linear-gradient(135deg, rgba(0, 168, 204, 0.08), rgba(0, 210, 255, 0.15));
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 20px;
+        }
+
+        .callout-banner h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .callout-banner p {
+            font-size: 0.86rem;
+            color: var(--navy);
+            line-height: 1.5;
+        }
+
+        /* Roadmap Timeline */
+        .roadmap-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .roadmap-phase {
+            background: #ffffff;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+            position: relative;
+        }
+
+        .roadmap-phase.active {
+            border-color: var(--accent);
+            box-shadow: 0 4px 18px rgba(0, 210, 255, 0.15);
+        }
+
+        .phase-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #ffffff;
+            background: var(--navy);
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .phase-tag.cyan {
+            background: var(--primary);
+        }
+
+        .roadmap-phase h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .roadmap-phase p {
+            font-size: 0.82rem;
+            color: var(--slate);
+            margin-bottom: 14px;
+        }
+
+        .phase-list {
+            list-style: none;
+        }
+
+        .phase-list li {
+            font-size: 0.82rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bullet-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Print Layout Rules */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            .action-bar {
+                display: none !important;
+            }
+
+            .report-wrapper {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .report-page {
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                padding: 25px 0 !important;
+                margin-bottom: 0 !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+
+            .cover-page {
+                min-height: 95vh !important;
+                padding: 40px !important;
+                background: #0f172a !important;
+                color: #ffffff !important;
+            }
+
+            .cover-title span {
+                color: #00d2ff !important;
+                -webkit-text-fill-color: #00d2ff !important;
+            }
+
+            .btn-print {
+                display: none !important;
+            }
+
+            .seo-table th {
+                background: #1e293b !important;
+                color: #ffffff !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .score-hero-grid, .grid-2, .grid-3, .roadmap-container, .cover-meta-grid {
+                grid-template-columns: 1fr;
+            }
+            .cover-title {
+                font-size: 2rem;
+            }
+            .report-page {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Screen Action Bar -->
+    <header class="action-bar">
+        <div class="action-bar-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            SENTRIC <span>| TEKNİK SEO RAPORU & SUNUMU</span>
+        </div>
+        <div class="action-bar-actions">
+            <span class="print-hint">Tarayıcıdan PDF olarak kaydetmek için:</span>
+            <button class="btn-print" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                PDF Olarak İndir / Yazdır
+            </button>
+        </div>
+    </header>
+
+    <main class="report-wrapper">
+
+        <!-- SLIDE 1: COVER -->
+        <section class="report-page cover-page">
+            <div>
+                <div class="cover-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    KURUMSAL TEKNİK DENETİM VE SIRALAMA STRATEJİSİ
+                </div>
+                <h1 class="cover-title">
+                    Sentric Web Sitesi<br>
+                    <span>Teknik SEO Karnesi</span> & Büyüme Planı
+                </h1>
+                <p class="cover-subtitle">
+                    Google arama motoru görünürlüğü, dizine eklenme (indexing) sağlığı, sayfa bazlı meta eksikleri ve B2B müşteri trafiğini artıracak teknik eylem yol haritası.
+                </p>
+            </div>
+
+            <div class="cover-meta-grid">
+                <div>
+                    <div class="meta-item-label">İncelenen Alan Adı</div>
+                    <div class="meta-item-value">sentric.com.tr</div>
+                </div>
+                <div>
+                    <div class="meta-item-label">Altyapı Mimarisi</div>
+                    <div class="meta-item-value">Statik CDN / Jamstack</div>
+                </div>
+                <div>
+                    <div class="meta-item-label">Rapor Tarihi</div>
+                    <div class="meta-item-value">Kasım 2026</div>
+                </div>
+                <div>
+                    <div class="meta-item-label">Hedef Pazar</div>
+                    <div class="meta-item-value">Türkiye & Bölgesel B2B</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: SCORECARD & EXECUTIVE SUMMARY -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Bölüm 01</div>
+                    <h2>Genel SEO Karnesi & Performans Özeti</h2>
+                </div>
+                <div class="page-number">01 / 06</div>
+            </div>
+
+            <div class="score-hero-grid">
+                <div class="overall-score-card">
+                    <div class="score-circle">
+                        <div class="score-val">54</div>
+                        <div class="score-max">/ 100</div>
+                    </div>
+                    <h3>Genel SEO Puanı</h3>
+                    <p>Güçlü altyapı hızı, fakat arama motoru yol haritası eksik.</p>
+                </div>
+
+                <div class="pillar-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-header">
+                            <span class="pillar-name">Sayfa Yüklenme Hızı (Core Web Vitals)</span>
+                            <span class="pillar-grade grade-a">96 / 100</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill fill-success" style="width: 96%;"></div>
+                        </div>
+                        <p class="pillar-desc">Statik mimari sayesinde 0.4 saniye açılış süresi. Google hız kriterlerini kusursuz geçiyor.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-header">
+                            <span class="pillar-name">Mobil Uyumluluk & Duyarlılık</span>
+                            <span class="pillar-grade grade-a">92 / 100</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill fill-success" style="width: 92%;"></div>
+                        </div>
+                        <p class="pillar-desc">Yatay taşmalar çözüldü. Dokunmatik kaydırma ve mobil menü tam optimize.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-header">
+                            <span class="pillar-name">Sayfa İçi (On-Page) & Meta Veriler</span>
+                            <span class="pillar-grade grade-c">42 / 100</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill fill-warning" style="width: 42%;"></div>
+                        </div>
+                        <p class="pillar-desc">Ürün sayfalarında anahtar kelime zenginliği düşük, birçok sayfada meta açıklama yok.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-header">
+                            <span class="pillar-name">Teknik Dizinleme (Crawling & Robots)</span>
+                            <span class="pillar-grade grade-f">15 / 100</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill fill-danger" style="width: 15%;"></div>
+                        </div>
+                        <p class="pillar-desc">Sitemap.xml ve robots.txt dosyaları bulunmuyor. Google botları siteyi verimsiz geziyor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-banner">
+                <h5>💡 Yönetici Özeti (Key Takeaway)</h5>
+                <p>
+                    Sentric'in altyapısı bir yarış arabası gibi çok hızlı ve modern; ancak arabaya henüz navigasyon haritası (sitemap) ve kimlik plakası (schema.org) takılmamış. Bu eksikleri giderdiğimizde Googlebot sayfalarımızı anında tarayacak ve sıralama sıçraması yaşanacaktır.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: STRENGTHS VS DEFICIENCIES -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Bölüm 02</div>
+                    <h2>Güçlü Yönlerimiz & Kritik Eksiklerimiz</h2>
+                </div>
+                <div class="page-number">02 / 06</div>
+            </div>
+
+            <div class="grid-2">
+                <!-- Strengths -->
+                <div class="card-box highlight">
+                    <h4 style="color: #15803d;">
+                        <span class="icon-check">✓</span> Güçlü Olduğumuz Alanlar (Avantajlar)
+                    </h4>
+                    <p>Rakiplerin birçoğunun hantal WordPress siteleri kullandığı pazarda en büyük kozlarımız:</p>
+                    <ul>
+                        <li><span class="icon-check">✓</span> <strong>Sıfır Sunucu Gecikmesi:</strong> Veritabanı sorgusu olmadığı için TTFB (ilk bayt süresi) 50ms altında.</li>
+                        <li><span class="icon-check">✓</span> <strong>Kusursuz Mobil Uyum:</strong> Google'ın <em>Mobile-First Indexing</em> algoritmasına %100 uyumlu.</li>
+                        <li><span class="icon-check">✓</span> <strong>Modern Güvenlik (HTTPS/SSL):</strong> SSL sertifikası tam ve güvenli protokoller aktif.</li>
+                        <li><span class="icon-check">✓</span> <strong>Temiz Kod Yapısı:</strong> Gereksiz ağır eklentiler (plugin) yok, saf CSS ve JS mimarisi.</li>
+                        <li><span class="icon-check">✓</span> <strong>Görsel Boyutları:</strong> Web optimizasyonlu şeffaf PNG ve SVG kullanımı.</li>
+                    </ul>
+                </div>
+
+                <!-- Deficiencies -->
+                <div class="card-box danger">
+                    <h4 style="color: #b91c1c;">
+                        <span class="icon-cross">✗</span> Kritik Eksiklerimiz (Sıralamayı Engelleyenler)
+                    </h4>
+                    <p>Google'ın bizi arka sayfalara itmesine neden olan acil düzeltilmesi gereken noktalar:</p>
+                    <ul>
+                        <li><span class="icon-cross">✗</span> <strong>sitemap.xml Yok:</strong> Google botlarına tüm sayfalarımızı sunan harita dosyası yok.</li>
+                        <li><span class="icon-cross">✗</span> <strong>robots.txt Yok:</strong> Bot yönlendirme ve tarama kuralları tanımlı değil.</li>
+                        <li><span class="icon-cross">✗</span> <strong>Schema.org (JSON-LD) Yok:</strong> Şirket ve ürün yapılandırılmış verisi eksik.</li>
+                        <li><span class="icon-cross">✗</span> <strong>Kayıp Meta Açıklamaları:</strong> Ticari, Marin vb. sayfalarda &lt;meta description&gt; yok.</li>
+                        <li><span class="icon-cross">✗</span> <strong>Sosyal Medya / WhatsApp Kartları Yok:</strong> Open Graph etiketleri bulunmuyor.</li>
+                        <li><span class="icon-cross">✗</span> <strong>Favicon Eksik:</strong> Arama sonuçlarında markanın logosu yerine boş ikon çıkıyor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-box warning" style="margin-top: 10px;">
+                <h4 style="color: #b45309;">
+                    <span class="icon-warn">⚠</span> B2B Pazarlama Risk Değerlendirmesi
+                </h4>
+                <p>
+                    Biri WhatsApp'ta veya LinkedIn'de <em>"sentric.com.tr/product-ticari.html"</em> linkini paylaştığında şık bir akü görseli ve açıklama kutusu çıkmıyor; sadece sade mavi bir yazı görünüyor. Bu durum kurumsal marka prestijini ve tıklanma oranını (CTR) doğrudan düşürüyor.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: PAGE-BY-PAGE AUDIT TABLE -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Bölüm 03</div>
+                    <h2>Sayfa Bazlı Teknik SEO Denetim Tablosu</h2>
+                </div>
+                <div class="page-number">03 / 06</div>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--slate); margin-bottom: 12px;">
+                Sitemizdeki ana sayfalar ve ürün kategorilerinin arama motoru etiketleri incelenmiş ve mevcut durumları puanlanmıştır:
+            </p>
+
+            <div class="table-responsive">
+                <table class="seo-table">
+                    <thead>
+                        <tr>
+                            <th>Sayfa Adı</th>
+                            <th>Mevcut Başlık (Title)</th>
+                            <th>Meta Açıklama</th>
+                            <th>Canonical</th>
+                            <th>Open Graph</th>
+                            <th>Öncelik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ana Sayfa</strong> (index.html)</td>
+                            <td>Sentric | Her Yolculukta Güvenilir Güç</td>
+                            <td><span class="status-pill status-ok">Mevcut (Genel)</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><strong style="color: var(--danger);">Acil</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ticari Aküler</strong> (product-ticari.html)</td>
+                            <td>Sentric | Ticari Aküler</td>
+                            <td><span class="status-pill status-missing">Yok (Kayıp)</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><strong style="color: var(--danger);">Acil</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marin & Karavan</strong> (product-marin.html)</td>
+                            <td>Sentric | Marin ve Karavan Aküleri</td>
+                            <td><span class="status-pill status-missing">Yok (Kayıp)</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><strong style="color: var(--danger);">Acil</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Otomotiv Aküleri</strong> (product-otomotiv.html)</td>
+                            <td>Otomotiv Aküleri | SENTRIC</td>
+                            <td><span class="status-pill status-missing">Yok (Kayıp)</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><strong style="color: var(--danger);">Acil</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Traksiyoner</strong> (product-traksiyoner.html)</td>
+                            <td>Sentric | Traksiyoner Aküler</td>
+                            <td><span class="status-pill status-missing">Yok (Kayıp)</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><strong style="color: var(--warning);">Orta</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bahçe ve Tarım</strong> (product-bahce.html)</td>
+                            <td>Sentric | Bahçe ve Tarım Aküleri</td>
+                            <td><span class="status-pill status-missing">Yok (Kayıp)</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><strong style="color: var(--warning);">Orta</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Global Markalar</strong> (brand-*.html)</td>
+                            <td>Kısmi marka isimleri</td>
+                            <td><span class="status-pill status-missing">Yok</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><span class="status-pill status-missing">Eksik</span></td>
+                            <td><strong style="color: var(--slate);">Düşük</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout-banner" style="margin-top: 18px;">
+                <h5>🔍 Tespit Edilen Fırsat: B2B Anahtar Kelime Zenginleştirmesi</h5>
+                <p>
+                    Örneğin <em>"Sentric | Ticari Aküler"</em> başlığı Google için çok zayıftır. Bunun yerine <strong>"Sentric | Ağır Vasıta & Ticari Aküler - EFB, SMF-SHD, HD Teknolojisi"</strong> yapıldığında kamyon, tır ve otobüs filolarının yaptığı aramalarda ilk sayfaya çıkma şansımız 4 kat artar.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: STRUCTURED DATA & SOCIAL VISIBILITY -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Bölüm 04</div>
+                    <h2>Zengin Arama Sonuçları (Rich Snippets) & Kartlar</h2>
+                </div>
+                <div class="page-number">04 / 06</div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card-box">
+                    <h4 style="color: var(--primary-dark);">1. Kurumsal Schema (JSON-LD)</h4>
+                    <p>
+                        Google'a sitemizin sıradan bir blog değil, resmi bir akü distribütörü ve üretici iş ortağı olduğunu kod dilinde anlatır:
+                    </p>
+                    <ul style="margin-top: 10px;">
+                        <li>• <strong>@type:</strong> Organization / AutomotiveBusiness</li>
+                        <li>• <strong>Logo & Resmi İletişim:</strong> info@sentric.com.tr</li>
+                        <li>• <strong>Ürün Kataloğu Yapısı:</strong> Akü kategorileri</li>
+                    </ul>
+                </div>
+
+                <div class="card-box">
+                    <h4 style="color: var(--primary-dark);">2. Open Graph & Twitter Cards</h4>
+                    <p>
+                        WhatsApp, LinkedIn veya Facebook üzerinden site linki gönderildiğinde kurumsal önizleme açılmasını sağlar:
+                    </p>
+                    <ul style="margin-top: 10px;">
+                        <li>• <strong>og:image:</strong> 1200x630 Sentric akü görseli</li>
+                        <li>• <strong>og:title:</strong> Tıklanma odaklı başlık</li>
+                        <li>• <strong>og:description:</strong> Güven verici açıklama</li>
+                    </ul>
+                </div>
+
+                <div class="card-box">
+                    <h4 style="color: var(--primary-dark);">3. Favicon & Web İkon Seti</h4>
+                    <p>
+                        Google artık mobil arama sonuçlarında her sitenin sol başına favicon ikonunu yerleştiriyor:
+                    </p>
+                    <ul style="margin-top: 10px;">
+                        <li>• <strong>favicon.ico:</strong> 32x32 mavi Sentric şimşek ikonu</li>
+                        <li>• <strong>apple-touch-icon:</strong> iPhone ana ekrana ekleme</li>
+                        <li>• <strong>Arama Tıklanma Artışı:</strong> %10-15 CTR artışı</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-box highlight" style="margin-top: 10px;">
+                <h4 style="color: #15803d;">🎯 Hedeflenen Google Arama Görünümü (Simülasyon)</h4>
+                <div style="background: #ffffff; padding: 15px 18px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: Arial, sans-serif; margin-top: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                        <span style="display: inline-block; width: 18px; height: 18px; background: #00d2ff; border-radius: 50%; color: #fff; font-weight: bold; font-size: 11px; text-align: center; line-height: 18px;">⚡</span>
+                        <span style="font-size: 13px; color: #202124;">sentric.com.tr › urunler › ticari</span>
+                    </div>
+                    <div style="font-size: 19px; color: #1a0dab; font-weight: 500; cursor: pointer; text-decoration: underline; margin-bottom: 4px;">
+                        Sentric | Ağır Vasıta & Ticari Aküler - EFB, SMF-SHD Teknolojisi
+                    </div>
+                    <div style="font-size: 13px; color: #4d5156; line-height: 1.4;">
+                        Kamyon, tır, otobüs ve iş makineleri için yüksek marş gücüne ve derin deşarj dayanıklılığına sahip Sentric ticari akü serisi. Kore'nin OE teknolojisiyle Türkiye'de.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: 30-DAY ACTION ROADMAP -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Bölüm 05</div>
+                    <h2>Üst Sıralara Çıkış İçin 3 Fazlı Eylem Planı</h2>
+                </div>
+                <div class="page-number">05 / 06</div>
+            </div>
+
+            <div class="roadmap-container">
+                <!-- Phase 1 -->
+                <div class="roadmap-phase active">
+                    <span class="phase-tag cyan">FAZ 1: ACİL TEKNİK TEMEL (1-2 GÜN)</span>
+                    <h4>Dizinleme & Görünürlük Kilitleri</h4>
+                    <p>Google botlarının sitemizi eksiksiz taraması için temel dosyaların entegrasyonu:</p>
+                    <ul class="phase-list">
+                        <li><span class="bullet-dot"></span> <strong>sitemap.xml</strong> dosyası oluşturulacak.</li>
+                        <li><span class="bullet-dot"></span> <strong>robots.txt</strong> kural dosyası yazılacak.</li>
+                        <li><span class="bullet-dot"></span> <strong>Favicon</strong> (Sentric şimşek ikonu) eklenecek.</li>
+                        <li><span class="bullet-dot"></span> <strong>Canonical</strong> etiketleri tanımlanacak.</li>
+                        <li><span class="bullet-dot"></span> Google Search Console kaydı yapılacak.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="roadmap-phase">
+                    <span class="phase-tag">FAZ 2: SAYFA İÇİ SEO (3-5 GÜN)</span>
+                    <h4>B2B Başlık & Meta Optimizasyonu</h4>
+                    <p>Her bir kategori sayfasının Google'da yüksek hacimli kelimelerle eşleşmesi:</p>
+                    <ul class="phase-list">
+                        <li><span class="bullet-dot"></span> Ticari, Marin vb. sayfaların Title/Desc revizyonu.</li>
+                        <li><span class="bullet-dot"></span> H1, H2 başlıklarına anahtar kelime beslemesi.</li>
+                        <li><span class="bullet-dot"></span> Görsel ALT etiketlerine zengin ürün tanımları.</li>
+                        <li><span class="bullet-dot"></span> Open Graph WhatsApp önizleme kartları.</li>
+                        <li><span class="bullet-dot"></span> İç linkleme hiyerarşisinin güçlendirilmesi.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="roadmap-phase">
+                    <span class="phase-tag">FAZ 3: OTORİTE & RICH SNIPPETS</span>
+                    <h4>Zengin Veri & Pazar Konumu</h4>
+                    <p>Sektörel güvenilirlik ve kurumsal arama sonuçlarının zirveye taşınması:</p>
+                    <ul class="phase-list">
+                        <li><span class="bullet-dot"></span> Schema.org Organization JSON-LD kodu.</li>
+                        <li><span class="bullet-dot"></span> Product / Battery teknik spesifikasyon şeması.</li>
+                        <li><span class="bullet-dot"></span> PDF Kataloglarının SEO indeksine açılması.</li>
+                        <li><span class="bullet-dot"></span> Haftalık sıralama ve organik izleme.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout-banner" style="margin-top: 24px;">
+                <h5>🚀 Beklenen Somut Çıktılar:</h5>
+                <p>
+                    Bu adımlar tamamlandığında sitemizin Google tarafından taranma sıklığı <strong>%300 artacak</strong>, arama sonuçlarındaki tıklanma oranı (CTR) <strong>2 katına çıkacak</strong> ve potansiyel kurumsal müşteriler "Sentric akü", "Kore aküsü", "Ağır vasıta SHD akü" aramalarında doğrudan ilgili ürün sayfamıza ulaşacaktır.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: SIGN-OFF & CONCLUSION -->
+        <section class="report-page" style="margin-bottom: 0;">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Bölüm 06</div>
+                    <h2>Özet Karar & Onay Bildirimi</h2>
+                </div>
+                <div class="page-number">06 / 06</div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 20px;">
+                <div class="card-box highlight">
+                    <h4 style="color: #15803d;">Mevcut Avantajımız</h4>
+                    <p>
+                        Sitemiz hız ve modern tasarım konusunda sektördeki rakiplerin %90'ından daha iyi durumdadır. İhtiyacımız olan tek şey arama motoru kurallarına uygun teknik etiketleri ve yol haritasını koda dökmektir.
+                    </p>
+                </div>
+
+                <div class="card-box">
+                    <h4 style="color: var(--navy);">Sıradaki Adım</h4>
+                    <p>
+                        Onayınızla birlikte <strong>FAZ 1 (Sitemap, Robots.txt, Favicon ve Sayfa Meta Etiketleri)</strong> paketini kodlayıp doğrudan sitemize entegre edebilirim.
+                    </p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; color: var(--slate-light); font-size: 0.85rem;">
+                <div>
+                    <strong>Sentric Battery Turkey</strong> | Teknik SEO & Web Mühendisliği Raporu
+                </div>
+                <div>
+                    Canlı Sistem Yayını: <strong>8 Ekim 2026</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

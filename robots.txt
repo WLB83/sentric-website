@@ -1,0 +1,6 @@
+# Robots.txt for Sentric Battery (https://www.sentric.com.tr)
+User-agent: *
+Allow: /
+
+# Sitemap Index
+Sitemap: https://www.sentric.com.tr/sitemap.xml
