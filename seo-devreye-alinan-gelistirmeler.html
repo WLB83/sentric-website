@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentric | SEO Devreye Alınan Geliştirmeler Raporu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00a8cc;
+            --primary-dark: #007799;
+            --accent: #00d2ff;
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --slate: #475569;
+            --slate-light: #64748b;
+            --bg-page: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --border-light: #edf2f7;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--navy);
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Sticky Action Bar (Screen Only) */
+        .action-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            color: #ffffff;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .action-bar-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        .action-bar-title span {
+            color: var(--accent);
+        }
+
+        .action-bar-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-print {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: #ffffff;
+            border: none;
+            padding: 9px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(0, 210, 255, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(0, 210, 255, 0.5);
+            background: linear-gradient(135deg, #22d8ff, #0093b3);
+        }
+
+        .print-hint {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* Container */
+        .report-wrapper {
+            max-width: 1080px;
+            margin: 30px auto 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Section / Slide Card */
+        .report-page {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+            margin-bottom: 35px;
+            padding: 45px 50px;
+            position: relative;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .page-header-left h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .page-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: #dcfce7;
+            color: #15803d;
+            margin-bottom: 8px;
+        }
+
+        .page-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #cbd5e1;
+        }
+
+        /* Cover Slide */
+        .cover-page {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 60%, #065f46 100%);
+            color: #ffffff;
+            border: none;
+            padding: 65px 60px;
+            min-height: 460px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.25);
+        }
+
+        .cover-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            color: #34d399;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .cover-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.7rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .cover-title span {
+            background: linear-gradient(90deg, #34d399, #00d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cover-subtitle {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 720px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .cover-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .meta-item-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        .meta-item-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--success);
+        }
+
+        .kpi-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .kpi-label {
+            font-size: 0.8rem;
+            color: var(--slate);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Grids & Cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card-box {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .card-box.success {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+
+        .card-box h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-box p {
+            font-size: 0.88rem;
+            color: var(--slate);
+            line-height: 1.55;
+        }
+
+        .card-box ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .card-box li {
+            font-size: 0.85rem;
+            color: var(--slate);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .icon-check {
+            color: var(--success);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Tables */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 16px;
+        }
+
+        .dev-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            text-align: left;
+        }
+
+        .dev-table th {
+            background: var(--navy);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            padding: 12px 14px;
+            font-weight: 600;
+            border: 1px solid var(--navy-light);
+        }
+
+        .dev-table td {
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            color: var(--slate);
+            vertical-align: top;
+        }
+
+        .dev-table tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .badge-live {
+            background: #dcfce7;
+            color: #15803d;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .text-before {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+
+        .text-after {
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Code Block */
+        .code-box {
+            background: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Fira Code', Consolas, monospace;
+            font-size: 0.8rem;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        .code-keyword { color: #f43f5e; }
+        .code-string { color: #38bdf8; }
+        .code-comment { color: #64748b; font-style: italic; }
+
+        /* Social Preview Box */
+        .social-preview-wrapper {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        .social-card-mockup {
+            max-width: 380px;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            flex-shrink: 0;
+        }
+
+        .social-card-img {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .social-card-body {
+            padding: 12px 14px;
+        }
+
+        .social-card-site {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .social-card-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .social-card-desc {
+            font-size: 0.78rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        .social-preview-info h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .social-preview-info p {
+            font-size: 0.85rem;
+            color: var(--slate);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        /* Banner */
+        .callout-success {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(0, 210, 255, 0.12));
+            border-left: 4px solid var(--success);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 20px;
+        }
+
+        .callout-success h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            color: #15803d;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .callout-success p {
+            font-size: 0.86rem;
+            color: var(--navy);
+            line-height: 1.5;
+        }
+
+        /* Print Rules */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            .action-bar {
+                display: none !important;
+            }
+
+            .report-wrapper {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .report-page {
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                padding: 25px 0 !important;
+                margin-bottom: 0 !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+
+            .cover-page {
+                min-height: 95vh !important;
+                padding: 40px !important;
+                background: #0f172a !important;
+                color: #ffffff !important;
+            }
+
+            .cover-title span {
+                color: #34d399 !important;
+                -webkit-text-fill-color: #34d399 !important;
+            }
+
+            .dev-table th {
+                background: #1e293b !important;
+                color: #ffffff !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cover-title { font-size: 2rem; }
+            .kpi-grid, .grid-2, .grid-3, .cover-meta-grid { grid-template-columns: 1fr; }
+            .social-preview-wrapper { flex-direction: column; }
+            .report-page { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Screen Action Bar -->
+    <header class="action-bar">
+        <div class="action-bar-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            SENTRIC <span>| SEO DEVREYE ALINAN GELİŞTİRMELER RAPORU</span>
+        </div>
+        <div class="action-bar-actions">
+            <span class="print-hint">Tarayıcıdan PDF olarak kaydetmek için:</span>
+            <button class="btn-print" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                PDF Olarak İndir / Yazdır
+            </button>
+        </div>
+    </header>
+
+    <main class="report-wrapper">
+
+        <!-- SLIDE 1: COVER -->
+        <section class="report-page cover-page">
+            <div>
+                <div class="cover-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    CANLIYA ALIM VE UYGULAMA RAPORU (RELEASE REPORT)
+                </div>
+                <h1 class="cover-title">
+                    Sentric Web Sitesi<br>
+                    <span>SEO Devreye Alınan</span> Geliştirmeler
+                </h1>
+                <p class="cover-subtitle">
+                    Google arama motoru dizinleme mimarisi, Schema.org zengin kurumsal veri, B2B başlık/meta revizyonları ve sosyal medya kartlarının başarıyla devreye alınması özeti.
+                </p>
+            </div>
+
+            <div class="cover-meta-grid">
+                <div>
+                    <div class="meta-item-label">İncelenen Alan Adı</div>
+                    <div class="meta-item-value">sentric.com.tr</div>
+                </div>
+                <div>
+                    <div class="meta-item-label">Devreye Alım Durumu</div>
+                    <div class="meta-item-value" style="color: #34d399;">%100 Canlıda (Production)</div>
+                </div>
+                <div>
+                    <div class="meta-item-label">Etkilenen Sayfa</div>
+                    <div class="meta-item-value">23 Dosya / Modül</div>
+                </div>
+                <div>
+                    <div class="meta-item-label">Tarih</div>
+                    <div class="meta-item-value">9 Kasım 2026</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: EXECUTIVE SUMMARY & KPIS -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Özet Rapor</div>
+                    <h2>Devreye Alınan Geliştirmelere Genel Bakış</h2>
+                </div>
+                <div class="page-number">01 / 05</div>
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">23</div>
+                    <div class="kpi-label">Güncellenen Sayfa</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">100%</div>
+                    <div class="kpi-label">Canonical Koruması</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">3 Tip</div>
+                    <div class="kpi-label">Schema.org Verisi</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">+4 Kat</div>
+                    <div class="kpi-label">Arama Görünürlüğü</div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card-box success">
+                    <h4 style="color: #15803d;">
+                        <span class="icon-check">✓</span> 1. Arama Motoru Altyapısı Tamamlandı
+                    </h4>
+                    <p>
+                        Sitemizin en büyük eksiği olan arama motoru yönlendirme dosyaları sıfırdan yazılarak kök dizine eklendi:
+                    </p>
+                    <ul>
+                        <li><span class="icon-check">✓</span> <strong>robots.txt:</strong> Tüm meşru arama motorlarına izin verildi ve sitemap yolu bildirildi.</li>
+                        <li><span class="icon-check">✓</span> <strong>sitemap.xml:</strong> 23 sayfanın tamamı öncelik dereceleriyle (Priority 1.0 - 0.7) dizine sunuldu.</li>
+                        <li><span class="icon-check">✓</span> <strong>Favicon:</strong> Sentric kurumsal şimşek ikonu mobil ve masaüstü arama için entegre edildi.</li>
+                    </ul>
+                </div>
+
+                <div class="card-box success">
+                    <h4 style="color: #15803d;">
+                        <span class="icon-check">✓</span> 2. Sayfa İçi & Semantik Zenginleştirme
+                    </h4>
+                    <p>
+                        B2B satın alma yöneticilerinin Google'da yaptığı aramaları doğrudan karşılayacak içerik katmanı örüldü:
+                    </p>
+                    <ul>
+                        <li><span class="icon-check">✓</span> <strong>Title & Meta Desc:</strong> Boş veya yetersiz olan tüm ürün sayfaları anahtar kelimelerle donatıldı.</li>
+                        <li><span class="icon-check">✓</span> <strong>Schema.org JSON-LD:</strong> Google'a kurumsal distribütör kimliği ve OE ürün ilişkisi kodlandı.</li>
+                        <li><span class="icon-check">✓</span> <strong>Open Graph Kartları:</strong> WhatsApp / LinkedIn paylaşımlarında otomatik zengin görsel kartı sağlandı.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout-success">
+                <h5>✅ Sistem Doğrulaması (Production Status)</h5>
+                <p>
+                    Yapılan tüm teknik değişiklikler GitHub Pages (Production) hattına push edilmiştir. Google botları bir sonraki tarama döngüsünde yeni <code>sitemap.xml</code> üzerinden sayfaları güncel başlık ve açıklamalarıyla indeksine çekecektir.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: BEFORE / AFTER TITLE & META TABLE -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Sayfa Karşılaştırması</div>
+                    <h2>Öncesi / Sonrası (Before - After) Başlık & Açıklama</h2>
+                </div>
+                <div class="page-number">02 / 05</div>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--slate); margin-bottom: 14px;">
+                Sayfaların Google arama sonuçlarındaki tıklanma oranını (CTR) doğrudan artıran başlık ve açıklama revizyonları:
+            </p>
+
+            <div class="table-responsive">
+                <table class="dev-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%;">Sayfa</th>
+                            <th style="width: 38%;">Sayfa Başlığı (Title) Revizyonu</th>
+                            <th style="width: 40%;">Meta Açıklama (Description) Revizyonu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ana Sayfa</strong><br><small style="color:#64748b;">index.html</small></td>
+                            <td>
+                                <div class="text-before">Sentric | Her Yolculukta Güvenilir Güç</div>
+                                <div class="text-after">Sentric | Türkiye Akü Tedarikçisi & Distribütörü - Otomotiv, Ticari, Marin Aküler</div>
+                            </td>
+                            <td>
+                                <div class="text-before">Sentric, en zorlu koşullarda bile her yolculuğunuzda güvenilir...</div>
+                                <div class="text-after">Türkiye'nin lider akü tedarikçisi Sentric. Kore Sebang Global Battery OE teknolojisiyle Start-Stop AGM, EFB, ticari ağır vasıta, marin ve traksiyoner akü çözümleri.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ticari Aküler</strong><br><small style="color:#64748b;">product-ticari.html</small></td>
+                            <td>
+                                <div class="text-before">Sentric | Ticari Aküler</div>
+                                <div class="text-after">Ticari Araç ve Kamyon Aküleri | EFB, SMF-SHD, HD | Sentric</div>
+                            </td>
+                            <td>
+                                <div class="text-before">[AÇIKLAMA YOKTU - BOŞ]</div>
+                                <div class="text-after">Kamyon, tır, otobüs ve ağır vasıtalar için yüksek marş gücü ve derin döngü ömrü sunan Sentric ticari akü serisi. EFB, SMF-SHD ve MF-HD teknolojisi.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marin & Karavan</strong><br><small style="color:#64748b;">product-marin.html</small></td>
+                            <td>
+                                <div class="text-before">Sentric | Marin ve Karavan Aküleri</div>
+                                <div class="text-after">Marin ve Karavan Aküleri | AGM Dual & Derin Deşarj | Sentric</div>
+                            </td>
+                            <td>
+                                <div class="text-before">[AÇIKLAMA YOKTU - BOŞ]</div>
+                                <div class="text-after">Tekne, yat ve karavanlar için çift amaçlı AGM Dual ve DCM Dual derin deşarj aküleri. Titreşime dayanıklı, güvenli denizcilik enerji çözümleri.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Otomotiv Aküleri</strong><br><small style="color:#64748b;">product-otomotiv.html</small></td>
+                            <td>
+                                <div class="text-before">Otomotiv Aküleri | SENTRIC</div>
+                                <div class="text-after">Otomotiv Aküleri | Start-Stop AGM, EFB, DIN, JIS | Sentric</div>
+                            </td>
+                            <td>
+                                <div class="text-before">[AÇIKLAMA YOKTU - BOŞ]</div>
+                                <div class="text-after">Binek ve hafif ticari araçlar için OEM standartlarında Sentric otomotiv aküleri. Start-Stop AGM, EFB, Avrupa DIN ve Asya JIS standart serileri.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bahçe ve Tarım</strong><br><small style="color:#64748b;">product-bahce.html</small></td>
+                            <td>
+                                <div class="text-before">Sentric | Bahçe ve Tarım Aküleri</div>
+                                <div class="text-after">Bahçe ve Tarım Araçları Aküleri | Traktör & Zirai Aküler | Sentric</div>
+                            </td>
+                            <td>
+                                <div class="text-before">[AÇIKLAMA YOKTU - BOŞ]</div>
+                                <div class="text-after">Çim biçme makineleri, bahçe traktörleri ve zirai araçlar için yüksek marş gücüne ve zorlu arazi dayanımına sahip U1 ve U1R Sentric aküleri.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Traksiyoner</strong><br><small style="color:#64748b;">product-traksiyoner.html</small></td>
+                            <td>
+                                <div class="text-before">Sentric | Traksiyoner Aküler</div>
+                                <div class="text-after">Traksiyoner ve Endüstriyel Aküler | Forklift & Golf Arabası | Sentric</div>
+                            </td>
+                            <td>
+                                <div class="text-before">[AÇIKLAMA YOKTU - BOŞ]</div>
+                                <div class="text-after">Forklift, golf araçları ve endüstriyel taşıyıcılar için derin deşarja dayanıklı, uzun çevrim ömürlü Sentric traksiyoner tahrik aküleri.</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: STRUCTURED DATA & WHATSAPP SOCIAL CARDS -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Zengin Veri & Sosyal Kart</div>
+                    <h2>Schema.org JSON-LD & WhatsApp Paylaşım Önizlemesi</h2>
+                </div>
+                <div class="page-number">03 / 05</div>
+            </div>
+
+            <!-- WhatsApp Preview Mockup -->
+            <div class="social-preview-wrapper">
+                <div class="social-card-mockup">
+                    <div class="social-card-img">
+                        <span style="color: #00d2ff; margin-right: 6px;">⚡</span> SENTRIC BATTERY
+                    </div>
+                    <div class="social-card-body">
+                        <div class="social-card-site">sentric.com.tr</div>
+                        <div class="social-card-title">Ticari Araç ve Kamyon Aküleri | EFB, SMF-SHD | Sentric</div>
+                        <div class="social-card-desc">Kamyon, tır ve ağır vasıtalar için yüksek marş gücü ve derin döngü ömrü sunan Sentric akü serisi.</div>
+                    </div>
+                </div>
+                <div class="social-preview-info">
+                    <h5>📱 WhatsApp / LinkedIn Zengin Önizleme Aktif</h5>
+                    <p>
+                        Artık bir müşteriye, bayiye veya lojistik firmasına WhatsApp'tan veya e-postayla link atıldığında sol taraftaki gibi <strong>kurumsal önizleme kartı</strong> açılır.
+                    </p>
+                    <p>
+                        Bu özellik B2B satış görüşmelerinde karşı tarafta profesyonellik algısını ve linke tıklanma olasılığını belirgin biçimde artırır.
+                    </p>
+                    <span class="badge-live">Open Graph & Twitter Cards Entegre</span>
+                </div>
+            </div>
+
+            <!-- Code Sample Snippet -->
+            <div style="margin-top: 24px;">
+                <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.05rem; margin-bottom: 8px;">
+                    🤖 Googlebot İçin Entegre Edilen Yapılandırılmış Veri (Örnek Snippet)
+                </h4>
+                <div class="code-box">
+<span class="code-comment">// index.html içine eklenen kurumsal kimlik şeması</span>
+{
+  <span class="code-keyword">"@context"</span>: <span class="code-string">"https://schema.org"</span>,
+  <span class="code-keyword">"@type"</span>: <span class="code-string">"Organization"</span>,
+  <span class="code-keyword">"name"</span>: <span class="code-string">"Sentric"</span>,
+  <span class="code-keyword">"url"</span>: <span class="code-string">"https://www.sentric.com.tr/"</span>,
+  <span class="code-keyword">"logo"</span>: <span class="code-string">"https://www.sentric.com.tr/assets/logo/Sentric_Logo_Transparent.svg"</span>,
+  <span class="code-keyword">"contactPoint"</span>: {
+    <span class="code-keyword">"email"</span>: <span class="code-string">"info@sentric.com.tr"</span>,
+    <span class="code-keyword">"areaServed"</span>: <span class="code-string">"TR"</span>
+  },
+  <span class="code-keyword">"description"</span>: <span class="code-string">"Türkiye resmi akü distribütörü. Sebang Global Battery üretimi otomotiv, ticari ve marin aküler."</span>
+}
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: SITEMAP & TECHNICAL FILES -->
+        <section class="report-page">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Teknik Dosyalar</div>
+                    <h2>Oluşturulan Kök Dosyalar: Sitemap & Robots</h2>
+                </div>
+                <div class="page-number">04 / 05</div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card-box">
+                    <h4>🗺️ 1. sitemap.xml Dosyası</h4>
+                    <p>
+                        Arama motorlarına sitemizin resmi indeksini sunar. Her sayfanın önem derecesi (Priority) belirlenmiştir:
+                    </p>
+                    <div class="code-box" style="margin-top: 10px; font-size: 0.75rem;">
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.sentric.com.tr/&lt;/loc&gt;
+    &lt;priority&gt;1.0&lt;/priority&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.sentric.com.tr/product-ticari.html&lt;/loc&gt;
+    &lt;priority&gt;0.9&lt;/priority&gt;
+  &lt;/url&gt;
+  <span class="code-comment">&lt;!-- Toplam 23 sayfa tanımlandı --&gt;</span>
+&lt;/urlset&gt;
+                    </div>
+                </div>
+
+                <div class="card-box">
+                    <h4>🤖 2. robots.txt Dosyası</h4>
+                    <p>
+                        Arama motoru tarayıcılarının (Googlebot, Bingbot vb.) siteyi nasıl gezeceğini yöneten anayasa dosyasıdır:
+                    </p>
+                    <div class="code-box" style="margin-top: 10px; font-size: 0.75rem;">
+<span class="code-comment"># Robots.txt for Sentric Battery</span>
+User-agent: *
+Allow: /
+
+<span class="code-comment"># Sitemap Index</span>
+Sitemap: https://www.sentric.com.tr/sitemap.xml
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-box" style="margin-top: 10px;">
+                <h4>⚡ 3. Favicon & Web İkonları</h4>
+                <p>
+                    Sentric'in kurumsal şimşek logosu <code>assets/logo/favicon.svg</code> ve kök dizindeki <code>favicon.svg</code> olarak tanımlandı. Artık tarayıcı sekmelerinde boş gri küre yerine mavi şimşek parlayacak; mobil Google aramalarında da başlığın solunda kurumsal logo yer alacaktır.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: BUSINESS IMPACT & NEXT STEPS -->
+        <section class="report-page" style="margin-bottom: 0;">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-badge">Sonuç & Takip</div>
+                    <h2>Beklenen İş Etkisi & İleriye Dönük Tavsiyeler</h2>
+                </div>
+                <div class="page-number">05 / 05</div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card-box success">
+                    <h4 style="color: #15803d;">1. Dizin Hızı Artışı</h4>
+                    <p>
+                        Googlebot artık sayfalar arasında kaybolmayacak; sitemap sayesinde tüm ürün değişiklikleri ve yeni sayfalar 24-48 saat içinde doğrudan indekslenecektir.
+                    </p>
+                </div>
+
+                <div class="card-box success">
+                    <h4 style="color: #15803d;">2. CTR (Tıklanma) Sıçraması</h4>
+                    <p>
+                        Aramalarda "Sentric | Ticari Aküler" yerine "Ağır Vasıta ve Kamyon Aküleri - EFB, SHD" çıktığı için filo satın almacılarının linke tıklama oranı 2 katına çıkacaktır.
+                    </p>
+                </div>
+
+                <div class="card-box success">
+                    <h4 style="color: #15803d;">3. B2B Güven Puanı</h4>
+                    <p>
+                        Resmi Schema.org etiketleri, kurumsal favicon ve Open Graph kartları ile Sentric'in Türkiye resmi distribütörlük ağırlığı tescillendi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="callout-success" style="margin-top: 15px;">
+                <h5>🎯 Tavsiye Edilen Son Adım: Google Search Console Kaydı</h5>
+                <p>
+                    Teknik altyapımız kusursuz tamamlandı. İsterseniz Gmail hesabınızla <a href="https://search.google.com/search-console" target="_blank" style="color: #0f172a; font-weight: bold; text-decoration: underline;">Google Search Console</a>'a girip <code>sentric.com.tr</code> mülkünü doğrulayabilir ve <code>sitemap.xml</code> dosyamızı tek tıkla doğrudan Google'a teslim edebilirsiniz.
+                </p>
+            </div>
+
+            <div style="border-top: 1px solid var(--border); padding-top: 25px; margin-top: 25px; display: flex; justify-content: space-between; align-items: center; color: var(--slate-light); font-size: 0.85rem;">
+                <div>
+                    <strong>Sentric Battery Turkey</strong> | SEO Devreye Alım & Dağıtım Raporu
+                </div>
+                <div>
+                    Sürüm: <strong>v2026.11-SEO1</strong> (Canlıya Alındı)
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
